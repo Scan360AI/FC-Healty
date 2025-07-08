@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Economica e Benchmark - Guglietta Global S.p.A. | SCAN V9</title> <!-- Changed Company Name -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet"> <!-- CSS V9 -->
+    <link href="../css/print.css" rel="stylesheet" media="print">
+     <!-- Stili specifici V9 (possono essere spostati in styles.css se usati altrove) -->
+     <style>
+        .table-success-light { background-color: #d1e7dd !important; }
+        .table-warning-light { background-color: #fff3cd !important; }
+        .table-danger-light { background-color: #f8d7da !important; }
+     </style>
+</head>
+<body>
+
+ <!-- Sidebar -->
+    <aside class="sidebar no-print">
+        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>Guglietta Global S.p.A.</h5> </div> <!-- Changed Name -->
+        <ul class="sidebar-nav flex-grow-1">
+            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li> <!-- Adjusted Path -->
+            <li class="nav-title">Analisi Dettagliata</li>
+            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li> <!-- Adjusted Paths -->
+            <li class="nav-item"> <a class="nav-link active" href="parte2_economico.html"> <i class="fas fa-balance-scale fa-fw"></i> Analisi Economica </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="parte3_patrimoniale.html"> <i class="fas fa-landmark fa-fw"></i> Analisi Patrimoniale </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="parte4_bancabilita.html"> <i class="fas fa-university fa-fw"></i> Bancabilità </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="parte5_circolante_flussi.html"> <i class="fas fa-sync-alt fa-fw"></i> Circolante e Flussi </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="parte6_rischi-raccomandazioni.html"> <i class="fas fa-exclamation-triangle fa-fw"></i> Rischi e Azioni </a> </li>
+            <li class="nav-title">Approfondimenti</li>
+            <li class="nav-item"> <a class="nav-link" href="irp_dettaglio.html"> <i class="fas fa-shield-alt fa-fw"></i> Dettaglio IRP </a> </li>
+            <!-- Removed Bilancio Plus Link -->
+        </ul>
+        <div class="sidebar-footer"> <small>SCAN360 © <span id="currentYearSidebar"></span> Kitzanos</small> </div>
+    </aside>
+
+
+    <!-- Contenuto Principale Wrapper -->
+    <div class="main-wrapper">
+        <!-- Header Orizzontale -->
+        <header class="dashboard-header no-print">
+            <div class="header-title">
+                <h5 class="mb-0">Report Dettagliato: Analisi Economica e Benchmark</h5>
+                <p class="mb-0">Guglietta Global S.p.A. | <span class="report-date">31 Dicembre 2024</span></p> <!-- Changed Company Name -->
+            </div>
+            <div class="header-controls d-flex align-items-center">
+                <span id="irp-header-badge" class="badge me-3"></span> <!-- Badge IRP -->
+                <button class="btn btn-sm btn-outline-secondary me-2 print-button" onclick="printDocument()"> <i class="fas fa-print"></i> Stampa </button>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> Guglietta Global S.p.A. </button> <!-- Changed Company Name -->
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton"> <li><button class="dropdown-item" type="button" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button></li> </ul>
+                </div>
+            </div>
+        </header>
+        <div class="container d-none d-print-block mt-4 mb-4">
+            <h1 class="text-center mb-0"><span class="company-name">Guglietta Global S.p.A.</span></h1> <!-- Changed Company Name -->
+            <p class="text-center mb-0">Report Dettagliato: Analisi Economica e Benchmark | <span class="report-date">31 Dicembre 2024</span></p>
+            <hr>
+        </div>
+
+        <!-- Area Contenuto Specifico del Report -->
+        <div class="dashboard-container">
+
+            <!-- ================================================================ -->
+            <!-- CONTENUTO SPECIFICO PARTE 2 - V9 - Updated for Calcidrata -->
+            <!-- ================================================================ -->
+
+             <h2 class="section-title" id="economic-analysis"><i class="fas fa-balance-scale me-2"></i>SEZIONE 2.1: ANALISI ECONOMICA</h2>
+
+            <div class="card mb-4 report-section">
+                <div class="card-header"><h5 class="mb-0">2.1.1 Conto Economico Riclassificato</h5></div>
+                <div class="card-body">
+                    <p>Il conto economico riclassificato evidenzia la struttura dei costi e dei ricavi di Guglietta Global S.p.A. nel periodo 2022-2024, consentendo di valutare la redditività operativa e netta.</p> <!-- Updated Text -->
+
+                     <h6 class="mt-4 text-center small">Grafico 2.1: Andamento Ricavi ed EBITDA 2022-2024 (€000 e %)</h6>
+                     <div class="chart-container mb-4" style="height: 350px;">
+                         <canvas id="economicTrendChart"></canvas> <!-- ID for report_init.js -->
+                     </div>
+
+                    <h6 class="mt-4">Tabella 2.1: Conto Economico Riclassificato 2022-2024 (valori in €)</h6>
+                     <!-- Updated Table Data for Calcidrata -->
+                     <div class="table-responsive">
+                         <table class="table table-sm table-striped table-hover">
+                             <thead class="table-light">
+                                 <tr><th>Voce</th><th class="text-end">2022</th><th class="text-end">% Ricavi</th><th class="text-end">2023</th><th class="text-end">% Ricavi</th><th class="text-end">2024</th><th class="text-end">% Ricavi</th><th class="text-end">Var. % 23-24</th></tr>
+                             </thead>
+                             <tbody>
+                                 <tr><td>Ricavi</td><td class="text-end">14.019.070</td><td class="text-end">100,0%</td><td class="text-end">13.547.319</td><td class="text-end">100,0%</td><td class="text-end">13.427.994</td><td class="text-end">100,0%</td><td class="text-danger">-0,88%</td></tr>
+                                 <tr><td>- Acquisti e consumi</td><td class="text-end">-6.193.611</td><td class="text-end">-44,2%</td><td class="text-end">-5.945.431</td><td class="text-end">-43,9%</td><td class="text-end">-5.571.295</td><td class="text-end">-41,5%</td><td class="text-success">-6,30%</td></tr>
+                                 <tr class="table-secondary"><td>= Valore Aggiunto su Consumi</td><td class="text-end">7.825.459</td><td class="text-end">55,8%</td><td class="text-end">7.601.888</td><td class="text-end">56,1%</td><td class="text-end">7.856.699</td><td class="text-end">58,5%</td><td class="text-success">+3,35%</td></tr>
+                                 <tr><td>- Costi variabili di produzione</td><td class="text-end">-3.186.730</td><td class="text-end">-22,7%</td><td class="text-end">-3.424.239</td><td class="text-end">-25,3%</td><td class="text-end">-3.730.100</td><td class="text-end">-27,8%</td><td class="text-danger">+8,93%</td></tr>
+                                 <tr class="table-secondary"><td>= Margine di Contribuzione</td><td class="text-end">4.638.729</td><td class="text-end">33,1%</td><td class="text-end">4.177.649</td><td class="text-end">30,8%</td><td class="text-end">4.126.599</td><td class="text-end">30,7%</td><td class="text-danger">-1,22%</td></tr>
+                                 <tr><td>- Costi fissi</td><td class="text-end">-1.128.504</td><td class="text-end">-8,0%</td><td class="text-end">-1.158.330</td><td class="text-end">-8,6%</td><td class="text-end">-1.260.581</td><td class="text-end">-9,4%</td><td class="text-danger">+8,83%</td></tr>
+                                 <tr class="table-success fw-bold"><td>= EBITDA</td><td class="text-end">3.510.225</td><td class="text-end">25,0%</td><td class="text-end">3.019.319</td><td class="text-end">22,3%</td><td class="text-end">2.866.018</td><td class="text-end">21,3%</td><td class="text-danger">-5,08%</td></tr>
+                                 <tr><td>- Ammortamenti e svalutazioni</td><td class="text-end">-924.927</td><td class="text-end">-6,6%</td><td class="text-end">-834.125</td><td class="text-end">-6,2%</td><td class="text-end">-806.254</td><td class="text-end">-6,0%</td><td class="text-success">-3,34%</td></tr>
+                                 <tr class="table-secondary"><td>= EBIT</td><td class="text-end">2.585.298</td><td class="text-end">18,4%</td><td class="text-end">2.185.194</td><td class="text-end">16,1%</td><td class="text-end">2.059.764</td><td class="text-end">15,3%</td><td class="text-danger">-5,74%</td></tr>
+                                 <tr><td>+/- Saldo Oneri/Ricavi Diversi</td><td class="text-end">-1.083.741</td><td class="text-end">-7,7%</td><td class="text-end">-692.382</td><td class="text-end">-5,1%</td><td class="text-end">-401.069</td><td class="text-end">-3,0%</td><td class="text-success">-42,07%</td></tr>
+                                 <tr class="table-secondary"><td>= Margine Ante Gestione Fin.</td><td class="text-end">1.501.557</td><td class="text-end">10,7%</td><td class="text-end">1.492.812</td><td class="text-end">11,0%</td><td class="text-end">1.632.790</td><td class="text-end">12,2%</td><td class="text-success">+9,38%</td></tr>
+                                 <tr><td>+/- Gestione Finanziaria</td><td class="text-end">-57.036</td><td class="text-end">-0,4%</td><td class="text-end">-81.332</td><td class="text-end">-0,6%</td><td class="text-end">-84.349</td><td class="text-end">-0,6%</td><td class="text-danger">+3,71%</td></tr>
+                                 <tr class="table-secondary"><td>= Risultato Ante Imposte (EBT)</td><td class="text-end">1.444.521</td><td class="text-end">10,3%</td><td class="text-end">1.411.480</td><td class="text-end">10,4%</td><td class="text-end">1.548.441</td><td class="text-end">11,5%</td><td class="text-success">+9,70%</td></tr>
+                                 <tr><td>- Imposte</td><td class="text-end">-77.380</td><td class="text-end">-0,6%</td><td class="text-end">-188.850</td><td class="text-end">-1,4%</td><td class="text-end">-411.492</td><td class="text-end">-3,1%</td><td class="text-danger">+117,89%</td></tr>
+                                 <tr class="table-success fw-bold"><td>= Utile/Perdita di esercizio</td><td class="text-end">1.367.141</td><td class="text-end">9,8%</td><td class="text-end">1.222.630</td><td class="text-end">9,0%</td><td class="text-end">1.136.949</td><td class="text-end">8,5%</td><td class="text-danger">-7,01%</td></tr>
+                             </tbody>
+                         </table>
+                     </div>
+
+                    <h6 class="mt-4">Analisi del Conto Economico (Calcidrata):</h6>
+                    <!-- Updated Commentary for Calcidrata -->
+                    <ol class="small">
+                        <li><strong>Ricavi:</strong> Leggera contrazione (-0,88%) nel 2024 dopo un calo precedente (-3,37%).</li>
+                        <li><strong>Consumi:</strong> Incidenza in calo (da 44% a 41,5%), segno di efficienza acquisti/produzione.</li>
+                        <li><strong>Margine di Contribuzione (30,7%):</strong> Lieve calo (-1,2%), influenzato da aumento costi variabili.</li>
+                        <li><strong>EBITDA (21,3%):</strong> Eccellente ma in calo (-5,1%), riflette ancora ottima efficienza operativa.</li>
+                        <li><strong>Gestione Finanziaria:</strong> Impatto stabile e molto contenuto (-0,6% ricavi).</li>
+                        <li><strong>Utile Netto (8,5%):</strong> Buono ma in calo (-7,0%), influenzato dal forte aumento delle imposte (+117,9%).</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card mb-4 report-section">
+                <div class="card-header"><h5 class="mb-0">2.1.2 Analisi della Marginalità</h5></div>
+                 <div class="card-body">
+                    <p>L'analisi della marginalità valuta la capacità di generare valore aggiunto.</p>
+                    <div class="row">
+                        <div class="col-lg-7 mb-3 mb-lg-0">
+                            <h6 class="text-center small">Grafico 2.2: Evoluzione delle Principali Marginalità (%)</h6>
+                             <div class="chart-container" style="height: 350px;">
+                                 <canvas id="marginalityChart"></canvas> <!-- ID for report_init.js -->
+                             </div>
+                        </div>
+                         <div class="col-lg-5">
+                             <h6>Tabella 2.2: Evoluzione Indici di Marginalità (Calcidrata)</h6>
+                             <!-- Updated Table Data for Calcidrata -->
+                             <div class="table-responsive">
+                                <table class="table table-sm table-striped table-hover">
+                                     <thead><tr><th>Indicatore</th><th class="text-end">2022</th><th class="text-end">2023</th><th class="text-end">2024</th><th>Trend</th></tr></thead>
+                                     <tbody>
+                                         <tr><td>Valore Aggiunto/Ricavi</td><td class="text-end">55,8%</td><td class="text-end">56,1%</td><td class="text-end">58,5%</td><td class="text-success"><i class="fas fa-arrow-up"></i></td></tr>
+                                         <tr><td>MdC/Ricavi</td><td class="text-end">33,1%</td><td class="text-end">30,8%</td><td class="text-end">30,7%</td><td class="text-danger"><i class="fas fa-arrow-down"></i></td></tr>
+                                         <tr><td>EBITDA/Ricavi</td><td class="text-end">25,0%</td><td class="text-end">22,3%</td><td class="text-end">21,3%</td><td class="text-danger"><i class="fas fa-arrow-down"></i></td></tr>
+                                         <tr><td>ROS (EBIT/Ricavi)</td><td class="text-end">18,4%</td><td class="text-end">16,1%</td><td class="text-end">15,3%</td><td class="text-danger"><i class="fas fa-arrow-down"></i></td></tr> <!-- ROS Corretto -->
+                                         <tr><td>Utile Netto/Ricavi</td><td class="text-end">9,8%</td><td class="text-end">9,0%</td><td class="text-end">8,5%</td><td class="text-danger"><i class="fas fa-arrow-down"></i></td></tr>
+                                         <tr class="table-secondary"><td>Break-Even Point (€)</td><td class="text-end">N/D</td><td class="text-end">N/D</td><td class="text-end">6.8M</td><td><i class="fas fa-check text-success"></i></td></tr> <!-- BEP solo 2024 -->
+                                         <tr class="table-secondary"><td>Margine Sicurezza</td><td class="text-end">N/D</td><td class="text-end">N/D</td><td class="text-end">49,3%</td><td><i class="fas fa-check text-success"></i></td></tr> <!-- Margine solo 2024 -->
+                                     </tbody>
+                                 </table>
+                             </div>
+                             <h6 class="mt-3">Break-Even e Leva Operativa (2024 - Calcidrata)</h6>
+                             <!-- Updated BEP Info -->
+                             <div class="alert-box alert-info small mt-2 p-2">
+                                 <ul class="list-unstyled mb-0">
+                                     <li><i class="fas fa-bullseye me-1"></i> BEP: €6.810K | Margine Sicurezza: 49,3% (Eccellente)</li>
+                                     <li><i class="fas fa-calculator me-1"></i> Moltiplicatore CF: 3,25</li>
+                                     <li><i class="fas fa-arrows-alt-v me-1"></i> Resistenza Calo Ricavi: -49,3% | Aumento CF: +161,3%</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+
+            <div class="card mb-4 report-section">
+                 <div class="card-header"><h5 class="mb-0">2.1.3 Struttura e Dettaglio Principali Costi</h5></div>
+                 <div class="card-body">
+                     <p>Analisi delle principali voci di costo e loro incidenza.</p>
+                     <h6 class="mt-4">Tabella 2.3: Struttura dei Costi 2023-2024 (Calcidrata)</h6>
+                     <!-- Updated Table Data for Calcidrata -->
+                      <div class="table-responsive">
+                         <table class="table table-sm table-striped table-hover">
+                            <thead class="table-light">
+                                <tr><th>Categoria di Costo</th><th class="text-end">2023 (€)</th><th class="text-end">% Ricavi</th><th class="text-end">2024 (€)</th><th class="text-end">% Ricavi</th><th>Var%</th><th>Benchmark</th><th>Valutazione</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Acquisti e consumi</td><td class="text-end">5.945.431</td><td class="text-end">43,9%</td><td class="text-end">5.571.295</td><td class="text-end">41,5%</td><td class="text-success">-6,30%</td><td>42-44%</td><td><span class="status-badge bg-success">Efficiente</span></td></tr>
+                                <tr><td>Costi variabili prod.</td><td class="text-end">3.424.239</td><td class="text-end">25,3%</td><td class="text-end">3.730.100</td><td class="text-end">27,8%</td><td class="text-danger">+8,93%</td><td>24-26%</td><td><span class="status-badge bg-danger">Peggiorato</span></td></tr>
+                                <tr><td>Costo del personale</td><td class="text-end">1.100.401</td><td class="text-end">8,1%</td><td class="text-end">1.166.256</td><td class="text-end">8,7%</td><td class="text-danger">+5,98%</td><td>12-15%</td><td><span class="status-badge bg-success">Molto Efficiente</span></td></tr>
+                                <tr><td>Altri costi fissi</td><td class="text-end">57.929</td><td class="text-end">0,4%</td><td class="text-end">94.325</td><td class="text-end">0,7%</td><td class="text-danger">+62,83%</td><td>2-3%</td><td><span class="status-badge bg-warning">Da Verificare</span></td></tr>
+                                <tr><td>Ammortamenti</td><td class="text-end">790.017</td><td class="text-end">5,8%</td><td class="text-end">779.729</td><td class="text-end">5,8%</td><td class="text-success">-1,30%</td><td>5-7%</td><td><span class="status-badge bg-secondary">In linea</span></td></tr>
+                                <tr><td>Svalutazioni e acc.</td><td class="text-end">124.222</td><td class="text-end">0,9%</td><td class="text-end">52.430</td><td class="text-end">0,4%</td><td class="text-success">-57,79%</td><td>0,5-1%</td><td><span class="status-badge bg-secondary">In linea</span></td></tr>
+                                <tr><td>Oneri diversi</td><td class="text-end">680.691</td><td class="text-end">5,0%</td><td class="text-end">574.843</td><td class="text-end">4,3%</td><td class="text-success">-15,55%</td><td>3-4%</td><td><span class="status-badge bg-warning">Monitorare</span></td></tr>
+                                <tr><td>Oneri finanziari</td><td class="text-end">81.706</td><td class="text-end">0,6%</td><td class="text-end">85.009</td><td class="text-end">0,6%</td><td class="text-danger">+4,04%</td><td>1-2%</td><td><span class="status-badge bg-success">Molto Basso</span></td></tr>
+                            </tbody>
+                         </table>
+                     </div>
+                     <h6 class="mt-4">Approfondimento (Calcidrata):</h6>
+                     <!-- Updated Commentary -->
+                     <ul class="small">
+                          <li><strong>Acquisti e consumi (41,5%):</strong> Incidenza in calo, ottima efficienza.</li>
+                          <li><strong>Costi variabili (27,8%):</strong> Incidenza in aumento, sopra benchmark, possibile pressione costi energia/fattori.</li>
+                          <li><strong>Personale (8,7%):</strong> Molto efficiente, ben sotto benchmark (12-15%).</li>
+                          <li><strong>Altri costi fissi:</strong> Aumento significativo da approfondire.</li>
+                          <li><strong>Oneri finanziari (0,6%):</strong> Molto contenuti, riflettono basso indebitamento.</li>
+                     </ul>
+                 </div>
+            </div>
+
+            <div class="card mb-4 report-section">
+                <div class="card-header"><h5 class="mb-0">2.1.4 Indici di Redditività</h5></div>
+                 <div class="card-body">
+                     <p>Analisi della capacità di generare ritorni adeguati.</p>
+                      <div class="row">
+                         <div class="col-lg-7 mb-3 mb-lg-0">
+                             <h6>Tabella 2.4: Indici di Redditività 2022-2024 (Calcidrata)</h6>
+                             <!-- Updated Table Data for Calcidrata -->
+                              <div class="table-responsive">
+                                 <table class="table table-sm table-striped table-hover">
+                                     <thead class="table-light"><tr><th>Indice</th><th>Formula</th><th class="text-end">2022</th><th class="text-end">2023</th><th class="text-end">2024</th><th>Soglia</th><th>Valutazione</th></tr></thead>
+                                     <tbody>
+                                         <tr><td>ROE</td><td>Utile/PN</td><td class="text-end">18,44%</td><td class="text-end">14,66%</td><td class="text-end">12,39%</td><td>>7%</td><td><span class="status-badge bg-success">Molto Buono</span></td></tr>
+                                         <tr><td>ROI</td><td>EBIT/CIN</td><td class="text-end">24,92%</td><td class="text-end">23,84%</td><td class="text-end">20,51%</td><td>>10%</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
+                                         <tr><td>ROS</td><td>EBIT/Ricavi</td><td class="text-end">18,4%</td><td class="text-end">16,1%</td><td class="text-end">15,3%</td><td>>6-8%</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
+                                         <tr><td>EBITDA Margin</td><td>EBITDA/Ricavi</td><td class="text-end">25,0%</td><td class="text-end">22,3%</td><td class="text-end">21,3%</td><td>>10-12%</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
+                                         <tr><td>Utile Netto/Ricavi</td><td>Utile/Ricavi</td><td class="text-end">9,8%</td><td class="text-end">9,0%</td><td class="text-end">8,5%</td><td>>4-5%</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
+                                         <tr><td>Turnover</td><td>Ricavi/CIN</td><td class="text-end">1,35</td><td class="text-end">1,48</td><td class="text-end">1,35</td><td>>1,0-1,5</td><td><span class="status-badge bg-success">Buono</span></td></tr> <!-- Turnover Corretto -->
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                          <div class="col-lg-5">
+                              <h6 class="text-center small">Grafico 2.3: Andamento Redditività (%)</h6>
+                              <div class="chart-container" style="height: 280px;"> <canvas id="profitabilityIndicesChart"></canvas> </div>
+                         </div>
+                     </div>
+                      <h6 class="mt-4">Analisi (Calcidrata):</h6>
+                      <!-- Updated Commentary -->
+                      <ul class="small"><li><strong>ROE (12,4%):</strong> Molto buono, sopra soglia 7% ma in calo.</li><li><strong>ROI (20,5%):</strong> Ottimo, ben sopra soglia 10% ma in calo.</li><li><strong>ROS (15,3%):</strong> Ottimo, ben sopra soglia 6-8%.</li><li><strong>EBITDA Margin (21,3%):</strong> Ottimo, ben sopra soglia 10-12% ma in calo.</li><li><strong>Turnover (1,35x):</strong> Buono, uso efficiente del capitale.</li></ul>
+                 </div>
+            </div>
+
+             <div class="card mb-4 report-section">
+                <div class="card-header"><h5 class="mb-0">2.1.5 Effetto Leva Finanziaria</h5></div>
+                 <div class="card-body">
+                     <p>Valutazione dell'impatto dell'indebitamento sulla redditività del capitale proprio.</p>
+                      <div class="row">
+                          <div class="col-lg-7 mb-3 mb-lg-0">
+                              <h6>Tabella 2.5: Analisi Effetto Leva 2022-2024 (Calcidrata)</h6>
+                              <!-- Updated Table Data for Calcidrata -->
+                              <div class="table-responsive">
+                                 <table class="table table-sm table-striped table-hover">
+                                      <thead><tr><th>Componente</th><th>Formula</th><th class="text-end">2022</th><th class="text-end">2023</th><th class="text-end">2024</th></tr></thead>
+                                      <tbody>
+                                          <tr><td>ROI</td><td>EBIT/CIN</td><td class="text-end">24,92%</td><td class="text-end">23,84%</td><td class="text-end">20,51%</td></tr>
+                                          <tr><td>Costo medio debito (i)</td><td>Oneri Fin./Debiti Fin.</td><td class="text-end">3,30%</td><td class="text-end">5,23%</td><td class="text-end">5,83%</td></tr>
+                                          <tr><td>Rapporto D/E</td><td>Debiti Fin./PN</td><td class="text-end">0,24</td><td class="text-end">0,19</td><td class="text-end">0,15</td></tr>
+                                          <tr class="table-secondary"><td>Spread (ROI-i)</td><td>ROI - i</td><td class="text-end text-success">21,62%</td><td class="text-end text-success">18,61%</td><td class="text-end text-success">14,68%</td></tr>
+                                          <tr class="table-secondary"><td>Effetto Leva</td><td>(ROI-i) × D/E</td><td class="text-end text-success">5,19%</td><td class="text-end text-success">3,54%</td><td class="text-end text-success">2,20%</td></tr>
+                                          <tr><td>ROE calcolato</td><td>ROI + Effetto Leva</td><td class="text-end">30,11%</td><td class="text-end">27,38%</td><td class="text-end">22,71%</td></tr>
+                                          <tr class="fw-bold"><td>ROE effettivo</td><td>Utile Netto/PN</td><td class="text-end">18,44%</td><td class="text-end">14,66%</td><td class="text-end">12,39%</td></tr>
+                                      </tbody>
+                                 </table>
+                              </div>
+                          </div>
+                          <div class="col-lg-5">
+                               <h6 class="text-center small">Grafico 2.4: Confronto ROI vs ROE (%)</h6>
+                               <div class="chart-container" style="height: 250px;"> <canvas id="leverageChart"></canvas> </div>
+                                <h6 class="mt-4">Analisi Leva (Calcidrata):</h6>
+                                <!-- Updated Commentary -->
+                               <ul class="small list-unstyled"><li><i class="fas fa-check-circle text-success me-1"></i> Spread (ROI-i) ampiamente positivo (14,7%).</li><li><i class="fas fa-check-circle text-success me-1"></i> Effetto Leva positivo ma limitato (+2,2% sul ROE).</li><li><i class="fas fa-arrow-down text-success me-1"></i> Leva D/E bassissima e in calo (0,15x - Ottimo).</li><li><i class="fas fa-question-circle text-info me-1"></i> ROE Effettivo < Teorico (probabile impatto negativo non-core/fiscale).</li></ul>
+                          </div>
+                      </div>
+                 </div>
+            </div>
+
+             <h2 class="section-title mt-5" id="benchmark"><i class="fas fa-chart-bar me-2"></i>SEZIONE 2.2: BENCHMARK E POSIZIONAMENTO COMPETITIVO</h2>
+
+            <div class="card mb-4 report-section">
+                <div class="card-header"><h5 class="mb-0">2.2.1 Posizionamento Competitivo</h5></div>
+                 <div class="card-body">
+                     <p>Valutazione della performance rispetto al settore "Produzione di calce".</p> <!-- Updated Sector -->
+                     <div class="row">
+                         <div class="col-lg-7 mb-3 mb-lg-0">
+                              <h6 class="text-center small">Grafico 2.5: Posizionamento Competitivo (Base 100 = Media Settore)</h6>
+                             <div class="chart-container" style="height: 350px;"> <canvas id="benchmarkRadarChart"></canvas>          <!-- ### INCOLLA LO SCRIPT QUI ### -->
+                                 <script>
+                                     document.addEventListener('DOMContentLoaded', function() {
+                                         const ctxBenchmarkRadar = document.getElementById('benchmarkRadarChart');
+
+                                         if (ctxBenchmarkRadar) {
+                                             try {
+                                                 // --- DATI SPECIFICI PER CALCIDRATA (DA charts_config.js AGGIORNATO) ---
+                                                  // Normalizzazione stimata: 100=Benchmark, >100=Migliore, <100=Peggiore
+                                                  // Valori invertiti dove basso è meglio (Costo Pers, PFN/EBITDA, D/E)
+                                                 const benchmarkRadarData = {
+                                                     labels: ["Crescita Ricavi", "EBITDA Margin", "ROI", "Turnover", "Costo Personale (inv)", "PFN/EBITDA (inv)", "D/E (inv)"],
+                                                     datasets: [
+                                                         {
+                                                             label: "Guglietta Global S.p.A.",
+                                                             // !!! VALORI NORMALIZZATI STIMATI PER CALCIDRATA - VERIFICARE !!!
+                                                             data: [97, 194, 205, 113, 155, 673, 467], // Stima basata su Tabella 2.6 (PFN/EBITDA e D/E molto migliori -> alto valore inverso)
+                                                             backgroundColor: "rgba(25, 25, 112, 0.3)",
+                                                             borderColor: "rgba(25, 25, 112, 1)",
+                                                             borderWidth: 2, pointBackgroundColor: "rgba(25, 25, 112, 1)", pointBorderColor: "#fff",
+                                                             pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "rgba(25, 25, 112, 1)"
+                                                         },
+                                                         {
+                                                             label: "Media Settore",
+                                                             data: [100, 100, 100, 100, 100, 100, 100], // Media = 100
+                                                             backgroundColor: "rgba(217, 140, 0, 0.3)",
+                                                             borderColor: "rgba(217, 140, 0, 1)",
+                                                             borderWidth: 2, pointBackgroundColor: "rgba(217, 140, 0, 1)", pointBorderColor: "#fff",
+                                                             pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "rgba(217, 140, 0, 1)"
+                                                         }
+                                                     ]
+                                                 };
+
+                                                 // --- OPZIONI SPECIFICHE PER QUESTO GRAFICO (RADAR) ---
+                                                 const benchmarkRadarOptions = {
+                                                     responsive: true,
+                                                     maintainAspectRatio: false,
+                                                       scales: {
+                                                          r: { // Asse radiale
+                                                              angleLines: { color: '#e0e0e0' }, grid: { color: '#e0e0e0' },
+                                                              pointLabels: { font: { size: 10 } },
+                                                              ticks: {
+                                                                  backdropColor: 'rgba(255, 255, 255, 0.75)', font: { size: 9 },
+                                                                  maxTicksLimit: 5,
+                                                              },
+                                                              suggestedMin: 0, // Potrebbe partire da 0 o 50 a seconda della scala
+                                                              // suggestedMax: 700 // Adatta in base ai dati normalizzati Calcidrata (PFN/D inv alto)
+                                                              // Considerare una scala logaritmica o capping se i valori sono troppo dispersi
+                                                          }
+                                                       },
+                                                       plugins: {
+                                                            legend: { position: 'bottom', labels: { boxWidth: 12, padding: 15, font: { size: 11 } } },
+                                                            title: { display: false }, // Titolo già presente nell'HTML
+                                                            tooltip: { // Usa tooltip comuni dal config o personalizza qui
+                                                                backgroundColor: 'rgba(0, 0, 0, 0.8)', titleFont: { weight: 'bold', size: 13 },
+                                                                bodyFont: { size: 12 }, padding: 10, cornerRadius: 4, displayColors: true, boxPadding: 4,
+                                                                callbacks: {
+                                                                    label: function(context) {
+                                                                        let label = context.dataset.label || '';
+                                                                        if (label) label += ': ';
+                                                                        if (context.parsed.r !== null) { label += context.parsed.r.toFixed(1); } // Valore normalizzato
+                                                                        else { label += 'N/D'; }
+                                                                        return label;
+                                                                    }
+                                                                }
+                                                            }
+                                                       },
+                                                       animation: { duration: 400 }
+                                                 };
+
+                                                 // Distrugge eventuale grafico precedente sullo stesso canvas
+                                                 const existingChart = Chart.getChart(ctxBenchmarkRadar);
+                                                 if (existingChart instanceof Chart) {
+                                                     existingChart.destroy();
+                                                 }
+
+                                                 // Crea il nuovo grafico
+                                                 new Chart(ctxBenchmarkRadar, {
+                                                     type: 'radar',
+                                                     data: benchmarkRadarData,
+                                                     options: benchmarkRadarOptions
+                                                 });
+                                                 console.log("Grafico benchmarkRadarChart inizializzato direttamente in HTML.");
+
+                                             } catch (error) {
+                                                 console.error("Errore inizializzazione grafico benchmarkRadarChart in HTML:", error);
+                                                  // Mostra errore sul canvas
+                                                  const ctx = ctxBenchmarkRadar.getContext('2d');
+                                                   if (ctx) {
+                                                       ctx.clearRect(0, 0, ctxBenchmarkRadar.width, ctxBenchmarkRadar.height);
+                                                       ctx.font = '14px Titillium Web, sans-serif';
+                                                       ctx.fillStyle = '#dc3545';
+                                                       ctx.textAlign = 'center';
+                                                       ctx.fillText('Errore durante il caricamento del grafico.', ctxBenchmarkRadar.width / 2, ctxBenchmarkRadar.height / 2);
+                                                   }
+                                             }
+                                         } else {
+                                              console.warn("Canvas 'benchmarkRadarChart' non trovato.");
+                                         }
+                                     });
+                                 </script>
+                                 <!-- ### FINE SCRIPT INCOLLATO ### --></div> <!-- Ensure benchmarkRadarChart exists -->
+                         </div>
+                         <div class="col-lg-5">
+                              <h6>Tabella 2.6: Posizionamento Competitivo 2024 (Calcidrata)</h6>
+                              <!-- Updated Table Data for Calcidrata -->
+                              <div class="table-responsive">
+                                <table class="table table-sm table-striped table-hover">
+                                    <thead><tr><th>Indicatore</th><th>Calcidrata</th><th>Media Sett.</th><th>Gap</th><th>Valutazione</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>Crescita ricavi</td><td>-0,9%</td><td>+2-3%</td><td class="text-danger">-3,5 p.p.</td><td><span class="status-badge bg-danger">Inferiore</span></td></tr>
+                                        <tr><td>EBITDA Margin</td><td>21,3%</td><td>10-12%</td><td class="text-success">+10 p.p.</td><td><span class="status-badge bg-success">Superiore</span></td></tr>
+                                        <tr><td>ROS</td><td>15,3%</td><td>6-8%</td><td class="text-success">+8 p.p.</td><td><span class="status-badge bg-success">Superiore</span></td></tr>
+                                        <tr><td>Turnover</td><td>1,35x</td><td>~1,0-1,5x</td><td class="text-success">In linea</td><td><span class="status-badge bg-secondary">In linea</span></td></tr>
+                                        <tr><td>ROI</td><td>20,5%</td><td>8-10%</td><td class="text-success">+11 p.p.</td><td><span class="status-badge bg-success">Superiore</span></td></tr>
+                                        <tr><td>Leva D/E</td><td>0,15x</td><td>0,6-0,8x</td><td class="text-success">-0,55x</td><td><span class="status-badge bg-success">Migliore</span></td></tr>
+                                        <tr><td>Ciclo Circolante</td><td>57 gg</td><td>~80-100 gg</td><td class="text-success">-33 gg</td><td><span class="status-badge bg-success">Migliore</span></td></tr>
+                                        <tr><td>PFN/EBITDA</td><td>0,26x</td><td>~1,5-2,0x</td><td class="text-success">-1,5x</td><td><span class="status-badge bg-success">Migliore</span></td></tr>
+                                    </tbody>
+                                </table>
+                              </div>
+                         </div>
+                     </div>
+                      <h6 class="mt-4">Analisi posizionamento (Calcidrata):</h6>
+                      <!-- Updated Commentary -->
+                      <p class="small mb-0">Guglietta Global S.p.A. si posiziona <strong>significativamente meglio della media di settore</strong> su quasi tutti gli indicatori di redditività e solidità finanziaria. L'efficienza del circolante è buona ma il trend è negativo. L'unica area di performance inferiore è la <strong>crescita dei ricavi</strong>.</p>
+                 </div>
+            </div>
+
+             <div class="card mb-4 report-section">
+                 <div class="card-header"><h5 class="mb-0">2.2.2 Gap Analysis vs Best Practice</h5></div>
+                  <div class="card-body">
+                     <p>Identificazione aree di miglioramento rispetto alle best practice.</p>
+                     <h6 class="mt-4">Tabella 2.7: Gap Analysis 2024 (Calcidrata)</h6>
+                     <!-- Updated Table Data for Calcidrata -->
+                      <div class="table-responsive">
+                         <table class="table table-sm table-striped table-hover">
+                            <thead class="table-light"> <tr><th>Area</th><th>Indicatore</th><th>Valore Attuale</th><th>Best Practice</th><th>Gap</th><th>Impatto Potenziale</th><th>Priorità</th></tr></thead>
+                             <tbody>
+                                <tr><td>Crescita</td><td>Var. Ricavi</td><td>-0,9%</td><td>+2-3%</td><td class="text-danger">-3,5%</td><td>Perdita quote/volumi</td><td><span class="status-badge bg-danger">Alta</span></td></tr>
+                                <tr><td>Gestione Scorte</td><td>DIO (gg)</td><td>84</td><td>60-70</td><td class="text-danger">+14 gg</td><td>€217K capitale immob.</td><td><span class="status-badge bg-danger">Alta</span></td></tr>
+                                <tr><td>Gestione Liquidità</td><td>Var. Cassa</td><td>-€455K</td><td>Positiva</td><td class="text-warning">-</td><td>Tensione Tesoreria</td><td><span class="status-badge bg-danger">Alta</span></td></tr>
+                                <tr><td>Costi Variabili</td><td>Costi Var./Ricavi</td><td>27,8%</td><td>24-26%</td><td class="text-danger">-1,8%</td><td>€240K margini pot.</td><td><span class="status-badge bg-warning text-dark">Media</span></td></tr>
+                                <tr><td>Gestione Fornitori</td><td>DPO (gg)</td><td>89</td><td>90-100</td><td class="text-warning">-6 gg</td><td>€93K finanz. perso</td><td><span class="status-badge bg-warning text-dark">Media</span></td></tr>
+                                <tr><td>Struttura Fiscale</td><td>Imposte/EBT</td><td>26,6%</td><td>~24% (IRES)</td><td class="text-warning">-2,6%</td><td>€40K costi extra</td><td><span class="status-badge bg-info text-dark">Bassa</span></td></tr>
+                             </tbody>
+                         </table>
+                     </div>
+                  </div>
+             </div>
+
+             <div class="card mb-4 report-section">
+                 <div class="card-header"><h5 class="mb-0">2.2.3 Azioni di Miglioramento Suggerite</h5></div>
+                  <div class="card-body">
+                      <h6 class="mt-4">Tabella 2.8: Piano di Azione Economico (Sintesi - Calcidrata)</h6>
+                      <!-- Updated Table Data for Calcidrata -->
+                      <div class="table-responsive">
+                          <table class="table table-sm table-hover action-table">
+                              <thead class="table-light"><tr><th><i class="fas fa-flag me-1"></i> Area</th><th><i class="fas fa-wrench me-1"></i> Azione Suggerita</th><th><i class="fas fa-chart-line me-1"></i> Effetti Previsti</th><th><i class="fas fa-coins me-1"></i> Net Benefit Stimato</th></tr></thead>
+                              <tbody>
+                                  <tr><td>Crescita</td><td>Piano sviluppo commerciale</td><td>Recupero crescita +3-5%</td><td class="text-success">€400K-670K Ricavi</td></tr>
+                                  <tr><td>Costi Variabili</td><td>Ottimizzazione mix energetico/forniture</td><td>Riduzione incidenza 1,5%</td><td class="text-success">€56K EBITDA</td></tr>
+                                  <tr><td>Struttura Fin.</td><td>Valutare investimenti con leva mod.</td><td>Incremento ROI/ROE</td><td class="text-success">ROI > 15%</td></tr>
+                                  <tr><td>Oneri Diversi</td><td>Analisi e razionalizzazione</td><td>Riduzione incidenza 0,8%</td><td class="text-success">€107K EBITDA</td></tr>
+                                  <tr><td>Tax Planning</td><td>Ottimizzazione fiscale</td><td>Riduzione carico fiscale</td><td class="text-success">€67K Utile</td></tr>
+                              </tbody>
+                          </table>
+                      </div>
+                       <p class="small mt-3 text-muted">L'implementazione di queste azioni potrebbe migliorare l'EBITDA di ~€160K e favorire la ripresa dei ricavi.</p> <!-- Updated Summary Text -->
+                  </div>
+             </div>
+
+            <div class="card summary-card mb-4 report-section">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-check-circle text-primary me-2"></i>Conclusioni Analisi Economica e Benchmark (Calcidrata)</h5>
+                    <!-- Updated Conclusions -->
+                     <p>Guglietta Global S.p.A. presenta un <strong>eccellente profilo di redditività</strong>, nettamente superiore ai benchmark di settore, e una solida efficienza operativa. La <strong>principale area di intervento</strong> riguarda la <strong>crescita stagnante dei ricavi</strong> e il <strong>monitoraggio dei costi variabili e fissi</strong>.</p>
+                     <p>La robusta generazione di cassa storica e il basso indebitamento offrono ampi margini per finanziare strategie di sviluppo (organico o M&A), mitigando i rischi legati alla contrazione del fatturato e al peggioramento di alcuni indicatori (Leanus, Liquidità, Scorte).</p>
+                </div>
+            </div>
+
+
+            <!-- ================================================================ -->
+            <!-- FINE CONTENUTO SPECIFICO PARTE 2 -->
+            <!-- ================================================================ -->
+
+        </div> <!-- /dashboard-container -->
+
+        <!-- Footer Standard V2 (Nessuna modifica necessaria) -->
+        <footer class="footer no-print"> <div class="container-fluid px-4"> <div class="row align-items-center"> <div class="col-md-6 text-center text-md-start mb-2 mb-md-0"> SCAN360 © <span id="currentYearFooterReport"></span> </div> <div class="col-md-6 text-center text-md-end"> Powered by <a href="http://www.kitzanos.com" target="_blank" class="text-white fw-bold">Kitzanos Lab</a> <img src="../assets/img/logo_kitzanos.png" alt="Kitzanos Logo" class="ms-2"> </div> </div> </div> </footer>
+
+    </div> <!-- /main-wrapper -->
+
+    <!-- Script JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/charts_config.js"></script>
+    <script src="../js/report_init.js"></script>
+     <script>
+        document.getElementById('currentYearSidebar').textContent = new Date().getFullYear();
+        document.getElementById('currentYearFooterReport').textContent = new Date().getFullYear();
+
+         // Script aggiornamento badge IRP header (Updated for Calcidrata)
+         document.addEventListener('DOMContentLoaded', function() {
+             const irpScoreValue = 82.03; // Updated IRP Value
+             const irpHeaderBadge = document.getElementById('irp-header-badge');
+             if(irpHeaderBadge) {
+                 let badgeClass = 'bg-warning text-dark';
+                 if (irpScoreValue >= 71) badgeClass = 'bg-success'; // Basso
+                 else if (irpScoreValue < 51) badgeClass = 'bg-danger'; // Alto
+                 irpHeaderBadge.className = `badge ${badgeClass} me-3`;
+                 irpHeaderBadge.textContent = `IRP: ${irpScoreValue.toFixed(1)}`;
+             }
+
+              // Ensure logout function is defined
+             if (typeof logout !== 'function') {
+                 window.logout = function() {
+                    console.log("Logout action triggered (placeholder)");
+                }
+             }
+             // Ensure print function is defined
+             if (typeof printDocument !== 'function') {
+                window.printDocument = function() {
+                    window.print();
+                }
+             }
+         });
+   </script>
+
+<scan-chat data-bot-id="44479c6e-7072-49fc-9046-e650ff6f9874"></scan-chat>
+<script src=".  /js/bundle.js"></script>
+</body>
+</html>

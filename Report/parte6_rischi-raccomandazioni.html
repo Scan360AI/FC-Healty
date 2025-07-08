@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi Rischi e Raccomandazioni - Guglietta Global S.p.A. | SCAN V17 - No Charts</title> <!-- Titolo Aggiornato -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/print.css" rel="stylesheet" media="print">
+    <style>
+        /* Copia/Incolla stili V17 qui... (rimuovendo eventuali stili specifici per i grafici rimossi se non servono più) */
+         .timeline-irp { list-style: none; padding-left: 0; position: relative; }
+        .timeline-irp::before { content: ''; position: absolute; left: 18px; top: 0; bottom: 0; width: 2px; background-color: var(--secondary); }
+        .timeline-irp-item { position: relative; margin-bottom: 1.5rem; padding-left: 45px; }
+        .timeline-irp-badge { position: absolute; left: 0; top: 0; width: 38px; height: 38px; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.2); font-size: 0.75rem;}
+        .timeline-irp-badge.priority-high { background-color: var(--danger); }
+        .timeline-irp-badge.priority-medium { background-color: var(--warning); }
+        .timeline-irp-badge.priority-low { background-color: var(--success); }
+        .timeline-irp-content { background-color: var(--white); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border); box-shadow: var(--shadow); }
+        .timeline-irp-content h6 { color: var(--primary); margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 1rem;}
+        .timeline-irp-content ul { margin-bottom: 0; padding-left: 1.2rem; font-size: 0.85rem; }
+        .kpi-target-table td, .kpi-target-table th { font-size: 0.8rem; padding: 0.4rem 0.5rem;}
+        .kpi-target-table .current-value { color: var(--text-secondary); font-style: italic; display: block; font-size: 0.75rem;}
+        .kpi-target-table .target-value { font-weight: bold; }
+         .kpi-target-table .value-ok { color: var(--success); }
+         .kpi-target-table .value-warn { color: var(--warning); }
+         .kpi-target-table .value-crit { color: var(--danger); }
+        .revision-section .list-group-item { background-color: transparent; border: none; padding: 0.5rem 0; display: flex; align-items: center; font-size: 0.9rem;}
+        .revision-section .list-group-item i { width: 20px; text-align: center; margin-right: 10px; color: var(--primary); }
+        .alerting-section .alert { padding: 0.75rem 1rem; margin-bottom: 0.5rem; font-size: 0.85rem; display: flex; align-items: center;}
+        .alerting-section .alert i { margin-right: 8px; }
+        .alert.alert-liquidita, .alert.alert-circolante { border-left: 4px solid var(--danger) !important; background-color: #f8d7da !important;}
+        .alert.alert-covenant, .alert.alert-be, .alert.alert-costi { border-left: 4px solid var(--warning) !important; background-color: #fff3cd !important;}
+         .accordion-button i { margin-right: 10px; }
+         #headingCirc button i { color: var(--danger); }
+         #headingFin button i { color: var(--warning); }
+         #headingOp button i { color: var(--warning); }
+          :root {
+            --primary: #191970; --secondary: #4a69bd; --success: #4CAF50;
+            --warning: #FFC107; --danger: #F44336; --info: #0dcaf0;
+            --light: #f8f9fa; --dark: #343a40; --white: #ffffff;
+            --text-primary: #212529; --text-secondary: #6c757d;
+            --card-bg: var(--white); --card-border: #dee2e6;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        html, body { height: 100%; overflow-x: hidden; font-family: 'Titillium Web', sans-serif; background-color: #f4f8fb; }
+        body { display: flex; }
+        .sidebar { width: 250px; background-color: var(--primary); color: #e0e0e0; position: fixed; top: 0; bottom: 0; left: 0; z-index: 1031; display: flex; flex-direction: column; box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); transition: width 0.3s ease; overflow-y: auto; }
+        .main-wrapper { margin-left: 250px; width: calc(100% - 250px); display: flex; flex-direction: column; min-height: 100vh; position: relative; padding-top: 70px; }
+        .dashboard-header { background-color: var(--white); padding: 15px 30px; border-bottom: 1px solid var(--card-border); box-shadow: 0 2px 5px rgba(0,0,0,0.05); min-height: 70px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 250px; right: 0; z-index: 1030; }
+        .dashboard-container { padding: 30px; flex-grow: 1; width: 100%; }
+        .footer { background-color: var(--primary); color: rgba(255, 255, 255, 0.7); padding: 15px 30px; font-size: 0.85rem; margin-top: auto; flex-shrink: 0; width: 100%; }
+        .footer img { max-height: 20px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; vertical-align: middle;}
+        .sidebar-header { padding: 10px 20px; margin-bottom: 20px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .sidebar-header img { max-height: 40px; } .sidebar-header h5 { color: var(--white); margin-top: 10px; font-size: 1.1rem; font-weight: 600; }
+        .sidebar-nav { list-style: none; padding: 0; } .sidebar-nav .nav-item { margin: 0; }
+        .sidebar-nav .nav-link { color: #e0e0e0; padding: 12px 20px; display: flex; align-items: center; font-size: 0.95rem; font-weight: 500; border-left: 4px solid transparent; transition: all 0.2s ease; }
+        .sidebar-nav .nav-link:hover { background-color: rgba(255, 255, 255, 0.05); color: var(--white); border-left-color: var(--warning); }
+        .sidebar-nav .nav-link.active { background-color: rgba(255, 255, 255, 0.1); color: var(--white); font-weight: 600; border-left-color: var(--white); }
+        .sidebar-nav .nav-link i { margin-right: 15px; width: 20px; text-align: center; font-size: 1rem; }
+        .sidebar-nav .nav-title { padding: 10px 20px; font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 15px; }
+        .sidebar-footer { margin-top: auto; padding: 15px 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; text-align: left; }
+        .section-title { color: var(--primary); font-weight: 600; margin-top: 2.5rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--secondary); font-size: 1.75rem; display: flex; align-items: center; } .section-title i { margin-right: 10px; }
+        .dashboard-card { background-color: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: var(--shadow); transition: all 0.3s ease; height: 100%; }
+        .dashboard-card:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.1); transform: translateY(-3px); }
+        .card-title-small { font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .table { border: 1px solid var(--card-border); margin-bottom: 1rem; } .table thead th { background-color: var(--light); color: var(--primary); font-weight: 600; border-bottom: 2px solid var(--primary); font-size: 0.9rem; white-space: nowrap; } .table-hover tbody tr:hover { background-color: #eef2f7; } .table td, .table th { vertical-align: middle; padding: 0.6rem 0.75rem; font-size: 0.9rem;} .value-highlight { font-weight: 600; color: var(--primary); } .text-end { text-align: right !important;} .text-success { color: var(--success) !important; } .text-danger { color: var(--danger) !important; } .text-warning { color: var(--warning) !important; } .text-secondary { color: var(--text-secondary) !important; }
+        .alert-box { padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid; } .alert-box h5 { margin-bottom: 10px; font-size: 1.1rem; font-weight: 600;} .alert-box ul { padding-left: 20px; margin-bottom: 0; font-size: 0.9rem;} .alert-box.alert-success { background-color: #d1e7dd; border-color: #a3cfbb; color: #0a3622; } .alert-box.alert-warning { background-color: #fff3cd; border-color: #ffda6a; color: #664d03; } .alert-box.alert-danger { background-color: #f8d7da; border-color: #f1aeb5; color: #58151c; } .alert-box.alert-info { background-color: #cff4fc; border-color: #9eeaf9; color: #055160; }
+        .status-badge { font-size: .75em; font-weight: 700; line-height: 1; padding: .35em .65em; border-radius: .375rem; color: white; display: inline-block; } .status-badge.bg-success { background-color: var(--success) !important; } .status-badge.bg-warning { background-color: var(--warning) !important; color: var(--dark) !important;} .status-badge.bg-danger { background-color: var(--danger) !important; } .status-badge.bg-info { background-color: var(--info) !important; color: var(--dark) !important;}
+        .chart-container { height: 300px; margin-bottom: 20px; background-color: var(--white); padding: 15px; border-radius: 8px; border: 1px solid var(--card-border); box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: relative; }
+        .icon-circle { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; color: white; margin-right: 12px; font-size: 0.9rem; flex-shrink: 0; }
+        .bg-icon-success { background-color: var(--success); } .bg-icon-warning { background-color: var(--warning); } .bg-icon-danger { background-color: var(--danger); } .bg-icon-info { background-color: #4f6d7a; } .bg-icon-primary { background-color: var(--primary); } .bg-icon-secondary { background-color: var(--secondary); }
+        .action-table td:nth-child(1) { width: 30%; white-space: nowrap; } .action-table td:nth-child(2) { width: 40%; } .action-table td:nth-child(3) { width: 20%; } .action-table td:nth-child(4) { width: 10%; text-align: center;}
+         @media (max-width: 991.98px) { .sidebar { width: 0; border: none; box-shadow: none;} .main-wrapper { margin-left: 0; width: 100%; padding-top: 56px; } .dashboard-header { left: 0; width: 100%; min-height: 56px; padding: 5px 15px;} .header-title h5 { font-size: 1rem;} .header-title p { font-size: 0.75rem;} .dashboard-container { padding: 15px;} .footer { padding: 10px 15px;} }
+         @media print { body { display: block; } .main-wrapper { margin-left: 0; width: 100%; padding-top: 0; } .no-print { display: none !important; } .report-section { page-break-inside: avoid; } }
+    </style>
+    <!-- Chart.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+
+     <!-- Sidebar -->
+    <aside class="sidebar no-print">
+        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>Guglietta Global S.p.A.</h5> </div> <!-- Changed Name -->
+        <ul class="sidebar-nav flex-grow-1">
+            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li> <!-- Adjusted Path -->
+            <li class="nav-title">Analisi Dettagliata</li>
+            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li> <!-- Adjusted Paths -->
+            <li class="nav-item"> <a class="nav-link" href="parte2_economico.html"> <i class="fas fa-balance-scale fa-fw"></i> Analisi Economica </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="parte3_patrimoniale.html"> <i class="fas fa-landmark fa-fw"></i> Analisi Patrimoniale </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="parte4_bancabilita.html"> <i class="fas fa-university fa-fw"></i> Bancabilità </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="parte5_circolante_flussi.html"> <i class="fas fa-sync-alt fa-fw"></i> Circolante e Flussi </a> </li>
+            <li class="nav-item"> <a class="nav-link active" href="parte6_rischi-raccomandazioni.html"> <i class="fas fa-exclamation-triangle fa-fw"></i> Rischi e Azioni </a> </li>
+            <li class="nav-title">Approfondimenti</li>
+            <li class="nav-item"> <a class="nav-link" href="irp_dettaglio.html"> <i class="fas fa-shield-alt fa-fw"></i> Dettaglio IRP </a> </li>
+            <!-- Removed Bilancio Plus Link -->
+        </ul>
+        <div class="sidebar-footer"> <small>SCAN360 © <span id="currentYearSidebar"></span> Kitzanos</small> </div>
+    </aside>
+
+
+    <!-- Contenuto Principale Wrapper -->
+    <div class="main-wrapper">
+        <!-- Header Orizzontale -->
+        <header class="dashboard-header no-print">
+            <div class="header-title">
+                <h5 class="mb-0">Report Dettagliato: Analisi Rischi e Raccomandazioni</h5>
+                <p class="mb-0">Guglietta Global S.p.A. | <span class="report-date">31 Dicembre 2024</span></p>
+            </div>
+            <div class="header-controls d-flex align-items-center">
+                <span id="irp-header-badge" class="badge me-3"></span>
+                <button class="btn btn-sm btn-outline-secondary me-2 print-button" onclick="printDocument()"> <i class="fas fa-print"></i> Stampa </button>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> Guglietta Global S.p.A. </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton"> <li><button class="dropdown-item" type="button" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button></li> </ul>
+                </div>
+            </div>
+        </header>
+        <div class="container d-none d-print-block mt-4 mb-4">
+            <h1 class="text-center mb-0"><span class="company-name">Guglietta Global S.p.A.</span></h1>
+            <p class="text-center mb-0">Report Dettagliato: Analisi Rischi e Raccomandazioni | <span class="report-date">31 Dicembre 2024</span></p>
+            <hr>
+        </div>
+
+        <!-- Area Contenuto Specifico del Report -->
+        <div class="dashboard-container">
+
+            <!-- ================================================================ -->
+            <!-- CONTENUTO SPECIFICO PARTE 6 - V16 - Updated for Calcidrata - NO CHARTS -->
+            <!-- ================================================================ -->
+
+             <h2 class="section-title" id="risk-analysis"><i class="fas fa-exclamation-triangle me-2"></i>6. ANALISI DEI RISCHI</h2>
+
+            <!-- Sezioni 6.1 a 6.5 presentate in card standard -->
+            <div class="card mb-4 report-section">
+                <div class="card-header card-header-primary"><h5 class="mb-0">6.1 Indicatori di Rischio</h5></div>
+                <div class="card-body">
+                    <p>Guglietta Global S.p.A. presenta un profilo di rischio complessivamente <strong>basso</strong>, con eccellente solidità finanziaria ma alcuni segnali di attenzione operativa.</p>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-striped table-hover" id="table_6_1_1">
+                           <thead class="table-light"><tr><th>Indicatore</th><th class="text-end">Valore 12/24</th><th>Trend</th><th>Interpretazione</th></tr></thead>
+                           <tbody>
+                               <tr><td>Variazione Ricavi</td><td class="text-end">-0,88%</td><td>In calo</td><td class="text-danger">Leggera contrazione fatturato</td></tr>
+                               <tr><td>EBITDA Margin</td><td class="text-end">21,34%</td><td>In calo (-5,08%)</td><td class="text-success">Redditività ottima ma in diminuzione</td></tr>
+                               <tr><td>PFN/EBITDA</td><td class="text-end">0,26</td><td>In peggioramento</td><td class="text-success">Livello indebitamento eccellente</td></tr>
+                               <tr><td>Leva Fin. (D/E)</td><td class="text-end">0,15</td><td>In miglioramento</td><td class="text-success">Ottima solidità patrimoniale</td></tr>
+                               <tr><td>Liquidità/Ricavi</td><td class="text-end">4,61%</td><td>In peggioramento</td><td class="text-warning">Riduzione liquidità da monitorare</td></tr>
+                               <tr><td>CF Operativo/Ricavi</td><td class="text-end">12,25%</td><td>In diminuzione</td><td class="text-success">Buona capacità generazione cassa</td></tr>
+                               <tr><td>Ciclo del circolante (gg)</td><td class="text-end">57</td><td>In peggioramento</td><td class="text-warning">Equilibrio positivo ma deteriorato</td></tr>
+                               <tr><td>DSO (giorni crediti)</td><td class="text-end">62</td><td>In miglioramento</td><td class="text-success">Tempo incasso buono</td></tr>
+                               <tr><td>DPO (giorni fornitori)</td><td class="text-end">89</td><td>In peggioramento</td><td class="text-warning">Allungamento tempi pagamento</td></tr>
+                               <tr><td>DIO (giorni magazzino)</td><td class="text-end">84</td><td>In peggioramento</td><td class="text-danger">Significativo aumento scorte (Critico)</td></tr>
+                           </tbody>
+                        </table>
+                    </div>
+                    <p class="small mt-3">Redditività e sostenibilità debito eccellenti. <strong>Criticità significativa nel magazzino (DIO)</strong> e trend negativi su ricavi/liquidità.</p>
+                </div>
+            </div>
+
+             <div class="card mb-4 report-section">
+                <div class="card-header card-header-secondary"><h5 class="mb-0">6.2 Z-Score e Rating</h5></div>
+                 <div class="card-body">
+                     <!-- Rimossa row, la tabella occupa tutta la larghezza -->
+                     <div class="small">
+                         <h6>Tabella 6.2.1: Z-Score e Rating (2024)</h6>
+                         <div class="table-responsive">
+                             <table class="table table-sm table-striped">
+                                 <thead class="table-light"><tr><th>Indicatore</th><th class="text-end">Valore</th><th>Valutazione</th></tr></thead>
+                                 <tbody>
+                                     <tr><td>Z-Score Altman</td><td class="text-end value-highlight">4,07</td><td><span class="badge bg-success">Zona Sicura</span></td></tr>
+                                     <tr><td>PD (MCC)</td><td class="text-end value-highlight">0,12%</td><td><span class="badge bg-success">Rischio Minimo</span></td></tr>
+                                     <tr><td>Classe MCC</td><td class="text-end value-highlight">F1</td><td><span class="badge bg-success">Eccellente</span></td></tr>
+                                     <tr><td>Leanus Score</td><td class="text-end value-highlight">2,99</td><td><span class="badge bg-danger">Critico (4)</span></td></tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                         <hr>
+                         <h6>Interpretazione</h6><p><strong class="text-warning">Discrepanza Valutativa:</strong> Ottimi Z-Score/MCC vs Leanus Critico. Necessario analizzare trend negativi (liquidità, scorte, ricavi).</p>
+                     </div>
+                 </div>
+             </div>
+
+            <div class="card mb-4 report-section">
+                 <div class="card-header card-header-primary"><h5 class="mb-0">6.3 Red Flags e Segnali d'Allarme</h5></div>
+                  <div class="card-body">
+                      <h6>Tabella 6.3.1: Principali Red Flags Identificate (2024)</h6>
+                      <div class="table-responsive">
+                          <table class="table table-sm table-hover small">
+                             <thead class="table-light"><tr><th>Area</th><th>Segnale di Allarme</th><th>Valore/Trend</th><th>Rischio Potenziale</th></tr></thead>
+                              <tbody>
+                                  <tr><td>Operativa</td><td>Riduzione Ricavi</td><td>-0,88%</td><td>Rallentamento business</td></tr>
+                                  <tr><td>Redditività</td><td>Riduzione EBITDA</td><td>-5,08%</td><td>Erosione margini</td></tr>
+                                  <tr><td>Magazzino</td><td>Aumento giorni scorte (DIO)</td><td>+68% (84 gg)</td><td>Obsolescenza/Sovrastima</td></tr>
+                                  <tr><td>Liquidità</td><td>Riduzione disponibilità</td><td>-42,3%</td><td>Tensione finanziaria potenziale</td></tr>
+                                  <tr><td>Tributaria</td><td>Aumento posizione tributaria netta</td><td>+395,2%</td><td>Possibile tensione fiscale/contenziosi</td></tr>
+                                  <tr><td>Dividendi</td><td>Probabile distribuzione</td><td>€297K</td><td>Potenziale depauperamento vs calo liq.</td></tr>
+                                  <tr><td>Rimanenze</td><td>Variazione significativa</td><td>+€486K</td><td>Potenziale sovrastima scorte vs calo ricavi</td></tr>
+                                  <tr><td>Stress Test</td><td>Performance medio-bassa</td><td>3/5 test superati</td><td>Moderata resilienza a stress circolante</td></tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+            </div>
+
+            <div class="card mb-4 report-section">
+                 <div class="card-header"><h5 class="mb-0">6.4 Analisi Potenziali Manipolazioni Contabili</h5></div>
+                 <div class="card-body small">
+                     <p>Framework Kitzanos:</p>
+                     <h6>Tabella 6.4.1: Indicatori di potenziali manipolazioni contabili</h6>
+                     <table class="table table-sm">
+                         <thead class="table-light"><tr><th>Test</th><th>Indicatori</th><th>Valutazione</th><th>Note</th></tr></thead>
+                          <tbody>
+                              <tr><td>Sales Profitability</td><td>Fatturato: -0,9%<br>EBITDA: -5,1%<br>Rimanenze: +60,0%</td><td class="text-left">⚠️</td><td>Incoerenza calo ricavi/aumento scorte</td></tr>
+                              <tr><td>Tax Effect</td><td>Oneri Fin: 5,8% debiti<br>PFN: 0,26x EBITDA<br>Pos. Trib: +395%</td><td class="text-left">⚠️</td><td>Forte aumento posizione tributaria</td></tr>
+                              <tr><td>Capitalism Test</td><td>Investimenti: €1.6M<br>Ammortamenti: €0.8M<br>CF Op: €1.6M</td><td class="text-left">✓</td><td>Investimenti coperti da CF Operativo</td></tr>
+                          </tbody>
+                     </table>
+                     <p><strong>Raccomandazione:</strong> Approfondire criteri valutazione rimanenze, dettaglio posizione tributaria e analisi qualitativa degli investimenti.</p>
+                 </div>
+            </div>
+
+            <div class="card mb-4 report-section">
+                <div class="card-header"><h5 class="mb-0">6.5 Analisi di Sensitività</h5></div>
+                 <div class="card-body">
+                     <!-- Rimossa row, la tabella occupa tutta la larghezza -->
+                     <div class="small">
+                         <h6>Tabella 6.5.1: Analisi di sensitività (2024)</h6>
+                         <div class="table-responsive">
+                              <table class="table table-sm table-striped">
+                                 <thead class="table-light"><tr><th>Parametro</th><th>Valore Critico</th><th>Interpretazione</th></tr></thead>
+                                 <tbody>
+                                     <tr><td>Variazione Ricavi (vs EBIT=0)</td><td class="">-49,3%</td><td class="text-success">Buona resilienza</td></tr>
+                                     <tr><td>Variazione Costi Fissi (vs EBIT=0)</td><td class="">+161,3%</td><td class="text-success">Ottima capacità assorbimento</td></tr>
+                                     <tr><td>Variazione Crediti Clienti (vs Liq.=0)</td><td class="">+17 gg</td><td class="text-danger">Limitata capacità assorbimento</td></tr>
+                                     <tr><td>Variazione Rimanenze (vs PN=0)</td><td class="">-594 gg</td><td class="text-success">Elevata copertura PN</td></tr>
+                                     <tr><td>Variazione Debiti Fornitori (vs Liq.=0)</td><td class="">-22 gg</td><td class="text-danger">Moderata sensibilità</td></tr>
+                                 </tbody>
+                              </table>
+                         </div>
+                         <p class="alert alert-warning small mt-3 p-2 mb-0"><i class="fas fa-exclamation-triangle me-1"></i>Ottima robustezza operativa e patrimoniale, ma <strong>vulnerabilità liquidità a variazioni circolante</strong> (Crediti/Debiti).</p>
+                     </div>
+                 </div>
+            </div>
+
+             <div class="card mb-4 report-section">
+                 <div class="card-header"><h5 class="mb-0">6.6 Risultati Stress Test</h5></div>
+                 <div class="card-body">
+                    <h6>Tabella 6.6.1: Risultati Stress Test (2024)</h6>
+                    <div class="table-responsive small">
+                        <table class="table table-sm table-hover">
+                            <thead class="table-light"><tr><th>Stress Test</th><th>Superato</th><th>Valore Critico</th><th>Valore Attuale</th><th>Margine Sicurezza</th></tr></thead>
+                            <tbody>
+                                <tr><td>Variazione Ricavi</td><td class="text-left text-success">✓</td><td>-49,3%</td><td>-0,9%</td><td>48,4%</td></tr>
+                                <tr><td>Variazione Costi Fissi</td><td class="text-left text-success">✓</td><td>+161,3%</td><td>N.A.</td><td>161,3%</td></tr>
+                                <tr><td>Variazione Crediti</td><td class="text-left text-danger">✗</td><td>+17 gg</td><td>62 gg</td><td>Solo +17 gg sostenibili</td></tr>
+                                <tr><td>Variazione Rimanenze</td><td class="text-left text-success">✓</td><td>-594 gg</td><td>84 gg</td><td>678 gg</td></tr>
+                                <tr><td>Variazione Debiti</td><td class="text-left text-danger">✗</td><td>-22 gg</td><td>89 gg</td><td>Solo -22 gg sostenibili</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     <p class="small mt-3 mb-1"><strong>Analisi:</strong> Conferma la robustezza economica (ricavi, costi fissi, patrimonio) ma evidenzia la <strong>vulnerabilità alla gestione del capitale circolante</strong> e della liquidità.</p>
+                 </div>
+             </div>
+
+
+             <h2 class="section-title mt-5" id="recommendations"><i class="fas fa-lightbulb me-2"></i>7. RACCOMANDAZIONI</h2>
+
+            <!-- 7.1 Piano d'Azione Operativo -->
+            <div class="card mb-4 report-section">
+                 <div class="card-header card-header-primary"><h5 class="mb-0">7.1 Piano d'Azione e Raccomandazioni Operative</h5></div>
+                  <div class="card-body">
+                     <p>Approccio strutturato per affrontare criticità e valorizzare punti di forza:</p>
+                     <h6>Tabella 7.1.1: Piano d'azione e raccomandazioni operative</h6>
+                     <div class="table-responsive small">
+                         <table class="table table-sm table-hover action-table" id="table_7_1_1">
+                             <thead class="table-light"><tr><th>Area</th><th>Situazione Attuale</th><th>Azione Raccomandata</th><th>Impatto Previsto</th><th>Priorità</th></tr></thead>
+                             <tbody>
+                                 <tr><td><i class="fas fa-boxes me-1"></i> Gest. Magazzino</td><td>DIO 84gg (+68%)</td><td>Implementare sistema JIT/ABC scorte</td><td>Riduz. scorte 30-40% (€390-520K liq.)</td><td><span class="status-badge bg-danger">Alta</span></td></tr>
+                                 <tr><td><i class="fas fa-tint-slash me-1"></i> Liquidità</td><td>-42,3% vs 2023</td><td>Rivedere policy dividendi</td><td>Conservazione liquidità (€297K)</td><td><span class="status-badge bg-danger">Alta</span></td></tr>
+                                 <tr><td><i class="fas fa-hand-holding-usd me-1"></i> Crediti Comm.</td><td>DSO 62gg</td><td>Incentivi pag. anticipati</td><td>Riduz. DSO a 50gg (+€460K liq.)</td><td><span class="status-badge bg-warning text-dark">Media</span></td></tr>
+                                 <tr><td><i class="fas fa-percent me-1"></i> Redditività</td><td>EBITDA -5,1%</td><td>Analisi ABC costi, efficientamento</td><td>Recupero 2-3% Mrg (€270-400K)</td><td><span class="status-badge bg-warning text-dark">Media</span></td></tr>
+                                 <tr><td><i class="fas fa-chart-line me-1"></i> Fatturato</td><td>-0,9%</td><td>Sviluppo nuovi mercati/prodotti</td><td>Crescita +3-5% (€400-670K)</td><td><span class="status-badge bg-warning text-dark">Media</span></td></tr>
+                                 <tr><td><i class="fas fa-search-dollar me-1"></i> Investimenti</td><td>€1.6M (11,9% ric)</td><td>Valutazione ROI investimenti</td><td>Ottimizz. allocazione capitale</td><td><span class="status-badge bg-info text-dark">Bassa</span></td></tr>
+                             </tbody>
+                         </table>
+                     </div>
+                  </div>
+            </div>
+
+            <!-- 7.3 Piano d'Azione per Timeframe -->
+              <div class="card mb-4 report-section">
+                   <div class="card-header card-header-secondary"><h5 class="mb-0">7.3 Piano d'Azione Articolato per Timeframe</h5></div>
+                   <div class="card-body">
+                      <h6>Tabella 7.3.1: Piano d'azione articolato per timeframe</h6>
+                      <ul class="timeline-irp">
+                          <li class="timeline-irp-item"> <div class="timeline-irp-badge priority-high">0/3m</div> <div class="timeline-irp-content"> <h6>Immediato <span class="badge bg-danger float-end">Alta</span></h6> <ul class="small"><li>Analisi dettagliata magazzino (cause aumento DIO)</li><li>Revisione policy distribuzione dividendi</li><li>Monitoraggio crediti commerciali</li><li>Implementazione forecast tesoreria settimanale</li></ul> </div> </li>
+                          <li class="timeline-irp-item"> <div class="timeline-irp-badge priority-medium">3/6m</div> <div class="timeline-irp-content"> <h6>Breve Termine <span class="badge bg-warning text-dark float-end">Media</span></h6> <ul class="small"><li>Implementazione sistema gestione scorte (JIT/ABC)</li><li>Piano ristrutturazione debiti fornitori (allineamento DPO)</li><li>Analisi ABC costi operativi (focus variabili)</li><li>Piano incentivi pagamenti anticipati clienti</li></ul> </div> </li>
+                          <li class="timeline-irp-item"> <div class="timeline-irp-badge priority-low">6/12m</div> <div class="timeline-irp-content"> <h6>Medio Termine <span class="badge bg-success float-end">Bassa</span></h6> <ul class="small"><li>Ottimizzazione struttura finanziaria (valutare leva mirata)</li><li>Piano commerciale sviluppo (nuovi mercati/prodotti)</li><li>Valutazione ROI investimenti recenti</li></ul> </div> </li>
+                          <li class="timeline-irp-item"> <div class="timeline-irp-badge priority-low">>12m</div> <div class="timeline-irp-content"> <h6>Lungo Termine <span class="badge bg-success float-end">Bassa</span></h6> <ul class="small"><li>Valutazione diversificazione produttiva/M&A</li><li>Piano investimenti strategici (crescita/efficienza)</li><li>Analisi make-or-buy processi chiave</li></ul> </div> </li>
+                       </ul>
+                   </div>
+              </div>
+
+            <!-- 7.4 Dashboard KPI Target -->
+             <div class="card mb-4 report-section">
+                 <div class="card-header card-header-primary"><h5 class="mb-0">7.4 Dashboard di Controllo KPI Raccomandata</h5></div>
+                  <div class="card-body">
+                     <p class="small">Implementazione dashboard mensile con monitoraggio Valore Attuale (12/24) vs Target:</p>
+                      <h6>Tabella 7.4.1: Dashboard di controllo con principali KPI</h6>
+                      <div class="table-responsive">
+                         <table class="table table-sm table-bordered kpi-target-table">
+                            <thead class="table-light"><tr><th>Categoria</th><th>KPI</th><th>Target</th><th>Valore 12/24</th><th>Alert</th></tr></thead>
+                            <tbody>
+                               <tr> <td rowspan="3">Redditività</td> <td>EBITDA margin</td> <td class="target-value">>20%</td> <td class="value-ok">21,3%</td> <td><i class="fas fa-arrow-down text-warning"></i> < 18%</td> </tr>
+                               <tr> <td>Margine contrib.</td> <td class="target-value">>30%</td> <td class="value-ok">30,7%</td> <td><i class="fas fa-arrow-down text-warning"></i> < 28%</td> </tr>
+                               <tr> <td>ROI</td> <td class="target-value">>18%</td> <td class="value-ok">20,5%</td> <td><i class="fas fa-arrow-down text-warning"></i> < 15%</td> </tr>
+                               <tr> <td rowspan="3">Liquidità</td> <td>CF Op./Ricavi</td> <td class="target-value">>12%</td> <td class="value-ok">12,3%</td> <td><i class="fas fa-arrow-down text-danger"></i> < 10%</td> </tr>
+                               <tr> <td>Liquidità/Ricavi</td> <td class="target-value">>5%</td> <td class="value-warn">4,6%</td> <td><i class="fas fa-arrow-down text-danger"></i> < 3%</td> </tr>
+                               <tr> <td>Var. netta Cassa</td> <td class="target-value">Positiva</td> <td class="value-crit">-€455K</td> <td><i class="fas fa-times-circle text-danger"></i> Negativa x2 mesi</td> </tr>
+                               <tr> <td rowspan="4">Cap. Circ.</td> <td>DSO (gg crediti)</td> <td class="target-value">&lt;60 gg</td> <td class="value-warn">62 gg</td> <td><i class="fas fa-arrow-up text-warning"></i> > 70 gg</td> </tr>
+                               <tr> <td>DPO (gg fornitori)</td> <td class="target-value">>90 gg</td> <td class="value-warn">89 gg</td> <td><i class="fas fa-arrow-up text-warning"></i> > 100 gg</td> </tr>
+                               <tr> <td>DIO (gg magazzino)</td> <td class="target-value">&lt;60 gg</td> <td class="value-crit">84 gg</td> <td><i class="fas fa-arrow-up text-danger"></i> > 90 gg</td> </tr>
+                               <tr> <td>Ciclo Circ. (gg)</td> <td class="target-value">&lt;50 gg</td> <td class="value-warn">57 gg</td> <td><i class="fas fa-arrow-up text-warning"></i> > 65 gg</td> </tr>
+                               <tr> <td rowspan="2">Solidità</td> <td>PFN/EBITDA</td> <td class="target-value">&lt;1.0</td> <td class="value-ok">0,26</td> <td><i class="fas fa-arrow-up text-warning"></i> > 1.5</td> </tr>
+                               <tr> <td>Leva (D/E)</td> <td class="target-value">&lt;0.5</td> <td class="value-ok">0,15</td> <td><i class="fas fa-arrow-up text-warning"></i> > 0.7</td> </tr>
+                               <tr> <td rowspan="3">Crescita</td> <td>Var. Ricavi YoY</td> <td class="target-value">>2%</td> <td class="value-crit">-0,9%</td> <td><i class="fas fa-arrow-down text-danger"></i> < -3%</td> </tr>
+                               <tr> <td>Var. Ordini</td> <td class="target-value">>0%</td> <td>N.D.</td> <td><i class="fas fa-arrow-down text-warning"></i> < -5%</td> </tr>
+                               <tr> <td>Pipeline Comm.</td> <td class="target-value">>120% Budg.</td> <td>N.D.</td> <td><i class="fas fa-arrow-down text-warning"></i> < 90% Budg.</td> </tr>
+                            </tbody>
+                         </table>
+                      </div>
+                  </div>
+             </div>
+
+             <!-- 7.5 Frequenza Revisione e Alerting -->
+              <div class="card mb-4 report-section">
+                   <div class="card-header card-header-secondary"><h5 class="mb-0">7.5 Frequenza Revisione e Sistema Alerting Raccomandati</h5></div>
+                   <div class="card-body revision-list small">
+                      <h6>Tabella 7.5.1: Sistema di monitoraggio e alerting</h6>
+                      <div class="table-responsive">
+                         <table class="table table-sm table-hover">
+                           <thead class="table-light"><tr><th>Area</th><th>Freq. Monitoraggio</th><th>Soglie di Alerting</th><th>Procedura Escalation</th></tr></thead>
+                            <tbody>
+                                <tr><td>Liquidità</td><td>Settimanale</td><td>• Riduz. >10% vs mese prec.<br>• Liquidità/Ricavi <3%<br>• CF Op. mensile negativo</td><td>1. Alert Team Fin.<br>2. Revisione Forecast Cassa<br>3. Escalation Direzione Fin.</td></tr>
+                                <tr><td>Cap. Circolante</td><td>Bisettimanale</td><td>• DSO >70 gg<br>• DPO >100 gg<br>• DIO >90 gg<br>• CCN aumenta >15%</td><td>1. Alert Team Amm.<br>2. Analisi Scostamenti<br>3. Escalation Controller</td></tr>
+                                <tr><td>Redditività</td><td>Mensile</td><td>• EBITDA Margin <18%<br>• MdC <28%<br>• ROI <15%</td><td>1. Alert Ctrl Gestione<br>2. Analisi Costi/Ricavi<br>3. Escalation Direzione Gen.</td></tr>
+                                <tr><td>Solidità</td><td>Trimestrale</td><td>• PFN/EBITDA >1.5<br>• Leva D/E >0.7<br>• Deterioram. indici bancari</td><td>1. Alert Direzione Fin.<br>2. Review Proiezioni Fin.<br>3. Escalation CdA</td></tr>
+                                <tr><td>Crescita</td><td>Mensile</td><td>• Var. Ricavi < -3%<br>• Var. Ordini < -5%<br>• Pipeline < 90% Budget</td><td>1. Alert Direzione Comm.<br>2. Revisione Azioni Comm.<br>3. Escalation Comitato Esec.</td></tr>
+                            </tbody>
+                         </table>
+                      </div>
+                       <p class="mt-3">Si raccomanda implementazione <strong>reportistica integrata</strong> (Tesoreria, Circolante, Flash Mensile, Forecast Rolling, Dashboard KPI).</p>
+                  </div>
+              </div>
+
+             <!-- Tabella Riepilogativa Interventi Finali -->
+             <div class="card summary-card mb-4 report-section">
+                 <div class="card-header bg-success text-white"><h5 class="mb-0"><i class="fas fa-check-circle me-2"></i>Tabella Riepilogativa Interventi Prioritari</h5></div>
+                 <div class="card-body"> <div class="table-responsive"> <table class="table table-sm table-striped table-hover action-table"> <thead class="table-light"> <tr><th>Area</th><th>Azione Raccomandata</th><th>Impatto Previsto</th><th>Effetto Quantitativo</th><th>Priorità</th></tr></thead> <tbody> <tr><td><span class="icon-circle icon-circle-sm bg-icon-danger"><i class="fas fa-boxes"></i></span> Gest. Magazzino</td><td>Implementare JIT/ABC</td><td>Riduzione DIO</td><td class="text-success">-20/25 gg (€400K+)</td><td><span class="status-badge bg-danger">Alta</span></td></tr> <tr><td><span class="icon-circle icon-circle-sm bg-icon-danger"><i class="fas fa-tint-slash"></i></span> Gest. Liquidità</td><td>Revisione policy dividendi</td><td>Preservare cassa</td><td class="text-success">+€300K</td><td><span class="status-badge bg-danger">Alta</span></td></tr> <tr><td><span class="icon-circle icon-circle-sm bg-icon-warning"><i class="fas fa-chart-line"></i></span> Crescita</td><td>Piano sviluppo commerciale</td><td>Recupero ricavi</td><td class="text-success">+3-5% YoY</td><td><span class="status-badge bg-warning text-dark">Media</span></td></tr> <tr><td><span class="icon-circle icon-circle-sm bg-icon-warning"><i class="fas fa-sync-alt"></i></span> Ottimizz. Circolante</td><td>Interventi DSO/DPO</td><td>Riduzione ciclo</td><td class="text-success">-15/20 gg</td><td><span class="status-badge bg-warning text-dark">Media</span></td></tr> <tr><td><span class="icon-circle icon-circle-sm bg-icon-info"><i class="fas fa-cogs"></i></span> Efficienza Costi</td><td>Analisi costi variabili/fissi</td><td>Miglioramento Margini</td><td class="text-success">+2-3% EBITDA</td><td><span class="status-badge bg-info text-dark">Bassa</span></td></tr> </tbody> </table> </div> <p class="mt-3 small">L'implementazione di queste azioni rafforzerà ulteriormente il profilo finanziario e supporterà la crescita futura.</p> </div>
+            </div>
+
+
+            <!-- ================================================================ -->
+            <!-- FINE CONTENUTO SPECIFICO PARTE 6 -->
+            <!-- ================================================================ -->
+
+        </div> <!-- /dashboard-container -->
+
+        <!-- Footer Standard V2 (Corretto) -->
+        <footer class="footer no-print"> <div class="container-fluid px-4"> <div class="row align-items-center"> <div class="col-md-6 text-center text-md-start mb-2 mb-md-0"> SCAN360 © <span id="currentYearFooterReport"></span> </div> <div class="col-md-6 text-center text-md-end"> Powered by <a href="http://www.kitzanos.com" target="_blank" class="text-white fw-bold">Kitzanos Lab</a> <img src="../assets/img/logo_kitzanos.png" alt="Kitzanos Logo" class="ms-2"> </div> </div> </div> </footer>
+
+    </div> <!-- /main-wrapper -->
+
+    <!-- Script JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js Library è già nell'HEAD -->
+
+    <!-- ### START SCRIPT JS EMBEDDED ALL-IN-ONE ### -->
+    <script>
+        // ======================================
+        // HELPER FUNCTIONS
+        // ======================================
+        function formatCurrency(value, decimals = 0) {
+            if (isNaN(value)) return value;
+            return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(value);
+        }
+
+        function formatPercentage(value) {
+             if (isNaN(value)) return value;
+             return new Intl.NumberFormat('it-IT', { style: 'decimal', minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(value) + '%';
+         }
+
+        /**
+         * Initializes a Chart.js chart on a given canvas ID.
+         * Destroys any existing chart on the same canvas before creating a new one.
+         * Uses Chart.getChart() for robustness.
+         */
+        function initChart(canvasId, type, data, options) {
+             const canvas = document.getElementById(canvasId);
+             if (!canvas) { console.error(`Canvas element with ID '${canvasId}' not found.`); return null; }
+             const ctx = canvas.getContext('2d');
+             const existingChart = Chart.getChart(canvasId);
+             if (existingChart) {
+                 try { existingChart.destroy(); } catch(e) { console.warn(`Could not destroy previous chart instance for ${canvasId}: ${e}`);}
+             }
+             ctx.clearRect(0, 0, canvas.width, canvas.height);
+             if (!data || !data.labels || !data.datasets) {
+                  ctx.fillStyle = '#dc3545'; ctx.font = '14px "Titillium Web", sans-serif'; ctx.textAlign = 'center';
+                  ctx.fillText('Errore: Dati non disponibili.', canvas.width / 2, canvas.height / 2);
+                  console.error(`Dati non validi forniti a initChart per ${canvasId}`);
+                  return null;
+              }
+             try {
+                 const newChart = new Chart(ctx, { type: type, data: data, options: options });
+                 return newChart;
+             } catch (error) {
+                  console.error(`Errore durante la creazione del grafico ${canvasId}:`, error);
+                  ctx.fillStyle = '#dc3545'; ctx.font = '14px "Titillium Web", sans-serif'; ctx.textAlign = 'center';
+                  const errorMessage = error.message && typeof error.message === 'string' ? (error.message.length > 100 ? error.message.substring(0, 97) + '...' : error.message) : 'Errore sconosciuto';
+                  ctx.fillText(`Errore grafico: ${errorMessage}`, canvas.width / 2, canvas.height / 2);
+                 return null;
+             }
+         }
+
+        // ======================================
+        // ALL CHART DATA (Calcidrata PARTE 6) - Definite qui
+        // ======================================
+         const zscoreData = {
+             labels: ["Z-Score 2024"],
+             datasets: [
+                 { label: "Z-Score", data: [4.07], backgroundColor: "rgba(77, 140, 87, 0.7)", borderColor: "rgba(77, 140, 87, 1)", borderWidth: 1, barPercentage: 0.4, order: 1 },
+                 { label: "Soglia Sicurezza (>2.99)", data: [2.99], borderColor: "rgba(77, 140, 87, 1)", borderDash: [5, 5], fill: false, pointRadius: 0, borderWidth: 2, type: 'line', order: 0 },
+                 { label: "Soglia Rischio (<1.81)", data: [1.81], borderColor: "rgba(214, 34, 70, 1)", borderDash: [5, 5], fill: false, pointRadius: 0, borderWidth: 2, type: 'line', order: 0 }
+             ]
+         };
+
+         const sensitivityData = {
+              labels: ["Ricavi (%)", "Costi Fissi (%)", "Crediti Clienti (gg)", "Debiti Fornitori (gg)"],
+              datasets: [{
+                  label: "Variazione Critica",
+                  data: [-49.29, 161.34, 17, -22],
+                  backgroundColor: ["#F44336", "#4CAF50", "#F44336", "#F44336"],
+                  borderColor: ["#c82333", "#157347", "#c82333", "#c82333"],
+                  borderWidth: 1
+              }]
+          };
+
+        // ======================================
+        // ALL CHART OPTIONS (Common + Specifics for Parte 6) - Definite qui
+        // ======================================
+        const commonChartOptionsParte6 = {
+             responsive: true,
+             maintainAspectRatio: false,
+             plugins: {
+                 legend: { display: false },
+                 tooltip: {
+                     backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                     titleFont: { weight: 'bold', size: 13 },
+                     bodyFont: { size: 12 },
+                     padding: 10, cornerRadius: 4, displayColors: true, boxPadding: 4,
+                     callbacks: {
+                          label: function(context) {
+                              let label = context.dataset.label || '';
+                              if (label) label += ': ';
+                              let value = context.chart.options.indexAxis === 'y' ? context.parsed.x : context.parsed.y;
+                              const datasetLabel = context.dataset.label || '';
+                              // Per sensitivity chart, l'etichetta dell'asse Y è in context.chart.data.labels[context.dataIndex]
+                              const axisLabel = context.chart.data.labels[context.dataIndex] || '';
+
+                              if (value !== null && value !== undefined) {
+                                  if (datasetLabel.includes('Z-Score') || datasetLabel.includes('Soglia')) {
+                                      label += value.toFixed(2);
+                                  } else if (datasetLabel.includes('Variazione Critica')) {
+                                      label += value.toFixed(2) + (axisLabel.includes('(gg)') ? ' gg' : '%');
+                                  } else {
+                                      label += value.toFixed(2);
+                                  }
+                              } else {
+                                  label += 'N/D';
+                              }
+                              return label;
+                          }
+                      }
+                 }
+             },
+             scales: { x: { grid: { display: false }, ticks: { font: { size: 11 } } }, y: { grid: { color: '#e0e0e0', borderDash: [2, 3] }, ticks: { font: { size: 11 } } } },
+             animation: { duration: 400 }
+         };
+
+        // --- Z-Score Chart Options ---
+        const zscoreOptions = {
+             ...commonChartOptionsParte6,
+             scales: {
+                 y: { ...commonChartOptionsParte6.scales.y, title: { display: true, text: 'Z-Score' }, suggestedMin: 0, suggestedMax: 5 },
+                 x: { ...commonChartOptionsParte6.scales.x }
+             },
+             plugins: {
+                 ...commonChartOptionsParte6.plugins,
+                 title: { display: false },
+                 legend: { display: true, position: 'bottom' }
+            }
+         };
+
+         // --- Sensitivity Chart Options ---
+         const sensitivityOptions = {
+             ...commonChartOptionsParte6,
+             indexAxis: 'y', // Barre orizzontali
+             scales: {
+                 x: { ...commonChartOptionsParte6.scales.x, title: { display: true, text: 'Variazione critica' }, ticks: { callback: function(v, index, ticks) {
+                             // Usa l'etichetta Y (dal dataset ora che indexAxis è 'y') per determinare l'unità
+                             const yLabel = this.chart.data.labels[index];
+                             return yLabel.includes('(gg)') ? v + ' gg' : v + '%';
+                          } } },
+                 y: { ...commonChartOptionsParte6.scales.y, grid: { display: false } }
+             },
+             plugins: { ...commonChartOptionsParte6.plugins, title: { display: false }, legend: { display: false } }
+         };
+
+        // ======================================
+        // CHART INITIALIZATION LOGIC + OTHER SCRIPTS
+        // ======================================
+        document.addEventListener('DOMContentLoaded', function() {
+             console.log("Initializing ALL scripts for Parte 6 Calcidrata (Embedded)...");
+
+             // --- Initialize Charts ---
+             try {
+                 initChart('zscoreChart', 'bar', zscoreData, zscoreOptions);
+                 console.log("Grafico zscoreChart inizializzato.");
+             } catch(e) { console.error("Errore init zscoreChart:", e);}
+
+             try {
+                 initChart('sensitivityChart', 'bar', sensitivityData, sensitivityOptions);
+                 console.log("Grafico sensitivityChart inizializzato.");
+             } catch(e) { console.error("Errore init sensitivityChart:", e);}
+
+             // --- Other Page Scripts ---
+             document.getElementById('currentYearSidebar').textContent = new Date().getFullYear();
+             const footerYear = document.getElementById('currentYearFooterReport');
+             if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+             const irpScoreValue = 82.03; // Calcidrata IRP
+             const irpHeaderBadge = document.getElementById('irp-header-badge');
+             if(irpHeaderBadge) {
+                 let badgeClass = 'bg-warning text-dark';
+                 if (irpScoreValue >= 71) badgeClass = 'bg-success'; // Basso
+                 else if (irpScoreValue < 51) badgeClass = 'bg-danger'; // Alto
+                 irpHeaderBadge.className = `badge ${badgeClass} me-3`;
+                 irpHeaderBadge.textContent = `IRP: ${irpScoreValue.toFixed(1)}`;
+             }
+
+             // Global logout/print function placeholders
+             if (typeof window.logout !== 'function') {
+                 window.logout = function() { console.log("Logout placeholder"); }
+             }
+             if (typeof window.printDocument !== 'function') {
+                 window.printDocument = function() { window.print(); }
+             }
+
+             console.log("All scripts initialization attempt complete (Embedded). Check console for errors.");
+         });
+    </script>
+    <!-- ### END EMBEDDED JAVASCRIPT ### -->
+
+<scan-chat data-bot-id="44479c6e-7072-49fc-9046-e650ff6f9874"></scan-chat>
+<script src=".  /js/bundle.js"></script>
+</body>
+</html>
