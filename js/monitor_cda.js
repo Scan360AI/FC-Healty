@@ -110,7 +110,7 @@
                      {
                          label: "PFN/EBITDA",
                          data: [-0.58, -2.77, -0.65], // Valori FLC (negativi per liquidità netta)
-                         borderColor: 'rgb(77, 140, 87)', // Verde per valori negativi (liquidità)
+                         borderColor: 'rgb(77, 140, 87)', // Verde per valori negativi (liquidità netta)
                          backgroundColor: 'rgba(77, 140, 87, 0.2)',
                          tension: 0.1, fill: true, pointRadius: 5, pointHoverRadius: 7,
                          pointBackgroundColor: 'rgb(77, 140, 87)'

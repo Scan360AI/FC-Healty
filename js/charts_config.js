@@ -1,9 +1,9 @@
 /**
  * SCAN - Strategic Corporate Analysis Navigator
  * Configurazione Dati e Opzioni per Grafici Chart.js
- * Versione 1.2 - DATI FLC HEALTHY EVOLUTION S.R.L. (DA REPORT LEANUS/KITZANOS)
+ * Versione 1.2 - DATI FLC HEALTHY EVOLUTION SRL (DA REPORT LEANUS/KITZANOS)
  *
- * Dati aggiornati sulla base dei file .md forniti per FLC HEALTHY EVOLUTION S.R.L. al 12/2024.
+ * Dati aggiornati sulla base dei file .md forniti per FLC HEALTHY EVOLUTION SRL al 12/2024.
  * Eventuali dati mancanti o che richiedono normalizzazione specifica sono lasciati come esempio o commentati.
  */
 
@@ -13,8 +13,8 @@
 
 // --- Dati per Dashboard Esecutiva (dashboard.html) ---
 function getTrendRicaviEbitdaData_Dashboard() {
-    // console.log("Fornitura dati per trendRicaviEbitdaChart (Dashboard) - FLC HEALTHY EVOLUTION S.R.L.");
-    // Fonte: PARTE1, PARTE2 (2.1.1, 2.1.2)
+    // console.log("Fornitura dati per trendRicaviEbitdaChart (Dashboard) - FLC HEALTHY EVOLUTION SRL");
+    // Fonte: PARTE1_flc_healthy_evolution_analisi_parte1.md (1.1), PARTE2_flc_analisi_economica.md (2.1.1)
     return {
         labels: ["2022", "2023", "2024"],
         datasets: [
@@ -44,14 +44,14 @@ function getTrendRicaviEbitdaData_Dashboard() {
 }
 
 function getTrendPfnEbitdaData_Dashboard() {
-    // console.log("Fornitura dati per trendPfnEbitdaChart (Dashboard) - FLC HEALTHY EVOLUTION S.R.L.");
-    // Fonte: PARTE1, PARTE4 (4.2.1 / 4.5.1)
+    // console.log("Fornitura dati per trendPfnEbitdaChart (Dashboard) - FLC HEALTHY EVOLUTION SRL");
+    // Fonte: PARTE1_flc_healthy_evolution_analisi_parte1.md (1.1), PARTE4_flc_bancabilita_report.md (4.5.1)
     return {
          labels: ["2022", "2023", "2024"],
          datasets: [
              {
                  label: "PFN/EBITDA",
-                 data: [-0.58, -2.77, -0.65], // Valori del rapporto (negativi indicano PFN negativa, ossia liquidità netta)
+                 data: [-0.58, -2.77, -0.65], // Valori del rapporto (negativi = liquidità netta)
                  borderColor: 'rgb(77, 140, 87)',
                  backgroundColor: 'rgba(77, 140, 87, 0.2)',
                  tension: 0.1, fill: true, pointRadius: 5, pointHoverRadius: 7,
@@ -71,7 +71,7 @@ function getTrendPfnEbitdaData_Dashboard() {
 
 // Dati Parte 1
 function getMainMetricsData() {
-    // console.log("Fornitura dati per mainMetricsChart (Report Parte 1) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per mainMetricsChart (Report Parte 1) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE1_flc_healthy_evolution_analisi_parte1.md (1.1 Sintesi)
      return {
          labels: ["2022", "2023", "2024"], // Rimosso previsionale
@@ -84,7 +84,7 @@ function getMainMetricsData() {
      };
 }
 function getCurrentAssetsLiabilitiesData() {
-    // console.log("Fornitura dati per currentAssetsLiabilitiesChart (Report Parte 1) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per currentAssetsLiabilitiesChart (Report Parte 1) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.1)
      return {
          labels: ["2023", "2024"],
@@ -98,7 +98,7 @@ function getCurrentAssetsLiabilitiesData() {
 
 // Dati Parte 2
 function getEconomicTrendData() {
-    // console.log("Fornitura dati per economicTrendChart (Report Parte 2) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per economicTrendChart (Report Parte 2) - FLC HEALTHY EVOLUTION SRL");
     // Uguale a getTrendRicaviEbitdaData_Dashboard ma usa valori in €000 per coerenza con altre tabelle
     const dataAbs = getTrendRicaviEbitdaData_Dashboard(); // Prende i dati aggiornati
     dataAbs.datasets[0].data = dataAbs.datasets[0].data.map(v => v ? Math.round(v / 1000) : null); // Ricavi in K (arrotondati)
@@ -108,7 +108,7 @@ function getEconomicTrendData() {
     return dataAbs;
 }
 function getMarginalityData() {
-    // console.log("Fornitura dati per marginalityChart (Report Parte 2) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per marginalityChart (Report Parte 2) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE2_flc_analisi_economica.md (2.1.1, 2.1.2)
      return {
          labels: ["2022", "2023", "2024"],
@@ -122,7 +122,7 @@ function getMarginalityData() {
      };
 }
 function getProfitabilityIndicesData() {
-    // console.log("Fornitura dati per profitabilityIndicesChart (Report Parte 2) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per profitabilityIndicesChart (Report Parte 2) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE2_flc_analisi_economica.md (2.1.4)
     return {
         labels: ["2022", "2023", "2024"],
@@ -134,8 +134,8 @@ function getProfitabilityIndicesData() {
     };
 }
 function getLeverageData() {
-     // console.log("Fornitura dati per leverageChart (Report Parte 2) - FLC HEALTHY EVOLUTION S.R.L.");
-     // Fonte: PARTE2_flc_analisi_economica.md (2.1.4)
+     // console.log("Fornitura dati per leverageChart (Report Parte 2) - FLC HEALTHY EVOLUTION SRL");
+     // Fonte: PARTE2_flc_analisi_economica.md (2.1.4, 2.1.5)
      return {
          labels: ["2023", "2024"],
          datasets: [
@@ -145,19 +145,19 @@ function getLeverageData() {
      };
 }
 function getBenchmarkRadarData() {
-    // console.log("Fornitura dati per benchmarkRadarChart (Report Parte 2) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per benchmarkRadarChart (Report Parte 2) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE2_flc_analisi_economica.md (2.2.1, 2.2.2)
     return {
-        labels: ["Crescita Ricavi", "EBITDA Margin", "ROI", "ROE", "Liquidità/Ricavi", "Cash Flow/Ricavi", "DSO (inv)"],
+        labels: ["Crescita Ricavi", "EBITDA Margin", "ROI", "ROE", "Liquidità/Ricavi", "PFN/EBITDA (inv)", "D/E (inv)"],
         datasets: [
             {
-                label: "FLC HEALTHY EVOLUTION",
-                data: [325, 116, 173, 142, 229, 144, 58], // Normalizzato rispetto a benchmark
+                label: "FLC HEALTHY EVOLUTION SRL",
+                data: [325, 116, 173, 142, 229, 200, 200], // Valori normalizzati rispetto alla media settoriale
                 backgroundColor: "rgba(25, 25, 112, 0.3)", borderColor: "rgba(25, 25, 112, 1)", borderWidth: 2, pointBackgroundColor: "rgba(25, 25, 112, 1)"
             },
             {
                 label: "Media Settore",
-                data: [100, 100, 100, 100, 100, 100, 100], // Base 100
+                data: [100, 100, 100, 100, 100, 100, 100],
                 backgroundColor: "rgba(217, 140, 0, 0.3)", borderColor: "rgba(217, 140, 0, 1)", borderWidth: 2, pointBackgroundColor: "rgba(217, 140, 0, 1)"
             }
         ]
@@ -166,8 +166,8 @@ function getBenchmarkRadarData() {
 
 // Dati Parte 3
 function getAssetsData() {
-    // console.log("Fornitura dati per assetsChart (Report Parte 3) - FLC HEALTHY EVOLUTION S.R.L.");
-    // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.1, 3.2 - dati 2024)
+    // console.log("Fornitura dati per assetsChart (Report Parte 3) - FLC HEALTHY EVOLUTION SRL");
+    // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.2, 3.7)
     const originalData = [7115, 2000, 512334, 0, 367325, 99972]; // Imm.Mat, Imm.Fin, Imm.Imm, Riman., Cred.Clienti, Liquidità
     const total = originalData.reduce((a, b) => a + b, 0);
     return {
@@ -180,12 +180,12 @@ function getAssetsData() {
     };
 }
 function getLiabilitiesData() {
-    // console.log("Fornitura dati per liabilitiesChart (Report Parte 3) - FLC HEALTHY EVOLUTION S.R.L.");
-    // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.1, 3.3 - dati 2024)
-    const originalData = [776453, 0, 0, 213246, 7027]; // PN, Debt Fin MLT, Debt Fin BT, Debt Comm., Altri Debiti
+    // console.log("Fornitura dati per liabilitiesChart (Report Parte 3) - FLC HEALTHY EVOLUTION SRL");
+    // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.3)
+    const originalData = [776453, 0, 0, 213246, 7027]; // PN, Debt Fin MLT, Debt Fin BT, Debt Comm., Altri Debiti/Fondi
     const total = originalData.reduce((a, b) => a + b, 0);
      return {
-         labels: ["Patrimonio Netto", "Debiti Fin. MLT", "Debiti Fin. BT", "Debiti Comm.", "Altri Debiti"],
+         labels: ["Patrimonio Netto", "Debiti Fin. MLT", "Debiti Fin. BT", "Debiti Comm.", "Altri Debiti/Fondi"],
          _originalData: originalData,
          datasets: [ {
              data: originalData.map(v => total > 0 ? (v/total)*100 : 0), // Dati %
@@ -194,7 +194,7 @@ function getLiabilitiesData() {
      };
 }
 function getInvestmentsStructureData() {
-    // console.log("Fornitura dati per investmentsStructureChart (Report Parte 3) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per investmentsStructureChart (Report Parte 3) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.1, 3.2)
     return {
         labels: ["2022", "2023", "2024"],
@@ -208,12 +208,12 @@ function getInvestmentsStructureData() {
     };
 }
 function getEquityCompositionData() {
-    // console.log("Fornitura dati per equityCompositionChart (Report Parte 3) - FLC HEALTHY EVOLUTION S.R.L.");
-    // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.3 - dati 2024)
-    const originalData = [10000, 628626, 138155, -328]; // Capitale Sociale, Riserve, Utile Esercizio 2024, Utili a Nuovo
+    // console.log("Fornitura dati per equityCompositionChart (Report Parte 3) - FLC HEALTHY EVOLUTION SRL");
+    // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.3)
+    const originalData = [10000, 628626, 138155, -328]; // Capitale Sociale, Riserve, Utile Esercizio, Utili/Perdite a Nuovo
     const total = originalData.reduce((a, b) => a + b, 0); // Should match 776453
      return {
-         labels: ["Capitale Sociale", "Riserve", "Utile Esercizio", "Utili a Nuovo"],
+         labels: ["Capitale Sociale", "Riserve", "Utile Esercizio", "Utili/Perdite a Nuovo"],
          _originalData: originalData,
          datasets: [ {
              data: originalData.map(v => total > 0 ? (v/total)*100 : 0), // Dati %
@@ -222,8 +222,8 @@ function getEquityCompositionData() {
      };
 }
 function getFinancialDebtSourcesData() { // Rinominato da getFinancialDebtData per evitare conflitti
-    // console.log("Fornitura dati per financialDebtSourcesChart (Report Parte 3) - FLC HEALTHY EVOLUTION S.R.L.");
-    // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.1, 3.3 - dati 2024)
+    // console.log("Fornitura dati per financialDebtSourcesChart (Report Parte 3) - FLC HEALTHY EVOLUTION SRL");
+    // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.3)
     const originalData = [776453, 0, 0]; // PN, Debt Fin MLT, Debt Fin BT
     const total = originalData.reduce((a, b) => a + b, 0);
     return {
@@ -236,7 +236,7 @@ function getFinancialDebtSourcesData() { // Rinominato da getFinancialDebtData p
     };
 }
 function getPfnTrendData() {
-    // console.log("Fornitura dati per pfnTrendChart (Report Parte 3) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per pfnTrendChart (Report Parte 3) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE3_flc_analisi_patrimoniale.md (3.4)
     return {
          labels: ["2022", "2023", "2024"],
@@ -250,66 +250,67 @@ function getPfnTrendData() {
 
 // Dati Parte 4
 function getDebtSustainabilityData() {
-    // console.log("Fornitura dati per debtSustainabilityChart (Report Parte 4) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per debtSustainabilityChart (Report Parte 4) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE4_flc_bancabilita_report.md (4.2, 4.3, 4.4)
      return {
-         labels: ["PFN/EBITDA (inv)", "D/E (inv)", "DSCR", "Oneri Fin./Ricavi (inv)", "Cash Flow Op./Ricavi", "Leanus Score"], // Invertiti D/E e OF/Ricavi
+         labels: ["PFN/EBITDA (inv)", "D/E (inv)", "DSCR", "Oneri Fin./Ricavi (inv)", "Cash Flow Op./Ricavi", "Leanus Score"],
          datasets: [
-             { label: "FLC HEALTHY EVOLUTION", data: [100, 100, 100, 99.99, 72.1, 71.6], backgroundColor: "rgba(25, 25, 112, 0.2)", borderColor: "rgba(25, 25, 112, 1)" }, // Normalizzato
-             { label: "Target/Benchmark", data: [67, 83, 60, 90, 50, 75], backgroundColor: "rgba(77, 140, 87, 0.2)", borderColor: "rgba(77, 140, 87, 1)" } // Benchmark
+             { label: "FLC HEALTHY EVOLUTION SRL", data: [200, 200, 200, 199, 144, 70], backgroundColor: "rgba(25, 25, 112, 0.2)", borderColor: "rgba(25, 25, 112, 1)" },
+             { label: "Target/Benchmark", data: [67, 83, 60, 90, 50, 75], backgroundColor: "rgba(77, 140, 87, 0.2)", borderColor: "rgba(77, 140, 87, 1)" }
          ]
      };
 }
 function getDebtCostData() { // Grafico Capacità Indebitamento
-    // console.log("Fornitura dati per debtCostChart (Report Parte 4) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per debtCostChart (Report Parte 4) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE4_flc_bancabilita_report.md (4.3)
     return {
          labels: ["2022", "2023", "2024"],
          datasets: [
              // Dati arrotondati in migliaia
              { label: "EBITDA (€000)", data: [155, 21, 155], type: "bar", yAxisID: "y", backgroundColor: "rgba(77, 140, 87, 0.7)" },
-             { label: "Capacità Teorica Indeb. (3.5x EBITDA, €000)", data: [543, 73, 543], type: "line", yAxisID: "y", borderColor: "rgba(25, 25, 112, 1)", fill: false } // Calcolato: EBITDA * 3.5
+             { label: "Capacità Teorica Indeb. (€000)", data: [465, 63, 543], type: "line", yAxisID: "y", borderColor: "rgba(25, 25, 112, 1)", fill: false }
          ]
      };
 }
 
 // Dati Parte 5
 function getWorkingCapitalCycleData() {
-    // console.log("Fornitura dati per workingCapitalCycleChart (Report Parte 5) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per workingCapitalCycleChart (Report Parte 5) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE5_flc_flussi_analysis.md (5.1.1, 5.1.2, 5.1.3, 5.1.4)
     return {
         labels: ["Crediti Clienti (DSO)", "Magazzino (DIO)", "Debiti Fornitori (DPO)", "Ciclo Circolante"],
         datasets: [
-            // Dati 2024 per FLC HEALTHY EVOLUTION, Benchmark da 5.1.3 / 5.1.4
-            { label: "FLC HEALTHY EVOLUTION (Giorni)", data: [128, 0, 109, 19], backgroundColor: "rgba(25, 25, 112, 0.7)" },
-            { label: "Benchmark Settore (Giorni)", data: [75, 30, 60, 45], backgroundColor: "rgba(77, 140, 87, 0.7)" } // Benchmark DSO=75, DIO=30, DPO=60 -> Ciclo=45
+            // Dati 2024 per FLC HEALTHY EVOLUTION
+            { label: "FLC HEALTHY EVOLUTION SRL (Giorni)", data: [128, 0, 109, 19], backgroundColor: "rgba(25, 25, 112, 0.7)" },
+            { label: "Benchmark Settore (Giorni)", data: [75, 30, 60, 45], backgroundColor: "rgba(77, 140, 87, 0.7)" }
         ]
     };
 }
 function getCashFlowWaterfallData() {
-    // console.log("Fornitura dati per cashFlowWaterfallChart (Report Parte 5) - FLC HEALTHY EVOLUTION S.R.L.");
-    // Fonte: PARTE5_flc_flussi_analysis.md (5.2.1, 5.2.2 - dati 2024)
-    // Calcolo: EBITDA(154660) - Imposte(14368) + DeltaCirc(-119889) = CFO(74846) - Invest(-1582) = FCF(73264) + DeltaDebt(-12556) - Dividendi(-31251) = DeltaCassa(29457)
-     return {
-         labels: ["EBITDA", "Imposte", "+Δ Circ.", "=CF Op.", "-Invest.", "=FCF", "+Δ Debt", "-Divid.", "=Δ Cassa"],
+    // console.log("Fornitura dati per cashFlowWaterfallChart (Report Parte 5) - FLC HEALTHY EVOLUTION SRL");
+    // Fonte: PARTE5_flc_flussi_analysis.md (5.2.1)
+    return {
+         labels: ["EBITDA", "Ammort.", "Oneri Fin.", "Gest. Fin.", "Imposte", "Utile Netto", "+Ammort.", "+Δ CCN", "=CF Op.", "-Invest.", "=FCF"],
          datasets: [{
-             data: [154660, -14368, -119889, 74846, -1582, 73264, -12556, -31251, 29457],
-             backgroundColor: [ // Colori significativi
+             data: [154660, -13883, -127, 38417, -14368, 138155, 13883, -119889, 74846, -1582, 73264],
+             backgroundColor: [ 
                  '#4CAF50', // EBITDA
+                 '#F44336', // Ammortamenti (-)
+                 '#F44336', // Oneri Fin. (-)
+                 '#4CAF50', // Gest. Fin. (+)
                  '#F44336', // Imposte (-)
-                 '#F44336', // Delta Circ. (-) in questo caso
+                 '#2E8B57', // Utile Netto (=)
+                 '#4CAF50', // Ammortamenti (+)
+                 '#F44336', // Delta CCN (-)
                  '#2E8B57', // CF Op (=)
                  '#F44336', // Investimenti (-)
-                 '#2E8B57', // FCF (=)
-                 '#F44336', // Delta Debt (-)
-                 '#FFC107', // Dividendi (-) - Warning color
-                 '#4CAF50'  // Delta Cassa (=) - Positive color
+                 '#2E8B57'  // FCF (=)
              ]
          }]
      };
 }
 function getCashFlowTrendData() {
-    // console.log("Fornitura dati per cashFlowTrendChart (Report Parte 5) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per cashFlowTrendChart (Report Parte 5) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE5_flc_flussi_analysis.md (5.2.2)
     return {
         labels: ["2022", "2023", "2024"],
@@ -321,14 +322,12 @@ function getCashFlowTrendData() {
     };
 }
 function getCashFlowProjectionData() {
-    // console.log("Fornitura dati per cashFlowProjectionChart (Report Parte 5) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per cashFlowProjectionChart (Report Parte 5) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE5_flc_flussi_analysis.md (5.2.3)
     return {
         labels: ["2024", "2025E", "2026E", "2027E", "2028E"],
         datasets: [
-            // Dati 2024 reali + Proiezioni
             { label: "Cash Flow Operativo", data: [74846, 152038, 152038, 152038, 152038], type: 'bar', backgroundColor: "rgba(79, 109, 122, 0.7)", yAxisID: 'y' },
-            // Usato CF Finanziamento come proxy Var Debiti
             { label: "Variazione Debiti Fin.", data: [-12556, 0, 0, 0, 0], type: 'bar', backgroundColor: "rgba(214, 34, 70, 0.7)", yAxisID: 'y' },
             { label: "Liquidità Finale", data: [99972, 260866, 421760, 582654, 743548], type: 'line', borderColor: "rgba(77, 140, 87, 1)", fill: false, yAxisID: 'y1' }
         ]
@@ -337,42 +336,42 @@ function getCashFlowProjectionData() {
 
 // Dati Parte 6
 function getZscoreData() {
-    // console.log("Fornitura dati per zscoreChart (Report Parte 6) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per zscoreChart (Report Parte 6) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE0_flc-irp-report.md (5), PARTE6_flc_rischi_analisi.md (6.2)
     return {
         labels: ["2022", "2023", "2024"],
         datasets: [
-            { label: "Z-Score", data: [5.8, 5.9, 6.20], borderColor: "rgba(25, 25, 112, 1)", fill: false },
+            { label: "Z-Score", data: [5.8, 5.9, 6.2], borderColor: "rgba(25, 25, 112, 1)", fill: false },
             { label: "Soglia Sicurezza", data: [2.99, 2.99, 2.99], borderColor: "rgba(77, 140, 87, 1)", borderDash: [5, 5], fill: false, pointRadius: 0 },
             { label: "Soglia Rischio", data: [1.81, 1.81, 1.81], borderColor: "rgba(214, 34, 70, 1)", borderDash: [5, 5], fill: false, pointRadius: 0 }
         ]
     };
 }
 function getRiskIndicatorsData() {
-     // console.log("Fornitura dati per riskIndicatorsChart (Report Parte 6) - FLC HEALTHY EVOLUTION S.R.L.");
+     // console.log("Fornitura dati per riskIndicatorsChart (Report Parte 6) - FLC HEALTHY EVOLUTION SRL");
      // Fonte: PARTE6_flc_rischi_analisi.md (6.1, 6.9)
     return {
         labels: ["ROI", "ROS", "D/E (inv)", "Cop. Immob.", "DSO (inv)", "DPO"],
         datasets: [{
-             label: "FLC HEALTHY EVOLUTION",
-             data: [208, 136, 200, 149, 59, 182], // Normalizzato
+             label: "FLC HEALTHY EVOLUTION SRL",
+             data: [173, 170, 200, 149, 59, 182], // Valori normalizzati
              backgroundColor: "rgba(136, 141, 194, 0.5)", borderColor: "rgba(97, 103, 173, 1)", borderWidth: 2
             }, {
              label: "Target/Benchmark",
-             data: [100, 100, 100, 100, 100, 100], // Benchmark normalizzato
+             data: [100, 100, 67, 100, 100, 100],
              backgroundColor: "rgba(145, 190, 145, 0.4)", borderColor: "rgba(103, 167, 103, 1)", borderWidth: 2
         }]
     };
 }
 function getSensitivityData() {
-    // console.log("Fornitura dati per sensitivityChart (Report Parte 6) - FLC HEALTHY EVOLUTION S.R.L.");
+    // console.log("Fornitura dati per sensitivityChart (Report Parte 6) - FLC HEALTHY EVOLUTION SRL");
     // Fonte: PARTE6_flc_rischi_analisi.md (6.5)
      return {
          labels: ["Ricavi (%)", "Costi Fissi (%)", "Crediti Clienti (gg)", "Debiti Fornitori (gg)"],
          datasets: [{
              label: "Variazione Critica",
              data: [-36.19, 60.07, 35, -51], // Valori da Tabella 6.5.1
-             backgroundColor: ["#F44336", "#4CAF50", "#F44336", "#F44336"] // Colori per impatto (negativo/positivo/negativo/negativo)
+             backgroundColor: ["#F44336", "#4CAF50", "#F44336", "#F44336"] // Colori per impatto
          }]
      };
 }
@@ -563,4 +562,4 @@ const radarChartOptions = {
       }
 };
 
-console.log("charts_config.js caricato e aggiornato con dati FLC HEALTHY EVOLUTION S.R.L. (dove disponibili).");
+console.log("charts_config.js caricato e aggiornato con dati FLC HEALTHY EVOLUTION SRL (dove disponibili).");

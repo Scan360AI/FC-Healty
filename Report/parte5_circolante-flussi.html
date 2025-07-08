@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circolante e Flussi di Cassa - Guglietta Global S.p.A. | SCAN V12</title> <!-- Changed Company Name -->
+    <title>Circolante e Flussi di Cassa - FLC HEALTHY EVOLUTION S.R.L. | SCAN V12</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -66,11 +66,11 @@
 
     <!-- Sidebar -->
     <aside class="sidebar no-print">
-        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>Guglietta Global S.p.A.</h5> </div> <!-- Changed Name -->
+        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>FLC HEALTHY EVOLUTION S.R.L.</h5> </div>
         <ul class="sidebar-nav flex-grow-1">
-            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li> <!-- Adjusted Path -->
+            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li>
             <li class="nav-title">Analisi Dettagliata</li>
-            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li> <!-- Adjusted Paths -->
+            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte2_economico.html"> <i class="fas fa-balance-scale fa-fw"></i> Analisi Economica </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte3_patrimoniale.html"> <i class="fas fa-landmark fa-fw"></i> Analisi Patrimoniale </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte4_bancabilita.html"> <i class="fas fa-university fa-fw"></i> Bancabilità </a> </li>
@@ -78,7 +78,6 @@
             <li class="nav-item"> <a class="nav-link" href="parte6_rischi-raccomandazioni.html"> <i class="fas fa-exclamation-triangle fa-fw"></i> Rischi e Azioni </a> </li>
             <li class="nav-title">Approfondimenti</li>
             <li class="nav-item"> <a class="nav-link" href="irp_dettaglio.html"> <i class="fas fa-shield-alt fa-fw"></i> Dettaglio IRP </a> </li>
-            <!-- Removed Bilancio Plus Link -->
         </ul>
         <div class="sidebar-footer"> <small>SCAN360 © <span id="currentYearSidebar"></span> Kitzanos</small> </div>
     </aside>
@@ -89,19 +88,19 @@
         <header class="dashboard-header no-print">
             <div class="header-title">
                 <h5 class="mb-0">Report Dettagliato: Analisi Circolante e Flussi</h5>
-                <p class="mb-0">Guglietta Global S.p.A. | <span class="report-date">31 Dicembre 2024</span></p> <!-- Changed Name -->
+                <p class="mb-0">FLC HEALTHY EVOLUTION S.R.L. | <span class="report-date">31 Dicembre 2024</span></p>
             </div>
             <div class="header-controls d-flex align-items-center">
                 <span id="irp-header-badge" class="badge me-3"></span> <!-- Badge IRP -->
                 <button class="btn btn-sm btn-outline-secondary me-2 print-button" onclick="printDocument()"> <i class="fas fa-print"></i> Stampa </button>
                 <div class="dropdown">
-                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> Guglietta Global S.p.A. </button> <!-- Changed Name -->
+                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> FLC HEALTHY EVOLUTION S.R.L. </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton"> <li><button class="dropdown-item" type="button" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button></li> </ul>
                 </div>
             </div>
         </header>
         <div class="container d-none d-print-block mt-4 mb-4">
-            <h1 class="text-center mb-0"><span class="company-name">Guglietta Global S.p.A.</span></h1> <!-- Changed Name -->
+            <h1 class="text-center mb-0"><span class="company-name">FLC HEALTHY EVOLUTION S.R.L.</span></h1>
             <p class="text-center mb-0">Report Dettagliato: Analisi Circolante e Flussi | <span class="report-date">31 Dicembre 2024</span></p>
             <hr>
         </div>
@@ -110,7 +109,7 @@
         <div class="dashboard-container">
 
             <!-- ================================================================ -->
-            <!-- CONTENUTO SPECIFICO PARTE 5 - V12 - Updated for Calcidrata -->
+            <!-- CONTENUTO SPECIFICO PARTE 5 - V12 - Updated for FLC HEALTHY EVOLUTION -->
             <!-- ================================================================ -->
 
             <h2 class="section-title" id="capital"><i class="fas fa-sync-alt me-2"></i>5.1 ANALISI CAPITALE CIRCOLANTE</h2>
@@ -118,26 +117,25 @@
             <div class="card mb-4 report-section">
                  <div class="card-header card-header-primary"><h5 class="mb-0">Sintesi Ciclo Capitale Circolante</h5></div>
                  <div class="card-body">
-                     <p>Il ciclo del capitale circolante (CCC) evidenzia un significativo peggioramento nel 2024, principalmente dovuto all'aumento delle scorte. Al 12/2024, il CCC è di <strong>57 giorni</strong>.</p> <!-- Updated Text -->
+                     <p>Il capitale circolante rappresenta un elemento cruciale nell'architettura finanziaria dell'impresa. Al 12/2024, il ciclo del capitale circolante (CCC) è di <strong>19 giorni</strong>, evidenziando un'efficiente gestione operativa.</p>
                      <div class="row gy-3 mt-4 mb-4">
-                         <div class="col-md-3 col-6"> <div class="cycle-kpi border-success"> <span class="kpi-label">DSO (Clienti)</span> <span class="kpi-value-days-lg text-success">62</span> </div> </div> <!-- DSO Updated -->
-                         <div class="col-md-3 col-6"> <div class="cycle-kpi border-danger"> <span class="kpi-label">DIO (Magazzino)</span> <span class="kpi-value-days-lg text-danger">84</span> </div> </div> <!-- DIO Updated -->
-                         <div class="col-md-3 col-6"> <div class="cycle-kpi border-warning"> <span class="kpi-label">DPO (Fornitori)</span> <span class="kpi-value-days-lg text-warning">89</span> </div> </div> <!-- DPO Updated -->
-                          <div class="col-md-3 col-6"> <div class="cycle-kpi border-danger bg-light"> <span class="kpi-label">Ciclo Circolante</span> <span class="kpi-value-days-lg text-danger">57</span> </div> </div> <!-- CCC Updated -->
+                         <div class="col-md-3 col-6"> <div class="cycle-kpi border-danger"> <span class="kpi-label">DSO (Clienti)</span> <span class="kpi-value-days-lg text-danger">128</span> </div> </div>
+                         <div class="col-md-3 col-6"> <div class="cycle-kpi border-success"> <span class="kpi-label">DIO (Magazzino)</span> <span class="kpi-value-days-lg text-success">0</span> </div> </div>
+                         <div class="col-md-3 col-6"> <div class="cycle-kpi border-warning"> <span class="kpi-label">DPO (Fornitori)</span> <span class="kpi-value-days-lg text-warning">109</span> </div> </div>
+                          <div class="col-md-3 col-6"> <div class="cycle-kpi border-success bg-light"> <span class="kpi-label">Ciclo Circolante</span> <span class="kpi-value-days-lg text-success">19</span> </div> </div>
                      </div>
-                     <p class="small">Il ciclo positivo di 57 giorni (+35gg vs 2023) indica un <strong>maggior fabbisogno finanziario</strong> generato dalla gestione operativa, principalmente a causa dell'allungamento dei tempi di magazzino.</p> <!-- Updated Text -->
+                     <p class="small">Il ciclo positivo di 19 giorni (-30gg vs 2023) indica un <strong>efficiente fabbisogno finanziario</strong> generato dalla gestione operativa, principalmente grazie all'ottimizzazione dei tempi di pagamento fornitori che compensano l'elevato DSO.</p>
 
-                     <h6 class="mt-4 card-title-small">TREND CICLO CIRCOLANTE 2022-2024 (GIORNI - Calcidrata)</h6>
-                     <!-- Updated Trend Table -->
+                     <h6 class="mt-4 card-title-small">TREND CICLO CIRCOLANTE 2022-2024 (GIORNI - FLC HEALTHY EVOLUTION)</h6>
                      <div class="table-responsive">
                          <table class="table table-sm table-striped table-hover caption-top">
                              <caption class="small text-muted"></caption>
                              <thead class="table-light"><tr><th>Componente</th><th class="text-end">12/2022</th><th class="text-end">12/2023</th><th class="text-end">12/2024</th><th>Trend</th></tr></thead>
                              <tbody>
-                                 <tr><td>DSO (giorni)</td><td class="text-end">68</td><td class="text-end">67</td><td class="text-end">62</td><td class="text-success">Miglioramento ↓</td></tr>
-                                 <tr><td>DIO (giorni)</td><td class="text-end">60</td><td class="text-end">50</td><td class="text-end">84</td><td class="text-danger">Peggioramento ↑↑</td></tr>
-                                 <tr><td>DPO (giorni)</td><td class="text-end">108</td><td class="text-end">95</td><td class="text-end">89</td><td class="text-success">Diminuzione ↓</td></tr>
-                                 <tr class="table-danger fw-bold"><td>Ciclo Circolante</td><td class="text-end">20</td><td class="text-end">22</td><td class="text-end">57</td><td class="text-danger">Peggioramento ↑↑</td></tr>
+                                 <tr><td>DSO (giorni)</td><td class="text-end">69</td><td class="text-end">81</td><td class="text-end">128</td><td class="text-danger">Peggioramento ↑↑</td></tr>
+                                 <tr><td>DIO (giorni)</td><td class="text-end">0</td><td class="text-end">0</td><td class="text-end">0</td><td class="text-success">Stabile ↔</td></tr>
+                                 <tr><td>DPO (giorni)</td><td class="text-end">12</td><td class="text-end">32</td><td class="text-end">109</td><td class="text-success">Miglioramento ↑↑</td></tr>
+                                 <tr class="table-success fw-bold"><td>Ciclo Circolante</td><td class="text-end">57</td><td class="text-end">49</td><td class="text-end">19</td><td class="text-success">Miglioramento ↓↓</td></tr>
                              </tbody>
                          </table>
                      </div>
@@ -149,103 +147,100 @@
                  <div class="card-body">
                       <div class="row mb-4">
                           <div class="col-lg-7 mb-3 mb-lg-0">
-                              <h6 class="text-center small">Grafico 5.1: Ciclo Capitale Circolante vs Benchmark (Giorni - Calcidrata)</h6>
+                              <h6 class="text-center small">Grafico 5.1: Ciclo Capitale Circolante vs Benchmark (Giorni - FLC HEALTHY EVOLUTION)</h6>
                                <div class="chart-container" style="height: 320px;"> <canvas id="workingCapitalCycleChart"></canvas> </div>
                           </div>
                           <div class="col-lg-5 d-flex flex-column justify-content-center">
-                                <div class="alert-box alert-danger p-3 mb-3"> <!-- Changed to Danger -->
-                                     <h6 class="mb-1"><i class="fas fa-exclamation-triangle me-2"></i>Analisi Ciclo (57 giorni)</h6>
-                                     <p class="small mb-0">Significativo peggioramento (+35gg vs 2023) causa aumento DIO.</p> <!-- Updated Text -->
+                                <div class="alert-box alert-success p-3 mb-3">
+                                     <h6 class="mb-1"><i class="fas fa-check-circle me-2"></i>Analisi Ciclo (19 giorni)</h6>
+                                     <p class="small mb-0">Significativo miglioramento (-30gg vs 2023) grazie all'ottimizzazione dei tempi di pagamento fornitori che compensano l'elevato DSO.</p>
                                 </div>
                                  <div class="alert-box alert-warning p-3 small">
                                     <h6 class="mb-2"><i class="fas fa-info-circle me-2"></i>Componenti Chiave 2024:</h6>
-                                    <!-- Updated Commentary -->
                                     <ul class="list-unstyled mb-0">
-                                        <li><strong class="text-success">DSO (62gg):</strong> Buono e in miglioramento (<65gg).</li>
-                                        <li><strong class="text-danger">DIO (84gg):</strong> Critico, forte aumento (+34gg).</li>
-                                        <li><strong class="text-warning">DPO (89gg):</strong> Rientrato vs 2023, ma sotto benchmark (95gg).</li>
+                                        <li><strong class="text-danger">DSO (128gg):</strong> Critico, forte aumento (+47gg vs 2023).</li>
+                                        <li><strong class="text-success">DIO (0gg):</strong> Ottimale, assenza di rimanenze.</li>
+                                        <li><strong class="text-success">DPO (109gg):</strong> Eccellente, forte miglioramento (+77gg vs 2023).</li>
                                     </ul>
                                 </div>
                           </div>
                       </div>
                       <hr class="my-4">
-                       <h6 class="mt-4 mb-3"><i class="fas fa-balance-scale me-1"></i> Test di Congruità Componenti (2024 - Calcidrata)</h6>
-                       <!-- Updated Congruity Tests -->
+                       <h6 class="mt-4 mb-3"><i class="fas fa-balance-scale me-1"></i> Test di Congruità Componenti (2024 - FLC HEALTHY EVOLUTION)</h6>
                        <div class="row gy-4">
                            <!-- Test Crediti -->
                            <div class="col-lg-4 col-md-6">
-                               <div class="dashboard-card h-100 border-success"> <!-- Changed to Success -->
-                                   <h6 class="card-title-small text-success"><i class="fas fa-file-invoice-dollar me-1"></i> Crediti (DSO)</h6>
+                               <div class="dashboard-card h-100 border-danger">
+                                   <h6 class="card-title-small text-danger"><i class="fas fa-file-invoice-dollar me-1"></i> Crediti (DSO)</h6>
                                    <ul class="list-unstyled small mb-0">
-                                       <li>Valore: € 2,30M</li>
-                                       <li>DSO Effettivo: <strong>62 gg</strong></li>
-                                       <li>DSO Normale: 65 gg</li>
-                                       <li class="mt-2 border-top pt-2">Giorni Eccesso: <strong class="text-success">-3 gg</strong></li>
-                                       <li>Capitale Liberato: <strong class="text-success">~€ 112 K</strong></li>
+                                       <li>Valore: € 367.325</li>
+                                       <li>DSO Effettivo: <strong>128 gg</strong></li>
+                                       <li>DSO Normale: 75 gg</li>
+                                       <li class="mt-2 border-top pt-2">Giorni Eccesso: <strong class="text-danger">+53 gg</strong></li>
+                                       <li>Capitale Immobilizzato: <strong class="text-danger">~€ 152.746</strong></li>
                                    </ul>
                                </div>
                            </div>
                             <!-- Test Debiti -->
                            <div class="col-lg-4 col-md-6">
-                               <div class="dashboard-card h-100 border-danger"> <!-- Changed to Danger (paying faster) -->
-                                   <h6 class="card-title-small text-danger"><i class="fas fa-truck me-1"></i> Debiti (DPO)</h6>
+                               <div class="dashboard-card h-100 border-success">
+                                   <h6 class="card-title-small text-success"><i class="fas fa-truck me-1"></i> Debiti (DPO)</h6>
                                     <ul class="list-unstyled small mb-0">
-                                       <li>Valore: € 2,44M</li>
-                                       <li>DPO Effettivo: <strong>89 gg</strong></li>
-                                       <li>DPO Standard: 95 gg</li>
-                                       <li class="mt-2 border-top pt-2">Giorni Eccesso: <strong class="text-danger">-6 gg</strong></li>
-                                       <li>Finanz. Mancante: <strong class="text-danger">~€ 93 K</strong></li>
+                                       <li>Valore: € 213.246</li>
+                                       <li>DPO Effettivo: <strong>109 gg</strong></li>
+                                       <li>DPO Standard: 60 gg</li>
+                                       <li class="mt-2 border-top pt-2">Giorni Eccesso: <strong class="text-success">+49 gg</strong></li>
+                                       <li>Finanz. Ottenuto: <strong class="text-success">~€ 552</strong></li>
                                    </ul>
                                </div>
                            </div>
                             <!-- Test Magazzino -->
-                           <div class="col-lg-4 col-md-12"> <!-- Occupa tutta larghezza su md -->
-                               <div class="dashboard-card h-100 border-danger"> <!-- Changed to Danger -->
-                                    <h6 class="card-title-small text-danger"><i class="fas fa-boxes me-1"></i> Magazzino (DIO)</h6>
+                           <div class="col-lg-4 col-md-12">
+                               <div class="dashboard-card h-100 border-success">
+                                    <h6 class="card-title-small text-success"><i class="fas fa-boxes me-1"></i> Magazzino (DIO)</h6>
                                      <ul class="list-unstyled small mb-0">
-                                       <li>Valore: € 1,30M</li>
-                                       <li>DIO Effettivo: <strong>84 gg</strong></li>
-                                       <li>DIO Standard: 70 gg</li>
-                                       <li class="mt-2 border-top pt-2">Giorni Eccesso: <strong class="text-danger">+14 gg</strong></li>
-                                       <li>Valore Immobilizzato: <strong class="text-danger">~€ 217 K</strong></li>
+                                       <li>Valore: € 0</li>
+                                       <li>DIO Effettivo: <strong>0 gg</strong></li>
+                                       <li>DIO Standard: 30 gg</li>
+                                       <li class="mt-2 border-top pt-2">Giorni Eccesso: <strong class="text-success">-30 gg</strong></li>
+                                       <li>Valore Ottimizzato: <strong class="text-success">~€ 338</strong></li>
                                    </ul>
                                </div>
                            </div>
                        </div>
-                        <div class="alert-box alert-danger small mt-4 p-2"> <!-- Changed to Danger -->
-                           <strong>Analisi Dettagliata:</strong> Il ciclo di 57gg richiede un fabbisogno finanziario stimato di ~€882K. La criticità è l'aumento del DIO (84gg) che immobilizza €217K. Il DPO (89gg) è sotto benchmark, riducendo il finanziamento ottenibile. DSO (62gg) è un punto di forza. <!-- Updated Text -->
+                        <div class="alert-box alert-warning small mt-4 p-2">
+                           <strong>Analisi Dettagliata:</strong> Il ciclo di 19gg richiede un fabbisogno finanziario stimato di ~€54.758. La criticità è l'elevato DSO (128gg) che immobilizza €152.746. Il DPO (109gg) è eccellente, generando un finanziamento operativo che compensa parzialmente. L'assenza di magazzino (DIO 0gg) è un punto di forza.
                        </div>
                        <hr class="my-4">
-                        <h6 class="mt-4 mb-3"><i class="fas fa-lightbulb me-1"></i> Strategie di Miglioramento e Impatto Finanziario Atteso (Calcidrata)</h6>
-                         <!-- Updated Strategies -->
+                        <h6 class="mt-4 mb-3"><i class="fas fa-lightbulb me-1"></i> Strategie di Miglioramento e Impatto Finanziario Atteso (FLC HEALTHY EVOLUTION)</h6>
                          <div class="row">
                              <div class="col-md-4">
                                  <div class="strategy-card h-100">
-                                    <h6><i class="fas fa-boxes me-1"></i> Magazzino</h6> <!-- Changed Focus -->
-                                     <ol> <li>Implementare JIT</li> <li>Analisi ABC scorte</li> <li>Accordi progr. fornitori</li> </ol>
-                                     <p class="fw-bold text-success mt-2 mb-0">Impatto Netto: +€217K</p>
-                                      <small class="text-muted">(Target DIO 70gg)</small>
+                                    <h6><i class="fas fa-file-invoice-dollar me-1"></i> Crediti Clienti</h6>
+                                     <ol> <li>Implementare credit scoring</li> <li>Automazione solleciti</li> <li>Factoring selettivo</li> </ol>
+                                     <p class="fw-bold text-success mt-2 mb-0">Impatto Netto: +€109.516</p>
+                                      <small class="text-muted">(Target DSO 90gg)</small>
                                  </div>
                              </div>
                               <div class="col-md-4">
                                   <div class="strategy-card h-100">
-                                     <h6><i class="fas fa-truck me-1"></i> Debiti Fornitori</h6> <!-- Changed Focus -->
-                                      <ol> <li>Rinegoziazione termini</li> <li>Allineamento a benchmark</li> <li>Centralizzazione pagamenti</li> </ol>
-                                      <p class="fw-bold text-success mt-2 mb-0">Impatto Netto: +€93K</p>
-                                      <small class="text-muted">(Target DPO 95gg)</small>
+                                     <h6><i class="fas fa-truck me-1"></i> Debiti Fornitori</h6>
+                                      <ol> <li>Mantenere policy attuali</li> <li>Formalizzare accordi</li> <li>Monitorare rating fornitori</li> </ol>
+                                      <p class="fw-bold text-success mt-2 mb-0">Impatto Netto: +€552</p>
+                                      <small class="text-muted">(Mantenimento vantaggio)</small>
                                   </div>
                               </div>
                                <div class="col-md-4">
                                   <div class="strategy-card h-100">
-                                      <h6><i class="fas fa-hand-holding-usd me-1"></i> Crediti Clienti</h6> <!-- Changed Focus -->
-                                       <ol> <li>Mantenere policy attuali</li> <li>Monitoraggio costante aging</li> <li>Valutazione preventiva</li> </ol>
-                                       <p class="fw-bold text-success mt-2 mb-0">Impatto Netto: €0</p>
-                                       <small class="text-muted">(Mantenimento vantaggio ~€112K)</small>
+                                      <h6><i class="fas fa-cogs me-1"></i> Processi</h6>
+                                       <ol> <li>Digitalizzazione ciclo ordine-incasso</li> <li>Dashboard real-time</li> <li>Integrazione sistemi</li> </ol>
+                                       <p class="fw-bold text-success mt-2 mb-0">Impatto Netto: +€28.820</p>
+                                       <small class="text-muted">(Ottimizzazione ciclo a 9gg)</small>
                                   </div>
                               </div>
                          </div>
                          <div class="alert-box alert-success text-center mt-4">
-                              <strong>Impatto Complessivo Stimato (Liquidità Netta): +€ 310.000</strong> <!-- Updated Value -->
+                              <strong>Impatto Complessivo Stimato (Liquidità Netta): +€ 138.888</strong>
                          </div>
                  </div>
             </div>
@@ -255,42 +250,46 @@
             <div class="card mb-4 report-section">
                  <div class="card-header card-header-primary"><h5 class="mb-0">Analisi Flussi di Cassa (da EBITDA a Variazione Netta Cassa) - 2024</h5></div>
                  <div class="card-body">
-                     <p>Analisi della capacità aziendale di generare liquidità e della sua destinazione.</p>
+                     <p>L'analisi della trasformazione dall'EBITDA al Free Cash Flow costituisce il framework analitico fondamentale per valutare la qualità della redditività e la capacità effettiva di generazione di liquidità dell'impresa.</p>
                      <div class="row">
                         <div class="col-lg-7 mb-3 mb-lg-0">
-                             <h6 class="text-center small">Grafico 5.2: Composizione Flussi di Cassa 2024 (Waterfall Semplificato - Calcidrata)</h6>
+                             <h6 class="text-center small">Grafico 5.2: Composizione Flussi di Cassa 2024 (Waterfall Semplificato - FLC HEALTHY EVOLUTION)</h6>
                             <div class="chart-container" style="height: 400px;"> <canvas id="cashFlowWaterfallChart"></canvas> </div>
                         </div>
                         <div class="col-lg-5">
-                             <h6 class="mt-1">Tabella 5.1: Dettaglio Flussi 2024 (€ - Calcidrata)</h6>
-                             <!-- Updated Table Data -->
+                             <h6 class="mt-1">Tabella 5.1: Dettaglio Flussi 2024 (€ - FLC HEALTHY EVOLUTION)</h6>
                              <div class="table-responsive">
                                  <table class="table table-sm table-striped table-hover">
                                       <thead class="table-light"><tr><th>Voce</th><th class="text-end">Valore</th><th class="text-end">% Ricavi</th></tr></thead>
                                       <tbody>
-                                          <tr><td>EBITDA</td><td class="text-end">2.866.018</td><td class="text-end">21,3%</td></tr>
-                                          <tr><td><i class="fas fa-minus-circle text-danger fa-fw me-1"></i> Imposte</td><td class="text-end text-danger">(411.492)</td><td class="text-end">-3,1%</td></tr>
-                                          <tr><td><i class="fas fa-minus-circle text-danger fa-fw me-1"></i> Variazione Cap. Circ. Op.</td><td class="text-end text-danger">(810.000)</td><td class="text-end">-6,0%</td></tr> <!-- Approx from narrative -->
-                                          <tr class="table-secondary fw-bold"><td><i class="fas fa-equals fa-fw me-1"></i> Cash Flow Operativo</td><td class="text-end">1.644.834</td><td class="text-end">12,3%</td></tr>
-                                          <tr><td><i class="fas fa-minus-circle text-danger fa-fw me-1"></i> Cash Flow Investimenti</td><td class="text-end text-danger">(1.595.041)</td><td class="text-end">-11,9%</td></tr>
-                                          <tr class="table-secondary fw-bold"><td><i class="fas fa-equals fa-fw me-1"></i> Free Cash Flow (FCF)</td><td class="text-end">49.793</td><td class="text-end">0,4%</td></tr>
-                                          <tr><td><i class="fas fa-plus-circle text-success fa-fw me-1"></i> Variazione Debiti Fin.</td><td class="text-end text-success">(207.489)</td><td class="text-end">-1,5%</td></tr> <!-- Negative value = outflow = debt reduction -->
-                                          <tr><td><i class="fas fa-minus-circle text-warning fa-fw me-1"></i> Variazione Patrimonio Netto</td><td class="text-end text-warning">(296.997)</td><td class="text-end">-2,2%</td></tr> <!-- Prob. Dividendi -->
-                                          <tr class="table-danger fw-bold"><td><i class="fas fa-equals fa-fw me-1"></i> Variazione Netta Cassa</td><td class="text-end text-danger">(454.693)</td><td class="text-end">-3,4%</td></tr>
+                                          <tr><td>EBITDA</td><td class="text-end">154.660</td><td class="text-end">14,91%</td></tr>
+                                          <tr><td><i class="fas fa-minus-circle text-danger fa-fw me-1"></i> Ammortamenti</td><td class="text-end text-danger">(13.883)</td><td class="text-end">-1,34%</td></tr>
+                                          <tr><td><i class="fas fa-equals fa-fw me-1"></i> EBIT</td><td class="text-end">140.777</td><td class="text-end">13,57%</td></tr>
+                                          <tr><td><i class="fas fa-minus-circle text-danger fa-fw me-1"></i> Oneri Finanziari</td><td class="text-end text-danger">(127)</td><td class="text-end">-0,01%</td></tr>
+                                          <tr><td><i class="fas fa-plus-circle text-success fa-fw me-1"></i> Gestione Finanziaria</td><td class="text-end text-success">38.417</td><td class="text-end">3,70%</td></tr>
+                                          <tr><td><i class="fas fa-minus-circle text-danger fa-fw me-1"></i> Imposte</td><td class="text-end text-danger">(14.368)</td><td class="text-end">-1,38%</td></tr>
+                                          <tr class="table-secondary fw-bold"><td><i class="fas fa-equals fa-fw me-1"></i> Utile Netto</td><td class="text-end">138.155</td><td class="text-end">13,32%</td></tr>
+                                          <tr><td><i class="fas fa-plus-circle text-success fa-fw me-1"></i> Ammortamenti (add-back)</td><td class="text-end text-success">13.883</td><td class="text-end">1,34%</td></tr>
+                                          <tr><td><i class="fas fa-plus-circle text-success fa-fw me-1"></i> Variazione CCN</td><td class="text-end text-success">119.889</td><td class="text-end">11,55%</td></tr>
+                                          <tr class="table-secondary fw-bold"><td><i class="fas fa-equals fa-fw me-1"></i> Cash Flow Operativo</td><td class="text-end">74.846</td><td class="text-end">7,21%</td></tr>
+                                          <tr><td><i class="fas fa-minus-circle text-danger fa-fw me-1"></i> Investimenti</td><td class="text-end text-danger">(1.582)</td><td class="text-end">-0,15%</td></tr>
+                                          <tr class="table-success fw-bold"><td><i class="fas fa-equals fa-fw me-1"></i> Free Cash Flow (FCF)</td><td class="text-end">73.264</td><td class="text-end">7,06%</td></tr>
+                                          <tr><td><i class="fas fa-minus-circle text-danger fa-fw me-1"></i> Variazione Debiti Fin.</td><td class="text-end text-danger">(12.556)</td><td class="text-end">-1,21%</td></tr>
+                                          <tr><td><i class="fas fa-minus-circle text-warning fa-fw me-1"></i> Variazione Patrimonio Netto</td><td class="text-end text-warning">(31.251)</td><td class="text-end">-3,01%</td></tr>
+                                          <tr class="table-success fw-bold"><td><i class="fas fa-equals fa-fw me-1"></i> Variazione Netta Cassa</td><td class="text-end">29.457</td><td class="text-end">2,84%</td></tr>
                                       </tbody>
                                  </table>
                                  <p class="small text-muted mt-1 mb-0">*Fonte: Report Leanus / Analisi Flussi</p>
                              </div>
                         </div>
                      </div>
-                     <h6 class="mt-4">Analisi Flussi di Cassa 2024 (Calcidrata):</h6>
-                     <!-- Updated Commentary -->
+                     <h6 class="mt-4">Analisi Flussi di Cassa 2024 (FLC HEALTHY EVOLUTION):</h6>
                       <div class="alert-box alert-info small">
                          <ul class="mb-0">
-                            <li><strong>Ottima generazione cassa op. (12,3%):</strong> Nonostante assorbimento da circolante (-€0.8M).</li>
-                            <li><strong>Forte assorbimento investimenti (-€1.6M):</strong> Indica ciclo investimenti importante (97% CF Op.).</li>
-                            <li><strong>FCF quasi nullo (€50K):</strong> Positivo ma marginale causa investimenti.</li>
-                            <li><strong>Riduzione Debito (-€207K) e Dividendi (-€297K):</strong> Causano Δ Cassa Netta Negativa (-€455K).</li>
+                            <li><strong>Buona generazione cassa op. (7,21%):</strong> Supportata da variazione positiva del capitale circolante (+€119.889).</li>
+                            <li><strong>Investimenti contenuti (-€1.582):</strong> Indica fase di consolidamento operativo (2,1% CF Op.).</li>
+                            <li><strong>FCF solido (€73.264):</strong> Eccellente conversione dell'EBITDA in cassa disponibile.</li>
+                            <li><strong>Riduzione Debito (-€12.556) e Dividendi (-€31.251):</strong> Nonostante distribuzione, Δ Cassa Netta Positiva (+€29.457).</li>
                         </ul>
                       </div>
                  </div>
@@ -301,52 +300,49 @@
                  <div class="card-body">
                       <div class="row">
                           <div class="col-lg-7 mb-3 mb-lg-0">
-                               <h6 class="text-center small">Grafico 5.3: Evoluzione Flussi di Cassa 2022-2024 (€ - Calcidrata)</h6>
+                               <h6 class="text-center small">Grafico 5.3: Evoluzione Flussi di Cassa 2022-2024 (€ - FLC HEALTHY EVOLUTION)</h6>
                                <div class="chart-container" style="height: 320px;"> <canvas id="cashFlowTrendChart"></canvas> </div>
                           </div>
                            <div class="col-lg-5">
-                              <h6 class="mt-1">Interpretazione Trend (Calcidrata):</h6>
-                              <!-- Updated Commentary -->
+                              <h6 class="mt-1">Interpretazione Trend (FLC HEALTHY EVOLUTION):</h6>
                                <ul class="small list-unstyled">
-                                  <li><i class="fas fa-sync-alt text-primary me-1"></i> CF Operativo volatile ma positivo.</li>
-                                  <li><i class="fas fa-chart-line text-danger me-1"></i> Investimenti ciclici (picco '22, ripresa '24).</li>
-                                  <li><i class="fas fa-exchange-alt text-success me-1"></i> Gestione Debito: Rimborso costante '23-'24.</li>
-                                  <li><i class="fas fa-donate text-warning me-1"></i> Dividendi stabili (~€300K).</li>
-                                  <li><i class="fas fa-arrow-down text-danger me-1"></i> Variazione Netta Cassa: Positiva '22-'23, Negativa '24.</li>
+                                  <li><i class="fas fa-sync-alt text-primary me-1"></i> CF Operativo volatile ma in recupero (€74.846 vs -€27.395 nel 2023).</li>
+                                  <li><i class="fas fa-chart-line text-success me-1"></i> Investimenti contenuti e stabili nel triennio.</li>
+                                  <li><i class="fas fa-exchange-alt text-success me-1"></i> Gestione Debito: Accensione '22-'23, Rimborso totale '24.</li>
+                                  <li><i class="fas fa-donate text-warning me-1"></i> Dividendi: Distribuzione significativa nel 2024 (€31.251).</li>
+                                  <li><i class="fas fa-arrow-up text-success me-1"></i> Variazione Netta Cassa: Recupero nel 2024 (+€29.457) dopo calo 2023.</li>
                                </ul>
                           </div>
                       </div>
                        <hr class="my-4">
                        <div class="row">
                            <div class="col-lg-7 mb-3 mb-lg-0">
-                               <h6 class="text-center small">Grafico 5.4: Proiezioni Finanziarie 2024-2028 (€ - Calcidrata)</h6>
+                               <h6 class="text-center small">Grafico 5.4: Proiezioni Finanziarie 2025-2028 (€ - FLC HEALTHY EVOLUTION)</h6>
                                 <div class="chart-container" style="height: 320px;"> <canvas id="cashFlowProjectionChart"></canvas> </div>
                            </div>
                             <div class="col-lg-5">
-                                <h6 class="mt-1">Analisi Proiezioni (Fonte Leanus - Calcidrata):</h6>
-                                <!-- Updated Commentary -->
+                                <h6 class="mt-1">Analisi Proiezioni (Fonte Leanus - FLC HEALTHY EVOLUTION):</h6>
                                 <ul class="small list-unstyled">
-                                   <li><i class="fas fa-arrow-up text-success me-1"></i> CF Operativo in crescita (~€2.0M/a).</li>
+                                   <li><i class="fas fa-arrow-up text-success me-1"></i> CF Operativo stabile (~€152.038/a).</li>
                                    <li><i class="fas fa-ban text-warning me-1"></i> Investimenti: Nessuno significativo nel piano base.</li>
-                                   <li><i class="fas fa-arrow-down text-success me-1"></i> Riduzione progressiva PFN.</li>
-                                   <li><i class="fas fa-coins text-success me-1"></i> Forte accumulo liquidità (€7.7M / '28).</li>
-                                   <li><i class="fas fa-check-circle text-success me-1"></i> DSCR Prospettico: 4,477 (Eccellente).</li>
-                                   <li><i class="fas fa-check-circle text-success me-1"></i> PFN Negativa (Cash Positive) da 2025.</li>
+                                   <li><i class="fas fa-arrow-down text-success me-1"></i> Mantenimento PFN negativa (liquidità netta).</li>
+                                   <li><i class="fas fa-coins text-success me-1"></i> Forte accumulo liquidità (€743.548 / '28).</li>
+                                   <li><i class="fas fa-check-circle text-success me-1"></i> DSCR Prospettico: 49,801 (Eccellente).</li>
+                                   <li><i class="fas fa-check-circle text-success me-1"></i> PFN Negativa (Cash Positive) mantenuta e rafforzata.</li>
                                 </ul>
-                                 <div class="alert alert-info small p-2 mt-2"> Forte potenziale accumulo liquidità per investimenti/remunerazione. Necessario piano allocazione capitale.</div>
+                                 <div class="alert alert-info small p-2 mt-2">Forte potenziale accumulo liquidità per investimenti/remunerazione. Necessario piano allocazione capitale strategico.</div>
                             </div>
                        </div>
-                         <h6 class="mt-4">Suggerimenti Operativi per Miglioramento Flussi (Calcidrata)</h6>
-                         <!-- Updated Suggestions -->
+                         <h6 class="mt-4">Suggerimenti Operativi per Miglioramento Flussi (FLC HEALTHY EVOLUTION)</h6>
                           <div class="table-responsive small">
                             <table class="table table-sm table-striped table-hover">
                                <thead class="table-light"><tr><th>Area</th><th>Azione Suggerita</th><th>Impatto Quantitativo Annuo</th></tr></thead>
                                <tbody>
-                                   <tr><td>Gestione Operativa</td><td>Ottimizzazione costi fissi/variabili</td><td class="text-success">+€370K CF Op. (Target 15%)</td></tr>
-                                   <tr><td>Gestione Investimenti</td><td>Sviluppo piano investimenti strategici</td><td class="text-success">+€240K CF (ROI 12%, da '26)</td></tr>
-                                   <tr><td>Gestione Finanziaria</td><td>Valutazione refinancing debito</td><td class="text-success">+€17K Oneri Fin. (-20%)</td></tr>
-                                   <tr><td>Politica Dividendi</td><td>Formalizzazione policy (40-50% Utile)</td><td>Prevedibilità per soci</td></tr>
-                                   <tr><td>Pianificazione Tesoreria</td><td>Budget tesoreria, cash pooling</td><td class="text-success">+€30K Ottimizz. Liq. (5%)</td></tr>
+                                   <tr><td>Credit Management</td><td>Riduzione DSO a 90gg con implementazione scoring</td><td class="text-success">+€109.516 liquidità</td></tr>
+                                   <tr><td>Investimento Liquidità</td><td>Depositi remunerati e strumenti monetari</td><td class="text-success">+€15.000-30.000 rendimento</td></tr>
+                                   <tr><td>Diversificazione Ricavi</td><td>Nuove linee prodotto e canali digitali</td><td class="text-success">+10-20% fatturato</td></tr>
+                                   <tr><td>Efficienza Operativa</td><td>Digitalizzazione processi e automazione</td><td class="text-success">-€20.000-40.000 costi</td></tr>
+                                   <tr><td>Financial Engineering</td><td>Ottimizzazione fiscale e strutture finanziarie</td><td class="text-success">+€5.000-15.000 annui</td></tr>
                                    <tr class="table-primary fw-bold"><td>Complessivo</td><td>Implementazione integrata</td><td>Miglioramento FCF/ROE</td></tr>
                                </tbody>
                             </table>
@@ -375,9 +371,9 @@
         document.getElementById('currentYearSidebar').textContent = new Date().getFullYear();
         document.getElementById('currentYearFooterReport').textContent = new Date().getFullYear();
 
-         // Script aggiornamento badge IRP header (Updated for Calcidrata)
+         // Script aggiornamento badge IRP header
          document.addEventListener('DOMContentLoaded', function() {
-             const irpScoreValue = 82.03; // Updated IRP Value
+             const irpScoreValue = 87.25; // Updated IRP Value for FLC
              const irpHeaderBadge = document.getElementById('irp-header-badge');
              if(irpHeaderBadge) {
                  let badgeClass = 'bg-warning text-dark';
@@ -401,8 +397,7 @@
              }
          });
 </script>
-
 <scan-chat data-bot-id="44479c6e-7072-49fc-9046-e650ff6f9874"></scan-chat>
-<script src=".  /js/bundle.js"></script>
+<script src="../js/bundle.js"></script>
 </body>
 </html>

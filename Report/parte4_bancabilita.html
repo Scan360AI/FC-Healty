@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bancabilità e Sostenibilità Debito - Guglietta Global S.p.A. | SCAN V11</title> <!-- Changed Company Name -->
+    <title>Bancabilità e Sostenibilità Debito - FLC HEALTHY EVOLUTION S.R.L. | SCAN V11</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -80,11 +80,11 @@
 
 <!-- Sidebar -->
     <aside class="sidebar no-print">
-        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>Guglietta Global S.p.A.</h5> </div> <!-- Changed Name -->
+        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>FLC HEALTHY EVOLUTION S.R.L.</h5> </div>
         <ul class="sidebar-nav flex-grow-1">
-            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li> <!-- Adjusted Path -->
+            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li>
             <li class="nav-title">Analisi Dettagliata</li>
-            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li> <!-- Adjusted Paths -->
+            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte2_economico.html"> <i class="fas fa-balance-scale fa-fw"></i> Analisi Economica </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte3_patrimoniale.html"> <i class="fas fa-landmark fa-fw"></i> Analisi Patrimoniale </a> </li>
             <li class="nav-item"> <a class="nav-link active" href="parte4_bancabilita.html"> <i class="fas fa-university fa-fw"></i> Bancabilità </a> </li>
@@ -92,7 +92,6 @@
             <li class="nav-item"> <a class="nav-link" href="parte6_rischi-raccomandazioni.html"> <i class="fas fa-exclamation-triangle fa-fw"></i> Rischi e Azioni </a> </li>
             <li class="nav-title">Approfondimenti</li>
             <li class="nav-item"> <a class="nav-link" href="irp_dettaglio.html"> <i class="fas fa-shield-alt fa-fw"></i> Dettaglio IRP </a> </li>
-            <!-- Removed Bilancio Plus Link -->
         </ul>
         <div class="sidebar-footer"> <small>SCAN360 © <span id="currentYearSidebar"></span> Kitzanos</small> </div>
     </aside>
@@ -104,19 +103,19 @@
         <header class="dashboard-header no-print">
             <div class="header-title">
                 <h5 class="mb-0">Report Dettagliato: Bancabilità e Sostenibilità Debito</h5>
-                <p class="mb-0">Guglietta Global S.p.A. | <span class="report-date">31 Dicembre 2024</span></p> <!-- Changed Name -->
+                <p class="mb-0">FLC HEALTHY EVOLUTION S.R.L. | <span class="report-date">31 Dicembre 2024</span></p>
             </div>
             <div class="header-controls d-flex align-items-center">
                 <span id="irp-header-badge" class="badge me-3"></span> <!-- Badge IRP -->
                 <button class="btn btn-sm btn-outline-secondary me-2 print-button" onclick="printDocument()"> <i class="fas fa-print"></i> Stampa </button>
                 <div class="dropdown">
-                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> Guglietta Global S.p.A. </button> <!-- Changed Name -->
+                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> FLC HEALTHY EVOLUTION S.R.L. </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton"> <li><button class="dropdown-item" type="button" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button></li> </ul>
                 </div>
             </div>
         </header>
         <div class="container d-none d-print-block mt-4 mb-4">
-            <h1 class="text-center mb-0"><span class="company-name">Guglietta Global S.p.A.</span></h1> <!-- Changed Name -->
+            <h1 class="text-center mb-0"><span class="company-name">FLC HEALTHY EVOLUTION S.R.L.</span></h1>
             <p class="text-center mb-0">Report Dettagliato: Bancabilità e Sostenibilità Debito | <span class="report-date">31 Dicembre 2024</span></p>
             <hr>
         </div>
@@ -125,39 +124,38 @@
         <div class="dashboard-container">
 
             <!-- ================================================================ -->
-            <!-- CONTENUTO SPECIFICO PARTE 4 - V11 CON IRP e SINTESI FUSE - Updated for Calcidrata -->
+            <!-- CONTENUTO SPECIFICO PARTE 4 - V11 CON IRP e SINTESI FUSE - Updated for FLC HEALTHY EVOLUTION -->
             <!-- ================================================================ -->
 
             <h2 class="section-title" id="bankability"><i class="fas fa-university me-2"></i>4. BANCABILITÀ E SOSTENIBILITÀ DEL DEBITO</h2>
 
             <!-- Sezione IRP Prominente che include la Sintesi Bancabilità -->
-            <section class="irp-visual-section risk-low report-section" id="bankability-summary-section"> <!-- Changed class to risk-low -->
+            <section class="irp-visual-section risk-low report-section" id="bankability-summary-section">
                  <div class="row align-items-center">
                       <div class="col-lg-4 text-center mb-4 mb-lg-0">
                            <h6 class="card-title-small mb-3"><i class="fas fa-shield-alt me-1"></i> Indice Rischio Ponderato</h6>
-                           <div class="irp-score-circle risk-low"> <!-- Changed class -->
-                               <span class="irp-score-value">82,0</span> <!-- Updated Value -->
+                           <div class="irp-score-circle risk-low">
+                               <span class="irp-score-value">87,3</span>
                                <span class="irp-score-max">/ 100</span>
                            </div>
-                           <div class="irp-category-text text-success mt-2"> <!-- Changed class -->
-                                Rischio Basso <span class="status-badge bg-success">B</span> <!-- Changed Badge -->
+                           <div class="irp-category-text text-success mt-2">
+                                Rischio Molto Basso <span class="status-badge bg-success">A</span>
                            </div>
                            <a href="irp_dettaglio.html" class="btn btn-sm btn-outline-primary mt-3 btn-pill">Dettaglio Calcolo IRP</a>
                       </div>
                        <div class="col-lg-8">
                            <h4 class="mb-3 fw-bold" style="color: var(--primary);">Valutazione Sintetica Bancabilità e Rischio</h4>
-                           <!-- Updated Synthesis Text for Calcidrata -->
-                           <p class="mb-3">Guglietta Global S.p.A. presenta un profilo di bancabilità **eccellente (IRP 82)**, caratterizzato da **solida struttura patrimoniale** (PN €9,2M, D/E 0,15), **ottima redditività** (EBITDA Margin 21,3%) e **indebitamento molto contenuto e sostenibile** (PFN/EBITDA 0,26x, DSCR 4,48x).</p>
+                           <p class="mb-3">FLC HEALTHY EVOLUTION S.R.L. presenta un profilo di bancabilità <strong>eccellente (IRP 87,3)</strong>, caratterizzato da <strong>eccezionale struttura patrimoniale</strong> (PN €776.453, D/E 0,00), <strong>ottima redditività</strong> (EBITDA Margin 14,91%) e <strong>assenza totale di indebitamento finanziario</strong> (PFN negativa -€99.972, liquidità netta).</p>
                            <div class="other-ratings border-top pt-3 mt-3">
                                <h6 class="card-title-small mb-2">Altri Indicatori Chiave (12/2024):</h6>
                                <ul class="list-unstyled mb-0 row gx-3 gy-2">
-                                   <li class="col-sm-6 d-flex align-items-center"><span class="icon-circle icon-circle-sm bg-icon-danger me-2"><i class="fas fa-chart-bar"></i></span><strong>Leanus Score:</strong> 2,99 <span class="badge bg-danger ms-1">Critico</span></li> <!-- Updated Value & Category -->
-                                   <li class="col-sm-6 d-flex align-items-center"><span class="icon-circle icon-circle-sm bg-icon-success me-2"><i class="fas fa-university"></i></span><strong>Rating MCC PD:</strong> 0,12% <span class="badge bg-success ms-1">Minimo (F1)</span></li> <!-- Updated Value & Category -->
-                                   <li class="col-sm-6 d-flex align-items-center"><span class="icon-circle icon-circle-sm bg-icon-success me-2"><i class="fas fa-balance-scale-right"></i></span><strong>PFN/EBITDA:</strong> 0,26x <span class="badge bg-success ms-1">Ottimo</span></li> <!-- Updated Value -->
-                                    <li class="col-sm-6 d-flex align-items-center"><span class="icon-circle icon-circle-sm bg-icon-success me-2"><i class="fas fa-landmark"></i></span><strong>Leva (D/E):</strong> 0,15x <span class="badge bg-success ms-1">Ottimo</span></li> <!-- Updated Value -->
+                                   <li class="col-sm-6 d-flex align-items-center"><span class="icon-circle icon-circle-sm bg-icon-success me-2"><i class="fas fa-chart-bar"></i></span><strong>Leanus Score:</strong> 7,16 <span class="badge bg-success ms-1">Discreto</span></li>
+                                   <li class="col-sm-6 d-flex align-items-center"><span class="icon-circle icon-circle-sm bg-icon-warning me-2"><i class="fas fa-university"></i></span><strong>Rating MCC PD:</strong> N.A. <span class="badge bg-warning ms-1">UNRATED</span></li>
+                                   <li class="col-sm-6 d-flex align-items-center"><span class="icon-circle icon-circle-sm bg-icon-success me-2"><i class="fas fa-balance-scale-right"></i></span><strong>PFN/EBITDA:</strong> -0,65x <span class="badge bg-success ms-1">Eccellente</span></li>
+                                    <li class="col-sm-6 d-flex align-items-center"><span class="icon-circle icon-circle-sm bg-icon-success me-2"><i class="fas fa-landmark"></i></span><strong>Leva (D/E):</strong> 0,00x <span class="badge bg-success ms-1">Eccellente</span></li>
                                </ul>
                            </div>
-                           <p class="small text-muted mt-3 mb-0">L'unico elemento di attenzione è il Leanus Score "Critico", che suggerisce di monitorare i trend negativi recenti (ricavi, liquidità, scorte) pur in un contesto di forte solidità complessiva.</p> <!-- Updated Text -->
+                           <p class="small text-muted mt-3 mb-0">L'unico elemento di attenzione è il DSO elevato (128 giorni), che suggerisce di ottimizzare la gestione dei crediti commerciali pur in un contesto di eccellente solidità complessiva.</p>
                        </div>
                  </div>
             </section>
@@ -169,29 +167,27 @@
                      <p>Analisi dettagliata della capacità di gestire l'indebitamento.</p>
                       <div class="row">
                          <div class="col-lg-7 mb-3 mb-lg-0">
-                              <h6>Tabella 4.1: Indicatori Sostenibilità Debito 2022-2024 (Calcidrata)</h6>
-                             <!-- Updated Table Data for Calcidrata -->
+                              <h6>Tabella 4.1: Indicatori Sostenibilità Debito 2022-2024 (FLC HEALTHY EVOLUTION)</h6>
                              <div class="table-responsive">
                                  <table class="table table-sm table-striped table-hover">
                                      <thead class="table-light"><tr><th>Indicatore</th><th class="text-end">2022</th><th class="text-end">2023</th><th class="text-end">2024</th><th>Trend</th><th>Benchmark</th><th>Valutazione</th></tr></thead>
                                      <tbody>
-                                         <tr><td>PFN/EBITDA</td><td class="text-end">0,22</td><td class="text-end">0,16</td><td class="text-end">0,26</td><td class="text-danger">↑</td><td>&lt; 3,0</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
-                                         <tr><td>D/E (Leva Fin.)</td><td class="text-end">0,24</td><td class="text-end">0,19</td><td class="text-end">0,15</td><td class="text-success">↓</td><td>&lt; 0,5</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
-                                         <tr><td>DSCR</td><td class="text-end">N.D.</td><td class="text-end">N.D.</td><td class="text-end">4,48</td><td>N.A.</td><td>&gt; 1,2</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
-                                         <tr><td>Oneri Fin./Ricavi</td><td class="text-end">0,41%</td><td class="text-end">0,60%</td><td class="text-end">0,63%</td><td class="text-danger">↑</td><td>&lt; 3%</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
-                                         <tr><td>CF Operativo/Ricavi</td><td class="text-end">22,4%</td><td class="text-end">10,1%</td><td class="text-end">12,3%</td><td class="text-success">↑</td><td>&gt; 5%</td><td><span class="status-badge bg-success">Molto Buono</span></td></tr>
+                                         <tr><td>PFN/EBITDA</td><td class="text-end">-0,58</td><td class="text-end">-2,77</td><td class="text-end">-0,65</td><td class="text-success">↑</td><td>&lt; 3,0</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                                         <tr><td>D/E (Leva Fin.)</td><td class="text-end">0,01</td><td class="text-end">0,02</td><td class="text-end">0,00</td><td class="text-success">↓</td><td>&lt; 0,5</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                                         <tr><td>EBITDA/Oneri Fin.</td><td class="text-end">168,82</td><td class="text-end">18,87</td><td class="text-end">1218,58</td><td class="text-success">↑</td><td>&gt; 10,0</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                                         <tr><td>Oneri Fin./Ricavi</td><td class="text-end">0,12%</td><td class="text-end">0,14%</td><td class="text-end">0,01%</td><td class="text-success">↓</td><td>&lt; 3%</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                                         <tr><td>CF Operativo/Ricavi</td><td class="text-end">6,2%</td><td class="text-end">-3,4%</td><td class="text-end">7,21%</td><td class="text-success">↑</td><td>&gt; 5%</td><td><span class="status-badge bg-success">Buono</span></td></tr>
                                      </tbody>
                                  </table>
                              </div>
                          </div>
                           <div class="col-lg-5">
-                               <h6 class="text-center small">Grafico 4.1: Indicatori Sostenibilità (Radar - Calcidrata)</h6>
+                               <h6 class="text-center small">Grafico 4.1: Indicatori Sostenibilità (Radar - FLC HEALTHY EVOLUTION)</h6>
                                <div class="chart-container" style="height: 300px;"> <canvas id="debtSustainabilityChart"></canvas> </div>
                           </div>
                      </div>
-                      <h6 class="mt-4">Interpretazione Indicatori Sostenibilità (Calcidrata):</h6>
-                      <!-- Updated Commentary -->
-                      <ul class="small"><li><strong>PFN/EBITDA (0,26x):</strong> Ottimo (< 1x), anche se leggermente peggiorato vs 2023.</li><li><strong>Leva D/E (0,15x):</strong> Ottima (< 0,5x), indipendenza finanziaria elevata.</li><li><strong>DSCR (4,48x):</strong> Eccellente (> 1,2), ampia capacità di servizio del debito.</li><li><strong>Oneri Fin./Ricavi (0,63%):</strong> Ottimi (< 1%).</li><li><strong>CF Operativo/Ricavi (12,25%):</strong> Molto buono (> 8-10%).</li></ul>
+                      <h6 class="mt-4">Interpretazione Indicatori Sostenibilità (FLC HEALTHY EVOLUTION):</h6>
+                      <ul class="small"><li><strong>PFN/EBITDA (-0,65x):</strong> Eccellente (PFN negativa), indica posizione di liquidità netta.</li><li><strong>Leva D/E (0,00x):</strong> Eccellente (assenza totale di debito finanziario).</li><li><strong>EBITDA/Oneri Fin. (1218,58x):</strong> Eccellente (>10x), capacità di copertura straordinaria.</li><li><strong>Oneri Fin./Ricavi (0,01%):</strong> Eccellenti (praticamente nulli).</li><li><strong>CF Operativo/Ricavi (7,21%):</strong> Buono (>5%), adeguata conversione dei ricavi in liquidità.</li></ul>
                   </div>
              </div>
 
@@ -202,19 +198,18 @@
                      <p>Valutazione della capacità dell'azienda di assumere nuovo debito.</p>
                      <div class="row align-items-center">
                          <div class="col-md-5 mb-3 mb-md-0 text-center">
-                             <div class="alert-box alert-success p-3"> <!-- Changed to Success -->
-                                 <div class="icon-circle bg-icon-success mx-auto mb-2"><i class="fas fa-plus"></i></div> <!-- Changed Icon -->
+                             <div class="alert-box alert-success p-3">
+                                 <div class="icon-circle bg-icon-success mx-auto mb-2"><i class="fas fa-plus"></i></div>
                                  <h6 class="mb-1">Capacità Incrementale Stimata:</h6>
-                                 <p class="fs-3 fw-bold mb-1">+ € 5,0 - 6,4 M</p> <!-- Updated Value -->
-                                 <p class="small text-muted mb-0">Debito aggiuntivo sostenibile (Stima Leanus/Kitzanos).</p>
+                                 <p class="fs-3 fw-bold mb-1">+ € 543.000</p>
+                                 <p class="small text-muted mb-0">Debito aggiuntivo sostenibile (Stima Leanus).</p>
                              </div>
                          </div>
                           <div class="col-md-7">
-                             <h6>Fattori Chiave (Calcidrata):</h6>
-                             <!-- Updated Factors -->
+                             <h6>Fattori Chiave (FLC HEALTHY EVOLUTION):</h6>
                               <div class="row small">
-                                  <div class="col-6"><strong>Supporto:</strong><ul class="fa-ul ms-3"><li><span class="fa-li text-success"><i class="fas fa-check"></i></span>EBITDA Elevato</li><li><span class="fa-li text-success"><i class="fas fa-check"></i></span>CF Op. Robusto</li><li><span class="fa-li text-success"><i class="fas fa-check"></i></span>PFN/EBITDA Bassissimo</li><li><span class="fa-li text-success"><i class="fas fa-check"></i></span>Leva D/E Minima</li></ul></div>
-                                  <div class="col-6"><strong>Limitanti:</strong><ul class="fa-ul ms-3"><li><span class="fa-li text-danger"><i class="fas fa-times"></i></span>Leanus Score Critico</li><li><span class="fa-li text-warning"><i class="fas fa-exclamation"></i></span>Calo Liquidità Recente</li><li><span class="fa-li text-warning"><i class="fas fa-exclamation"></i></span>Aumento Scorte</li><li><span class="fa-li text-warning"><i class="fas fa-exclamation"></i></span>Contrazione Ricavi</li></ul></div>
+                                  <div class="col-6"><strong>Supporto:</strong><ul class="fa-ul ms-3"><li><span class="fa-li text-success"><i class="fas fa-check"></i></span>Assenza Debito Attuale</li><li><span class="fa-li text-success"><i class="fas fa-check"></i></span>EBITDA Solido</li><li><span class="fa-li text-success"><i class="fas fa-check"></i></span>Liquidità Eccedente</li><li><span class="fa-li text-success"><i class="fas fa-check"></i></span>Patrimonio Netto Robusto</li></ul></div>
+                                  <div class="col-6"><strong>Limitanti:</strong><ul class="fa-ul ms-3"><li><span class="fa-li text-danger"><i class="fas fa-times"></i></span>DSO Elevato (128 gg)</li><li><span class="fa-li text-warning"><i class="fas fa-exclamation"></i></span>Volatilità Storica EBITDA</li><li><span class="fa-li text-warning"><i class="fas fa-exclamation"></i></span>Dimensione Micro Impresa</li><li><span class="fa-li text-warning"><i class="fas fa-exclamation"></i></span>Giovane Età Aziendale</li></ul></div>
                               </div>
                          </div>
                      </div>
@@ -226,15 +221,15 @@
                  <div class="card-header"><h5 class="mb-0">4.4 DSCR (Debt Service Coverage Ratio)</h5></div>
                   <div class="card-body">
                       <p>Valutazione della capacità di coprire il servizio del debito.</p>
-                      <div class="alert-box alert-success"> <!-- Kept Success -->
+                      <div class="alert-box alert-success">
                           <div class="row">
-                              <div class="col-md-4 text-center border-end"><strong>DSCR Calcolato</strong><br><span class="fs-3 fw-bold">4,48</span></div> <!-- Updated Value -->
+                              <div class="col-md-4 text-center border-end"><strong>DSCR Calcolato</strong><br><span class="fs-3 fw-bold">49,80</span></div>
                               <div class="col-md-4 text-center border-end"><strong>Soglia Minima</strong><br><span class="fs-3 fw-bold">1,2</span></div>
-                              <div class="col-md-4 text-center"><strong>Margine Sicurezza</strong><br><span class="fs-3 fw-bold">273%</span></div> <!-- Updated Margin -->
+                              <div class="col-md-4 text-center"><strong>Margine Sicurezza</strong><br><span class="fs-3 fw-bold">4050%</span></div>
                           </div>
                       </div>
-                      <p class="small mt-3">Il DSCR <strong>eccellente (> 4x)</strong> indica che l'azienda genera flussi sufficienti a coprire oltre 4 volte gli impegni per il servizio del debito (ipotizzando rimborso in 3 periodi).</p> <!-- Updated Text -->
-                      <p class="small">Anche in scenari di forte stress (es. -70% CF Op.), il DSCR rimarrebbe sopra 1.3, confermando l'elevata resilienza finanziaria.</p> <!-- Added Stress Test Info -->
+                      <p class="small mt-3">Il DSCR <strong>eccezionalmente elevato (49,80)</strong> è calcolato assumendo l'ipotesi teorica di restituzione dell'indebitamento finanziario (attualmente nullo) in 3 periodi. Tale valore, benché tecnicamente corretto, ha limitata significatività operativa data l'assenza di servizio del debito effettivo.</p>
+                      <p class="small">Anche in scenari di forte stress (es. -50% CF Op.), il DSCR rimarrebbe ampiamente sopra le soglie di sicurezza, confermando l'eccezionale resilienza finanziaria.</p>
                   </div>
              </div>
 
@@ -243,16 +238,14 @@
                  <div class="card-header"><h5 class="mb-0">4.5 PFN/EBITDA</h5></div>
                   <div class="card-body">
                      <p>Valutazione della sostenibilità del debito rispetto alla marginalità lorda.</p>
-                      <h6>Evoluzione storica PFN/EBITDA (Calcidrata):</h6>
-                      <!-- Updated Table Data for Calcidrata -->
+                      <h6>Evoluzione storica PFN/EBITDA (FLC HEALTHY EVOLUTION):</h6>
                       <div class="table-responsive"> <table class="table table-sm table-striped table-hover"> <thead class="table-light"><tr><th>Anno</th><th class="text-end">PFN (€)</th><th class="text-end">EBITDA (€)</th><th class="text-end">PFN/EBITDA (x)</th><th>Valutazione</th></tr></thead> <tbody>
-                          <tr><td>2022</td><td class="text-end">773.379</td><td class="text-end">3.510.225</td><td class="text-end">0,22</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
-                          <tr><td>2023</td><td class="text-end">488.439</td><td class="text-end">3.019.319</td><td class="text-end">0,16</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
-                          <tr><td>2024</td><td class="text-end">735.643</td><td class="text-end">2.866.018</td><td class="text-end">0,26</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
+                          <tr><td>2022</td><td class="text-end">-89.650</td><td class="text-end">155.297</td><td class="text-end">-0,58</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                          <tr><td>2023</td><td class="text-end">-57.959</td><td class="text-end">20.908</td><td class="text-end">-2,77</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                          <tr><td>2024</td><td class="text-end">-99.972</td><td class="text-end">154.660</td><td class="text-end">-0,65</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
                           </tbody> </table> </div>
-                      <h6 class="mt-4">Interpretazione (Calcidrata):</h6>
-                      <!-- Updated Commentary -->
-                      <ul class="small"><li>Valore 2024 (0,26x) <strong>eccellente</strong>, ampiamente sotto la soglia critica (3-4x) e anche sotto la soglia ottimale (1x).</li><li>Leggero peggioramento nel 2024 dovuto a calo liquidità e lieve calo EBITDA, ma il livello rimane estremamente contenuto.</li><li>Conferma bassissimo rischio finanziario e ampia capacità di indebitamento futuro.</li></ul>
+                      <h6 class="mt-4">Interpretazione (FLC HEALTHY EVOLUTION):</h6>
+                      <ul class="small"><li>Valore 2024 (-0,65x) <strong>eccellente</strong>, indica posizione finanziaria netta positiva (liquidità eccedente).</li><li>Miglioramento rispetto al 2023 dovuto al recupero dell'EBITDA (+639,72%) e all'incremento della liquidità (+41,8%).</li><li>La posizione finanziaria netta negativa rappresenta una condizione di ottimalità finanziaria, indicando autofinanziamento completo della crescita.</li></ul>
                   </div>
              </div>
 
@@ -263,53 +256,53 @@
                     <p>Valutazione dell'allineamento tra la struttura degli impieghi (investimenti) e delle fonti (finanziamenti).</p>
                     <div class="row gy-3">
                          <div class="col-md-6">
-                            <div class="dashboard-card matching-card excellent h-100"> <!-- Changed to excellent -->
+                            <div class="dashboard-card matching-card excellent h-100">
                                  <h6 class="matching-card-header"><i class="fas fa-coins text-success"></i> Cash Flow Matching</h6>
                                  <p class="small mb-1">Valuta l'allineamento tra servizio del debito e capacità di generazione di cassa.</p>
                                  <ul class="small list-unstyled">
-                                     <li><strong>DSCR 2024:</strong> 4,48 (> 1,2 Soglia)</li> <!-- Updated -->
-                                     <li><strong>Cash Flow Operativo 2024:</strong> €1.644.834</li> <!-- Updated -->
-                                     <li><strong>Servizio Debito Stimato*:</strong> ~€367.000</li> <!-- Updated -->
-                                     <li><strong>Margine Sicurezza:</strong> Elevatissimo</li> <!-- Updated -->
+                                     <li><strong>Cash Flow Operativo 2024:</strong> €74.846</li>
+                                     <li><strong>Servizio Debito Effettivo:</strong> €0</li>
+                                     <li><strong>DSCR teorico:</strong> ∞ (infinito)</li>
+                                     <li><strong>Margine Sicurezza:</strong> Massimo</li>
                                  </ul>
-                                 <p class="small fw-bold mb-0">Valutazione: <span class="status-badge bg-success">Eccellente</span></p> <!-- Updated -->
-                                 <p class="small text-muted mt-1 mb-0">*Calcolato come CF Operativo / DSCR</p>
+                                 <p class="small fw-bold mb-0">Valutazione: <span class="status-badge bg-success">Eccellente</span></p>
+                                 <p class="small text-muted mt-1 mb-0">Assenza di obbligazioni finanziarie elimina rischio di mismatch.</p>
                             </div>
                          </div>
                           <div class="col-md-6">
-                             <div class="dashboard-card matching-card good h-100"> <!-- Changed to Good -->
-                                  <h6 class="matching-card-header"><i class="fas fa-layer-group text-success"></i> Amounts Matching</h6> <!-- Changed icon color -->
+                             <div class="dashboard-card matching-card excellent h-100">
+                                  <h6 class="matching-card-header"><i class="fas fa-layer-group text-success"></i> Amounts Matching</h6>
                                   <p class="small mb-1">Valuta se il debito MLT e PN coprono gli investimenti a MLT.</p>
                                   <ul class="small list-unstyled">
-                                      <li><strong>Attivo Fisso Netto 2024:</strong> €9.957.250</li> <!-- Updated -->
-                                      <li><strong>Debiti Finanziari MLT 2024:</strong> €1.134.894</li> <!-- Updated -->
-                                      <li><strong>Patrimonio Netto 2024:</strong> €9.179.864</li> <!-- Updated -->
-                                      <li><strong>Copertura Immob. Capitale Perm.:</strong> 1,04 (> 1)</li> <!-- Updated (PN+MLT)/AF -->
+                                      <li><strong>Attivo Fisso Netto 2024:</strong> €521.449</li>
+                                      <li><strong>Debiti Finanziari MLT 2024:</strong> €0</li>
+                                      <li><strong>Patrimonio Netto 2024:</strong> €776.453</li>
+                                      <li><strong>Copertura Immob.:</strong> 1,49 (> 1)</li>
                                   </ul>
-                                  <p class="small fw-bold mb-0">Valutazione: <span class="status-badge bg-success">Buono</span></p> <!-- Updated -->
-                                   <p class="small text-muted mt-1 mb-0">Fonti durevoli coprono adeguatamente attivo fisso.</p> <!-- Updated -->
+                                  <p class="small fw-bold mb-0">Valutazione: <span class="status-badge bg-success">Eccellente</span></p>
+                                   <p class="small text-muted mt-1 mb-0">Patrimonio netto copre integralmente immobilizzazioni con margine 49%.</p>
                              </div>
                          </div>
                           <div class="col-md-6">
-                             <div class="dashboard-card matching-card good h-100"> <!-- Changed to Good -->
-                                 <h6 class="matching-card-header"><i class="fas fa-hourglass-half text-success"></i> Duration Matching</h6> <!-- Changed icon color -->
+                             <div class="dashboard-card matching-card excellent h-100">
+                                 <h6 class="matching-card-header"><i class="fas fa-hourglass-half text-success"></i> Duration Matching</h6>
                                   <p class="small mb-1">Valuta se la durata del finanziamento è allineata alla vita utile dell'attivo.</p>
-                                   <p class="small mb-1">Dati non puntuali disponibili, ma:</p>
+                                   <p class="small mb-1">L'assenza di debiti finanziari elimina problematiche di Duration Matching. La struttura temporale degli asset evidenzia:</p>
                                    <ul class="small list-unstyled">
-                                      <li>Attivo fisso significativo e in crescita (+8.9%).</li>
-                                      <li>Riduzione Debiti MLT (-16%) suggerisce rimborso in corso.</li>
-                                      <li>Probabile buon allineamento data la stabilità finanziaria.</li>
+                                      <li><strong>Immobilizzazioni immateriali:</strong> €512.334 (98,3% del totale)</li>
+                                      <li><strong>Immobilizzazioni materiali:</strong> €7.115 (1,4% del totale)</li>
+                                      <li><strong>Immobilizzazioni finanziarie:</strong> €2.000 (0,4% del totale)</li>
                                    </ul>
-                                   <p class="small fw-bold mb-0">Valutazione: <span class="status-badge bg-success">Buono (stimato)</span></p> <!-- Updated -->
-                                   <p class="small text-muted mt-1 mb-0">Da verificare con scadenziario debiti.</p>
+                                   <p class="small fw-bold mb-0">Valutazione: <span class="status-badge bg-success">Eccellente</span></p>
+                                   <p class="small text-muted mt-1 mb-0">Finanziamento equity ottimale per asset immateriali.</p>
                              </div>
                          </div>
                            <div class="col-md-6">
-                              <div class="dashboard-card matching-card good h-100"> <!-- Kept Good -->
+                              <div class="dashboard-card matching-card excellent h-100">
                                    <h6 class="matching-card-header"><i class="fas fa-gem text-success"></i> Quality Matching</h6>
                                    <p class="small mb-1">Valuta se la forma tecnica del finanziamento è appropriata alla natura dell'attivo.</p>
-                                    <p class="small mb-0">La composizione dell'attivo (materiali e finanziarie) giustifica il ricorso a debito MLT. Non emergono evidenti mismatching qualitativi.</p> <!-- Updated -->
-                                   <p class="small fw-bold mb-0 mt-2">Valutazione: <span class="status-badge bg-success">Buono</span></p>
+                                    <p class="small mb-0">La qualità del matching risulta eccellente, con caratteristiche ottimali: business model Services appropriatamente finanziato con capitale proprio, asset prevalentemente immateriali coerenti con finanziamento equity, flessibilità operativa massima per adattamenti strategici.</p>
+                                   <p class="small fw-bold mb-0 mt-2">Valutazione: <span class="status-badge bg-success">Eccellente</span></p>
                               </div>
                           </div>
                      </div>
@@ -320,17 +313,16 @@
              <div class="card mb-4 report-section">
                  <div class="card-header"><h5 class="mb-0">4.8 KPI della Crisi d'Impresa (CCII)</h5></div>
                  <div class="card-body">
-                      <div class="alert-box alert-success d-flex align-items-center mb-4"> <span class="icon-circle bg-icon-success me-3"><i class="fas fa-check"></i></span> <div> <h6 class="mb-1">Indicatori CCII: <strong>6 su 6 Rispettati</strong></h6> <p class="small mb-0">Assenza di segnali di allerta specifici. Valori ampiamente sopra le soglie.</p> </div> </div> <!-- Updated Text -->
-                      <h6 class="mt-4">Tabella 4.2: Dettaglio indicatori CCII (2024 - Calcidrata)</h6>
-                      <!-- Updated Table Data for Calcidrata -->
+                      <div class="alert-box alert-success d-flex align-items-center mb-4"> <span class="icon-circle bg-icon-success me-3"><i class="fas fa-check"></i></span> <div> <h6 class="mb-1">Indicatori CCII: <strong>6 su 6 Rispettati</strong></h6> <p class="small mb-0">Assenza di segnali di allerta specifici. Valori ampiamente sopra le soglie.</p> </div> </div>
+                      <h6 class="mt-4">Tabella 4.2: Dettaglio indicatori CCII (2024 - FLC HEALTHY EVOLUTION)</h6>
                        <div class="table-responsive"> <table class="table table-sm table-striped table-hover"> <thead class="table-light"><tr><th>Indicatore</th><th class="text-end">Valore</th><th>Soglia Allarme</th><th>Esito</th></tr></thead> <tbody>
-                           <tr><td>Oneri Finanziari/Ricavi</td><td class="text-end">0,63%</td><td>> 3,0%</td><td><span class="status-badge bg-success">No allarme</span></td></tr>
-                           <tr><td>PN/Debiti Totali</td><td class="text-end">156,92%</td><td>< 7,6%</td><td><span class="status-badge bg-success">No allarme</span></td></tr>
-                           <tr><td>Attività Breve/Passività Breve</td><td class="text-end">138,71%</td><td>< 93,7%</td><td><span class="status-badge bg-success">No allarme</span></td></tr> <!-- Recalculated with Calcidrata data -->
-                           <tr><td>CF Operativo/Totale Attivo</td><td class="text-end">11,04%</td><td>< 0,5%</td><td><span class="status-badge bg-success">No allarme</span></td></tr> <!-- Recalculated CF Op / Tot Attivo -->
-                           <tr><td>Indeb. Prev. e Trib./Attivo</td><td class="text-end">3,61%</td><td>> 4,9%</td><td><span class="status-badge bg-success">No allarme</span></td></tr>
+                           <tr><td>Oneri Finanziari/Ricavi</td><td class="text-end">0,01%</td><td>> 3,0%</td><td><span class="status-badge bg-success">No allarme</span></td></tr>
+                           <tr><td>PN/Debiti Totali</td><td class="text-end">364,20%</td><td>< 7,6%</td><td><span class="status-badge bg-success">No allarme</span></td></tr>
+                           <tr><td>Attività Breve/Passività Breve</td><td class="text-end">219,18%</td><td>< 93,7%</td><td><span class="status-badge bg-success">No allarme</span></td></tr>
+                           <tr><td>CF Operativo/Totale Attivo</td><td class="text-end">7,51%</td><td>< 0,5%</td><td><span class="status-badge bg-success">No allarme</span></td></tr>
+                           <tr><td>Indeb. Prev. e Trib./Attivo</td><td class="text-end">0,00%</td><td>> 4,9%</td><td><span class="status-badge bg-success">No allarme</span></td></tr>
                            </tbody> </table> </div>
-                        <p class="small text-muted mt-3">Il pieno rispetto degli indicatori CCII conferma la solidità strutturale e l'assenza di rischi immediati di crisi.</p> <!-- Updated Text -->
+                        <p class="small text-muted mt-3">Tutti e 5 gli indicatori risultano <strong>ampiamente conformi</strong> alle soglie normative, con margini di sicurezza che eccedono del 300-500% i valori critici. Particolarmente significativo il valore dell'<strong>adeguatezza patrimoniale</strong> (364,1% vs soglia 7,6%), indicativo di una struttura finanziaria estremamente solida.</p>
                  </div>
              </div>
 
@@ -338,15 +330,14 @@
             <div class="card mb-4 report-section">
                 <div class="card-header"><h5 class="mb-0">4.9 Raccomandazioni per la Strategia Finanziaria</h5></div>
                  <div class="card-body">
-                     <!-- Updated Recommendations for Calcidrata -->
                      <ol class="small">
-                         <li class="mb-2"><strong>Monitoraggio Trend Negativi (Alta):</strong> Indagare cause calo ricavi, aumento scorte e calo liquidità. Attuare azioni correttive (vedi Parte 6).</li>
-                         <li class="mb-2"><strong>Piano Strategico Investimenti (Media):</strong> Sfruttare l'elevata capacità di indebitamento (€5-6M) per finanziare crescita/diversificazione/efficienza, mantenendo PFN/EBITDA < 1.5x.</li>
-                         <li class="mb-2"><strong>Valutazione Operazioni M&A (Media):</strong> Considerare acquisizioni strategiche nel settore per consolidamento, data la solidità finanziaria.</li>
-                         <li class="mb-2"><strong>Ottimizzazione Tesoreria (Media):</strong> Implementare sistema strutturato di treasury management per migliorare gestione e rendimento liquidità.</li>
-                         <li class="mb-2"><strong>Gestione Rischio Tassi (Bassa):</strong> Valutare coperture su tassi data la volatilità, anche se l'impatto attuale è limitato.</li>
+                         <li class="mb-2"><strong>Ottimizzazione Credit Management (Alta):</strong> Implementazione sistema di credit scoring automatico, incentivi per pagamenti anticipati, factoring pro-soluto selettivo. Target: riduzione DSO a 90 giorni entro 12 mesi.</li>
+                         <li class="mb-2"><strong>Utilizzo Selettivo Leva Finanziaria (Media):</strong> Valutare utilizzo moderato di debito (€200.000-250.000) per accelerare crescita, mantenendo DSCR > 1,25x e sfruttando il differenziale ROI-costo debito positivo.</li>
+                         <li class="mb-2"><strong>Gestione Attiva Liquidità (Media):</strong> Implementare sistema di cash management per ottimizzare rendimento della liquidità eccedente (€99.972), con potenziale rendimento aggiuntivo 2-3% annuo.</li>
+                         <li class="mb-2"><strong>Diversificazione Fonti (Bassa):</strong> Accesso a linee di credito per flessibilità operativa, con commitment fee contenuto e utilizzo selettivo per opportunità strategiche.</li>
+                         <li class="mb-2"><strong>Ottimizzazione Fiscale (Bassa):</strong> Valutare investimenti con benefici fiscali (R&D, digitalizzazione) per ridurre carico fiscale e modernizzare infrastruttura tecnologica.</li>
                      </ol>
-                      <a href="parte6_rischi-raccomandazioni.html#table_7_1_1" class="btn btn-sm btn-primary mt-2 btn-pill"> <i class="fas fa-list-alt me-1"></i> Vai a Piano d'Azione Dettagliato</a> <!-- Updated Link Target -->
+                      <a href="parte6_rischi-raccomandazioni.html#table_7_1_1" class="btn btn-sm btn-primary mt-2 btn-pill"> <i class="fas fa-list-alt me-1"></i> Vai a Piano d'Azione Dettagliato</a>
                  </div>
             </div>
 
@@ -371,14 +362,14 @@
         document.getElementById('currentYearSidebar').textContent = new Date().getFullYear();
         document.getElementById('currentYearFooterReport').textContent = new Date().getFullYear();
 
-         // Script aggiornamento badge IRP header (Updated for Calcidrata)
+         // Script aggiornamento badge IRP header
          document.addEventListener('DOMContentLoaded', function() {
-             const irpScoreValue = 82.03; // Updated IRP Value
+             const irpScoreValue = 87.25;
              const irpHeaderBadge = document.getElementById('irp-header-badge');
              if(irpHeaderBadge) {
                  let badgeClass = 'bg-warning text-dark';
-                 if (irpScoreValue >= 71) badgeClass = 'bg-success'; // Basso
-                 else if (irpScoreValue < 51) badgeClass = 'bg-danger'; // Alto
+                 if (irpScoreValue >= 71) badgeClass = 'bg-success';
+                 else if (irpScoreValue < 51) badgeClass = 'bg-danger';
                  irpHeaderBadge.className = `badge ${badgeClass} me-3`;
                  irpHeaderBadge.textContent = `IRP: ${irpScoreValue.toFixed(1)}`;
              }
@@ -397,8 +388,7 @@
              }
          });
 </script>
-
 <scan-chat data-bot-id="44479c6e-7072-49fc-9046-e650ff6f9874"></scan-chat>
-<script src=".  /js/bundle.js"></script>
+<script src="../js/bundle.js"></script>
 </body>
 </html>

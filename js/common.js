@@ -25,7 +25,7 @@ function handleLogin(event) {
     // --- VALIDAZIONE CREDENZIALI ---
     // Sostituisci questa logica con una verifica sicura se necessario.
     // Accetta le credenziali predefinite o qualsiasi coppia per la demo.
-    if ((username === 'AdminFLC' && password === 'FLCHealthy2025') || (username && password)) {
+    if ((username === 'AdminCalcidrata' && password === 'Calcidrata2025') || (username && password)) {
         console.log('Login successful per', username);
         // Salva stato login (localStorage è per demo, NON sicuro per produzione)
         try {
@@ -150,6 +150,53 @@ function formatPercentage(value, digits = 1) {
          console.error("Errore formattazione percentuale:", value, e);
          return "Err"; // Valore di errore breve
      }
+}
+
+/**
+ * Formatta un indice di rischio con classe di rischio
+ * @param {number|string|null|undefined} value - Valore numerico dell'indice (es. 87.25)
+ * @returns {object} - Oggetto con valore formattato e classe di rischio
+ */
+function formatRiskIndex(value) {
+    const num = parseFloat(value);
+    if (value === null || value === undefined || isNaN(num)) {
+        return { value: "N/D", class: "risk-na", label: "Non disponibile" };
+    }
+    
+    let riskClass, riskLabel;
+    
+    if (num >= 80) {
+        riskClass = "risk-very-low";
+        riskLabel = "MOLTO BASSO";
+    } else if (num >= 65) {
+        riskClass = "risk-low";
+        riskLabel = "BASSO";
+    } else if (num >= 50) {
+        riskClass = "risk-medium";
+        riskLabel = "MEDIO";
+    } else if (num >= 35) {
+        riskClass = "risk-high";
+        riskLabel = "ALTO";
+    } else {
+        riskClass = "risk-very-high";
+        riskLabel = "MOLTO ALTO";
+    }
+    
+    try {
+        const formattedValue = new Intl.NumberFormat('it-IT', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }).format(num);
+        
+        return {
+            value: formattedValue,
+            class: riskClass,
+            label: riskLabel
+        };
+    } catch(e) {
+        console.error("Errore formattazione indice di rischio:", value, e);
+        return { value: "Err", class: "risk-na", label: "Errore" };
+    }
 }
 
 /**

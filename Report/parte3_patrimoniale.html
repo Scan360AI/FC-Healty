@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analisi Patrimoniale - Guglietta Global S.p.A. | SCAN V9</title> <!-- Changed Company Name -->
+    <title>Analisi Patrimoniale - FLC HEALTHY EVOLUTION S.R.L. | SCAN V9</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="../css/styles.css" rel="stylesheet"> <!-- CSS V9 -->
+    <link href="../css/styles.css" rel="stylesheet">
     <link href="../css/print.css" rel="stylesheet" media="print">
-    <!-- Stili specifici eventuali -->
 </head>
 <body>
 
 <!-- Sidebar -->
     <aside class="sidebar no-print">
-        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>Guglietta Global S.p.A.</h5> </div> <!-- Changed Name -->
+        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>FLC HEALTHY EVOLUTION S.R.L.</h5> </div>
         <ul class="sidebar-nav flex-grow-1">
-            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li> <!-- Adjusted Path -->
+            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li>
             <li class="nav-title">Analisi Dettagliata</li>
-            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li> <!-- Adjusted Paths -->
+            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte2_economico.html"> <i class="fas fa-balance-scale fa-fw"></i> Analisi Economica </a> </li>
             <li class="nav-item"> <a class="nav-link active" href="parte3_patrimoniale.html"> <i class="fas fa-landmark fa-fw"></i> Analisi Patrimoniale </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte4_bancabilita.html"> <i class="fas fa-university fa-fw"></i> Bancabilità </a> </li>
@@ -27,7 +26,6 @@
             <li class="nav-item"> <a class="nav-link" href="parte6_rischi-raccomandazioni.html"> <i class="fas fa-exclamation-triangle fa-fw"></i> Rischi e Azioni </a> </li>
             <li class="nav-title">Approfondimenti</li>
             <li class="nav-item"> <a class="nav-link" href="irp_dettaglio.html"> <i class="fas fa-shield-alt fa-fw"></i> Dettaglio IRP </a> </li>
-            <!-- Removed Bilancio Plus Link -->
         </ul>
         <div class="sidebar-footer"> <small>SCAN360 © <span id="currentYearSidebar"></span> Kitzanos</small> </div>
     </aside>
@@ -40,19 +38,19 @@
         <header class="dashboard-header no-print">
             <div class="header-title">
                 <h5 class="mb-0">Report Dettagliato: Analisi Patrimoniale</h5>
-                <p class="mb-0">Guglietta Global S.p.A. | <span class="report-date">31 Dicembre 2024</span></p> <!-- Changed Name -->
+                <p class="mb-0">FLC HEALTHY EVOLUTION S.R.L. | <span class="report-date">31 Dicembre 2024</span></p>
             </div>
             <div class="header-controls d-flex align-items-center">
-                <span id="irp-header-badge" class="badge me-3"></span> <!-- Badge IRP -->
+                <span id="irp-header-badge" class="badge me-3"></span>
                 <button class="btn btn-sm btn-outline-secondary me-2 print-button" onclick="printDocument()"> <i class="fas fa-print"></i> Stampa </button>
                 <div class="dropdown">
-                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> Guglietta Global S.p.A. </button> <!-- Changed Name -->
+                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> FLC HEALTHY EVOLUTION S.R.L. </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton"> <li><button class="dropdown-item" type="button" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button></li> </ul>
                 </div>
             </div>
         </header>
         <div class="container d-none d-print-block mt-4 mb-4">
-            <h1 class="text-center mb-0"><span class="company-name">Guglietta Global S.p.A.</span></h1> <!-- Changed Name -->
+            <h1 class="text-center mb-0"><span class="company-name">FLC HEALTHY EVOLUTION S.R.L.</span></h1>
             <p class="text-center mb-0">Report Dettagliato: Analisi Patrimoniale | <span class="report-date">31 Dicembre 2024</span></p>
             <hr>
         </div>
@@ -61,7 +59,7 @@
         <div class="dashboard-container">
 
             <!-- ================================================================ -->
-            <!-- CONTENUTO SPECIFICO PARTE 3 - V9 - Updated for Calcidrata -->
+            <!-- CONTENUTO SPECIFICO PARTE 3 - V9 - Updated for FLC HEALTHY EVOLUTION -->
             <!-- ================================================================ -->
 
             <h2 class="section-title" id="patrimonial-analysis"><i class="fas fa-landmark me-2"></i>ANALISI PATRIMONIALE</h2>
@@ -69,53 +67,52 @@
          <div class="card mb-4 report-section">
             <div class="card-header"><h5 class="mb-0">1. Stato Patrimoniale Riclassificato (triennio)</h5></div>
             <div class="card-body">
-                <p>L'analisi patrimoniale consente di valutare la struttura degli investimenti (Impieghi) e delle fonti di finanziamento (Fonti), evidenziando l'equilibrio strutturale di Guglietta Global S.p.A..</p> <!-- Updated Text -->
+                <p>L'analisi patrimoniale consente di valutare la struttura degli investimenti (Impieghi) e delle fonti di finanziamento (Fonti), evidenziando l'equilibrio strutturale di FLC HEALTHY EVOLUTION S.R.L..</p>
 
                  <!-- Grafici Composizione Attivo e Passivo -->
                  <div class="row mt-4">
                      <div class="col-lg-6 mb-3 mb-lg-0">
                          <h6 class="text-center small">Grafico 3.1: Composizione Impieghi 2024 (%)</h6>
                          <div class="chart-container" style="height: 300px;">
-                             <canvas id="assetsChart"></canvas> <!-- ID for report_init.js -->
+                             <canvas id="assetsChart"></canvas>
                          </div>
                      </div>
                      <div class="col-lg-6">
                           <h6 class="text-center small">Grafico 3.2: Composizione Fonti 2024 (%)</h6>
                           <div class="chart-container" style="height: 300px;">
-                              <canvas id="liabilitiesChart"></canvas> <!-- ID for report_init.js -->
+                              <canvas id="liabilitiesChart"></canvas>
                           </div>
                      </div>
                  </div>
 
                  <h6 class="mt-4">Tabella 3.1: Stato Patrimoniale Riclassificato 2022-2024 (valori in €)</h6>
-                 <!-- Updated Table Data for Calcidrata -->
                  <div class="table-responsive">
                      <table class="table table-sm table-striped table-hover">
                          <thead class="table-light">
                              <tr><th>IMPIEGHI</th><th class="text-end">12/2022</th><th class="text-end">%</th><th class="text-end">12/2023</th><th class="text-end">%</th><th class="text-end">12/2024</th><th class="text-end">%</th><th class="text-end">Δ 2023-2024</th></tr>
                          </thead>
                          <tbody>
-                             <tr><td>Liquidità</td><td class="text-end">973.620</td><td class="text-end">6,7%</td><td class="text-end">1.073.974</td><td class="text-end">7,5%</td><td class="text-end">619.281</td><td class="text-end">4,2%</td><td class="text-end text-danger">-42,3%</td></tr>
-                             <tr><td>Crediti Clienti</td><td class="text-end">2.641.890</td><td class="text-end">18,2%</td><td class="text-end">2.485.272</td><td class="text-end">17,3%</td><td class="text-end">2.302.104</td><td class="text-end">15,4%</td><td class="text-end text-success">-7,4%</td></tr>
-                             <tr><td>Rimanenze</td><td class="text-end">1.026.336</td><td class="text-end">7,1%</td><td class="text-end">810.659</td><td class="text-end">5,6%</td><td class="text-end">1.297.364</td><td class="text-end">8,7%</td><td class="text-end text-danger">+60,0%</td></tr>
-                             <tr><td>Altri Crediti</td><td class="text-end">705.944</td><td class="text-end">4,9%</td><td class="text-end">866.795</td><td class="text-end">6,0%</td><td class="text-end">725.882</td><td class="text-end">4,9%</td><td class="text-end text-danger">-16,3%</td></tr>
-                             <tr class="table-secondary fw-bold"><td>Totale Attivo Circolante</td><td class="text-end">5.347.790</td><td class="text-end">36,9%</td><td class="text-end">5.236.700</td><td class="text-end">36,4%</td><td class="text-end">4.944.631</td><td class="text-end">33,2%</td><td class="text-end text-danger">-5,6%</td></tr>
-                             <tr><td class="fw-bold">Immobilizzazioni Nette</td><td class="text-end">9.147.182</td><td class="text-end">63,1%</td><td class="text-end">9.141.938</td><td class="text-end">63,6%</td><td class="text-end">9.957.250</td><td class="text-end">66,8%</td><td class="text-end text-success">+8,9%</td></tr>
-                             <tr class="table-primary fw-bold"><td>TOTALE IMPIEGHI</td><td class="text-end">14.494.972</td><td class="text-end">100,0%</td><td class="text-end">14.378.638</td><td class="text-end">100,0%</td><td class="text-end">14.901.881</td><td class="text-end">100,0%</td><td class="text-end text-success">+3,6%</td></tr>
+                             <tr><td>Liquidità</td><td class="text-end">93.186</td><td class="text-end">11,6%</td><td class="text-end">70.515</td><td class="text-end">8,4%</td><td class="text-end">99.972</td><td class="text-end">10,0%</td><td class="text-end text-success">+41,8%</td></tr>
+                             <tr><td>Crediti Clienti</td><td class="text-end">156.495</td><td class="text-end">19,6%</td><td class="text-end">181.482</td><td class="text-end">21,7%</td><td class="text-end">367.325</td><td class="text-end">36,9%</td><td class="text-end text-success">+102,4%</td></tr>
+                             <tr><td>Rimanenze</td><td class="text-end">0</td><td class="text-end">0,0%</td><td class="text-end">0</td><td class="text-end">0,0%</td><td class="text-end">0</td><td class="text-end">0,0%</td><td class="text-end">0,0%</td></tr>
+                             <tr><td>Altri Crediti</td><td class="text-end">7.238</td><td class="text-end">0,9%</td><td class="text-end">48.874</td><td class="text-end">5,9%</td><td class="text-end">8.021</td><td class="text-end">0,8%</td><td class="text-end text-danger">-83,6%</td></tr>
+                             <tr class="table-secondary fw-bold"><td>Totale Attivo Circolante</td><td class="text-end">256.919</td><td class="text-end">32,1%</td><td class="text-end">300.871</td><td class="text-end">36,0%</td><td class="text-end">475.318</td><td class="text-end">47,7%</td><td class="text-end text-success">+58,0%</td></tr>
+                             <tr><td class="fw-bold">Immobilizzazioni Nette</td><td class="text-end">543.235</td><td class="text-end">67,9%</td><td class="text-end">533.750</td><td class="text-end">64,0%</td><td class="text-end">521.449</td><td class="text-end">52,3%</td><td class="text-end text-danger">-2,3%</td></tr>
+                             <tr class="table-primary fw-bold"><td>TOTALE IMPIEGHI</td><td class="text-end">800.154</td><td class="text-end">100,0%</td><td class="text-end">834.621</td><td class="text-end">100,0%</td><td class="text-end">996.697</td><td class="text-end">100,0%</td><td class="text-end text-success">+19,4%</td></tr>
                          </tbody>
                          <thead class="table-light">
                               <tr><th>FONTI</th><th class="text-end">12/2022</th><th class="text-end">%</th><th class="text-end">12/2023</th><th class="text-end">%</th><th class="text-end">12/2024</th><th class="text-end">%</th><th class="text-end">Δ 2023-2024</th></tr>
                          </thead>
                          <tbody>
-                             <tr><td>Debiti Fornitori</td><td class="text-end">2.750.334</td><td class="text-end">19,0%</td><td class="text-end">2.411.506</td><td class="text-end">16,8%</td><td class="text-end">2.437.166</td><td class="text-end">16,4%</td><td class="text-end text-success">+1,1%</td></tr>
-                             <tr><td>Altri Debiti</td><td class="text-end">1.256.817</td><td class="text-end">8,7%</td><td class="text-end">1.253.187</td><td class="text-end">8,7%</td><td class="text-end">1.127.684</td><td class="text-end">7,6%</td><td class="text-end text-danger">-10,0%</td></tr>
-                             <tr class="table-secondary fw-bold"><td>Passività Correnti</td><td class="text-end">4.007.151</td><td class="text-end">27,7%</td><td class="text-end">3.664.693</td><td class="text-end">25,5%</td><td class="text-end">3.564.850</td><td class="text-end">24,0%</td><td class="text-end text-danger">-2,7%</td></tr>
-                             <tr><td>Fondi</td><td class="text-end">1.326.535</td><td class="text-end">9,2%</td><td class="text-end">811.620</td><td class="text-end">5,6%</td><td class="text-end">802.243</td><td class="text-end">5,4%</td><td class="text-end text-danger">-1,2%</td></tr>
-                             <tr><td class="fw-bold">Debiti Finanziari</td><td class="text-end">1.746.999</td><td class="text-end">12,1%</td><td class="text-end">1.562.413</td><td class="text-end">10,9%</td><td class="text-end">1.354.924</td><td class="text-end">9,1%</td><td class="text-end text-success">-13,3%</td></tr>
-                             <tr><td>  di cui a M/L termine</td><td class="text-end">1.550.423</td><td class="text-end">10,7%</td><td class="text-end">1.355.799</td><td class="text-end">9,4%</td><td class="text-end">1.134.894</td><td class="text-end">7,6%</td><td class="text-end text-success">-16,3%</td></tr>
-                             <tr><td>  di cui a Breve termine</td><td class="text-end">196.576</td><td class="text-end">1,4%</td><td class="text-end">206.614</td><td class="text-end">1,5%</td><td class="text-end">220.030</td><td class="text-end">1,5%</td><td class="text-end text-danger">+6,5%</td></tr>
-                             <tr><td class="fw-bold">Patrimonio Netto</td><td class="text-end">7.414.287</td><td class="text-end">51,2%</td><td class="text-end">8.339.912</td><td class="text-end">58,0%</td><td class="text-end">9.179.864</td><td class="text-end">61,6%</td><td class="text-end text-success">+10,1%</td></tr>
-                             <tr class="table-primary fw-bold"><td>TOTALE FONTI</td><td class="text-end">14.494.972</td><td class="text-end">100,0%</td><td class="text-end">14.378.638</td><td class="text-end">100,0%</td><td class="text-end">14.901.881</td><td class="text-end">100,0%</td><td class="text-end text-success">+3,6%</td></tr>
+                             <tr><td>Debiti Fornitori</td><td class="text-end">20.299</td><td class="text-end">2,5%</td><td class="text-end">59.552</td><td class="text-end">7,1%</td><td class="text-end">213.246</td><td class="text-end">21,4%</td><td class="text-end text-success">+258,1%</td></tr>
+                             <tr><td>Altri Debiti</td><td class="text-end">122.400</td><td class="text-end">15,3%</td><td class="text-end">88.107</td><td class="text-end">10,6%</td><td class="text-end">41</td><td class="text-end">0,0%</td><td class="text-end text-danger">-99,9%</td></tr>
+                             <tr class="table-secondary fw-bold"><td>Passività Correnti</td><td class="text-end">142.699</td><td class="text-end">17,8%</td><td class="text-end">147.659</td><td class="text-end">17,7%</td><td class="text-end">213.287</td><td class="text-end">21,4%</td><td class="text-end text-success">+44,4%</td></tr>
+                             <tr><td>Fondi</td><td class="text-end">4.582</td><td class="text-end">0,6%</td><td class="text-end">4.857</td><td class="text-end">0,6%</td><td class="text-end">7.027</td><td class="text-end">0,7%</td><td class="text-end text-success">+44,7%</td></tr>
+                             <tr><td class="fw-bold">Debiti Finanziari</td><td class="text-end">3.536</td><td class="text-end">0,4%</td><td class="text-end">12.556</td><td class="text-end">1,5%</td><td class="text-end">0</td><td class="text-end">0,0%</td><td class="text-end text-success">-100,0%</td></tr>
+                             <tr><td>  di cui a M/L termine</td><td class="text-end">187</td><td class="text-end">0,0%</td><td class="text-end">0</td><td class="text-end">0,0%</td><td class="text-end">0</td><td class="text-end">0,0%</td><td class="text-end">0,0%</td></tr>
+                             <tr><td>  di cui a Breve termine</td><td class="text-end">3.349</td><td class="text-end">0,4%</td><td class="text-end">12.556</td><td class="text-end">1,5%</td><td class="text-end">0</td><td class="text-end">0,0%</td><td class="text-end text-success">-100,0%</td></tr>
+                             <tr><td class="fw-bold">Patrimonio Netto</td><td class="text-end">649.337</td><td class="text-end">81,2%</td><td class="text-end">669.549</td><td class="text-end">80,2%</td><td class="text-end">776.453</td><td class="text-end">77,9%</td><td class="text-end text-success">+16,0%</td></tr>
+                             <tr class="table-primary fw-bold"><td>TOTALE FONTI</td><td class="text-end">800.154</td><td class="text-end">100,0%</td><td class="text-end">834.621</td><td class="text-end">100,0%</td><td class="text-end">996.697</td><td class="text-end">100,0%</td><td class="text-end text-success">+19,4%</td></tr>
                          </tbody>
                      </table>
                  </div>
@@ -125,22 +122,21 @@
         <div class="card mb-4 report-section">
              <div class="card-header"><h5 class="mb-0">2. Struttura degli Investimenti</h5></div>
              <div class="card-body">
-                <p>La struttura degli investimenti evidenzia una <strong>significativa incidenza dell'attivo immobilizzato (66,8% del totale impieghi nel 2024)</strong>, in crescita. L'evoluzione mostra:</p> <!-- Updated Text -->
+                <p>La struttura degli investimenti evidenzia una <strong>significativa incidenza dell'attivo immobilizzato (52,3% del totale impieghi nel 2024)</strong>, in diminuzione rispetto al periodo precedente. L'evoluzione mostra:</p>
                  <div class="row">
                     <div class="col-lg-7 mb-3 mb-lg-0">
                          <h6 class="text-center small">Grafico 3.3: Evoluzione Struttura Impieghi (€)</h6>
                          <div class="chart-container" style="height: 350px;">
-                             <canvas id="investmentsStructureChart"></canvas> <!-- ID for report_init.js -->
+                             <canvas id="investmentsStructureChart"></canvas>
                          </div>
                     </div>
                      <div class="col-lg-5">
                          <h6 class="mt-1">Analisi Composizione Impieghi 2024:</h6>
-                         <!-- Updated Commentary -->
                           <ul class="small list-unstyled">
-                             <li class="mb-2"><span class="icon-circle icon-circle-sm bg-icon-primary me-2"><i class="fas fa-building"></i></span><strong>Attivo Fisso (€10.0M):</strong> 66,8% del Tot. Impieghi. Crescita +8,9% (trainata da Imm. Finanziarie +25,3%).</li>
-                             <li class="mb-2"><span class="icon-circle icon-circle-sm bg-icon-info me-2"><i class="fas fa-industry"></i></span><strong>Imm. Materiali (€5.5M):</strong> 55% dell'Attivo Fisso, crescita modesta (+1,0%).</li>
-                             <li class="mb-2"><span class="icon-circle icon-circle-sm bg-icon-warning me-2"><i class="fas fa-chart-line"></i></span><strong>Imm. Finanziarie (€4.5M):</strong> 45% dell'Attivo Fisso, forte crescita (+25,3%).</li>
-                             <li class="mb-2"><span class="icon-circle icon-circle-sm bg-icon-secondary me-2"><i class="fas fa-sync-alt"></i></span><strong>Attivo Circolante (€4.9M):</strong> 33,2% del Tot. Impieghi. Contrazione del -5,6%. <span class="text-danger">Forte calo Liquidità (-42,3%) e ↑ Rimanenze (+60,0%).</span></li>
+                             <li class="mb-2"><span class="icon-circle icon-circle-sm bg-icon-primary me-2"><i class="fas fa-building"></i></span><strong>Attivo Fisso (€521.449):</strong> 52,3% del Tot. Impieghi. Contrazione -2,3% rispetto al 2023.</li>
+                             <li class="mb-2"><span class="icon-circle icon-circle-sm bg-icon-info me-2"><i class="fas fa-industry"></i></span><strong>Imm. Immateriali (€512.334):</strong> 98,3% dell'Attivo Fisso, predominanza assoluta.</li>
+                             <li class="mb-2"><span class="icon-circle icon-circle-sm bg-icon-warning me-2"><i class="fas fa-chart-line"></i></span><strong>Imm. Materiali (€7.115):</strong> 1,4% dell'Attivo Fisso, incidenza marginale.</li>
+                             <li class="mb-2"><span class="icon-circle icon-circle-sm bg-icon-secondary me-2"><i class="fas fa-sync-alt"></i></span><strong>Attivo Circolante (€475.318):</strong> 47,7% del Tot. Impieghi. Forte crescita del +58,0%. <span class="text-success">Incremento Liquidità (+41,8%) e Crediti Clienti (+102,4%).</span></li>
                           </ul>
                      </div>
                  </div>
@@ -150,32 +146,30 @@
         <div class="card mb-4 report-section">
              <div class="card-header"><h5 class="mb-0">3. Struttura delle Fonti</h5></div>
               <div class="card-body">
-                 <p>L'analisi delle fonti mostra un <strong>ulteriore rafforzamento patrimoniale</strong> e una <strong>riduzione dell'indebitamento finanziario</strong>.</p> <!-- Updated Text -->
+                 <p>L'analisi delle fonti mostra un <strong>ulteriore rafforzamento patrimoniale</strong> e una <strong>completa eliminazione dell'indebitamento finanziario</strong>.</p>
                  <div class="row">
                     <div class="col-lg-6 mb-3 mb-lg-0">
                          <h6 class="text-center small">Grafico 3.4: Composizione Patrimonio Netto 2024 (%)</h6>
                          <div class="chart-container" style="height: 300px;">
-                             <canvas id="equityCompositionChart"></canvas> <!-- ID for report_init.js -->
+                             <canvas id="equityCompositionChart"></canvas>
                          </div>
-                         <h6 class="mt-3">Analisi Patrimonio Netto (€ 9,18M, +10,1%):</h6>
-                         <!-- Updated Commentary -->
+                         <h6 class="mt-3">Analisi Patrimonio Netto (€ 776.453, +16,0%):</h6>
                           <ul class="small list-unstyled">
-                             <li><i class="fas fa-arrow-up text-success me-1"></i> Crescita trainata da <strong>Utile Esercizio</strong> (€1,14M).</li>
-                             <li><i class="fas fa-check text-success me-1"></i> Incidenza su Fonti: <strong>61,6%</strong> (vs 58,0% 2023) <span class="status-badge bg-success">Ottimo</span>.</li>
+                             <li><i class="fas fa-arrow-up text-success me-1"></i> Crescita trainata da <strong>Utile Esercizio</strong> (€138.155).</li>
+                             <li><i class="fas fa-check text-success me-1"></i> Incidenza su Fonti: <strong>77,9%</strong> (vs 80,2% 2023) <span class="status-badge bg-success">Eccellente</span>.</li>
                           </ul>
                     </div>
                      <div class="col-lg-6">
                          <h6 class="text-center small">Grafico 3.5: Composizione Fonti Finanziarie 2024 (%)</h6>
                          <div class="chart-container" style="height: 300px;">
-                             <canvas id="financialDebtChart"></canvas> <!-- ID for report_init.js -->
+                             <canvas id="financialDebtChart"></canvas>
                          </div>
-                          <h6 class="mt-3">Analisi Debiti Finanziari (€ 1,35M, -13,3%):</h6>
-                          <!-- Updated Commentary -->
+                          <h6 class="mt-3">Analisi Debiti Finanziari (€ 0, -100,0%):</h6>
                            <ul class="small list-unstyled">
-                              <li><i class="fas fa-arrow-down text-success me-1"></i> Riduzione significativa Debiti Totali (-13,3%).</li>
-                              <li><i class="fas fa-arrow-down text-success me-1"></i> Riduzione Debiti MLT (-16,3%).</li>
-                              <li><i class="fas fa-arrow-up text-danger me-1"></i> Lieve aumento Debiti BT (+6,5%).</li>
-                              <li><i class="fas fa-check text-success me-1"></i> Incidenza Debiti su Fonti <strong>molto bassa (9,1%)</strong> <span class="status-badge bg-success">Ottimo</span>.</li>
+                              <li><i class="fas fa-arrow-down text-success me-1"></i> Eliminazione completa dei Debiti Finanziari (-100,0%).</li>
+                              <li><i class="fas fa-check text-success me-1"></i> Incidenza Debiti su Fonti <strong>nulla (0,0%)</strong> <span class="status-badge bg-success">Eccellente</span>.</li>
+                              <li><i class="fas fa-arrow-up text-warning me-1"></i> Aumento significativo Debiti Fornitori (+258,1%).</li>
+                              <li><i class="fas fa-check text-success me-1"></i> Struttura finanziaria completamente equity-based.</li>
                            </ul>
                      </div>
                  </div>
@@ -185,26 +179,25 @@
         <div class="card mb-4 report-section">
              <div class="card-header"><h5 class="mb-0">4. Posizione Finanziaria Netta (PFN)</h5></div>
              <div class="card-body">
-                 <p>La Posizione Finanziaria Netta (PFN) misura l'indebitamento finanziario netto dell'azienda.</p>
+                <p>La Posizione Finanziaria Netta (PFN) misura l'indebitamento finanziario netto dell'azienda.</p>
                  <div class="row">
                     <div class="col-lg-7 mb-3 mb-lg-0">
                          <h6 class="mt-1">Tabella 4.1: Analisi PFN 2022-2024 (€)</h6>
-                         <!-- Updated Table Data for Calcidrata -->
                          <div class="table-responsive">
                              <table class="table table-sm table-striped table-hover">
                                  <thead>
                                      <tr><th>Componente</th><th class="text-end">12/2022</th><th class="text-end">12/2023</th><th class="text-end">12/2024</th><th class="text-end">Var% 23-24</th></tr>
                                  </thead>
                                  <tbody>
-                                     <tr><td>Debiti finanziari a breve</td><td class="text-end">196.576</td><td class="text-end">206.614</td><td class="text-end">220.030</td><td class="text-end text-danger">+6,5%</td></tr>
-                                     <tr><td>Debiti finanziari a M/L termine</td><td class="text-end">1.550.423</td><td class="text-end">1.355.799</td><td class="text-end">1.134.894</td><td class="text-end text-success">-16,3%</td></tr>
-                                     <tr class="table-secondary"><td>Totale Debiti Finanziari</td><td class="text-end">1.746.999</td><td class="text-end">1.562.413</td><td class="text-end">1.354.924</td><td class="text-end text-success">-13,3%</td></tr>
-                                     <tr><td>(-) Liquidità</td><td class="text-end">973.620</td><td class="text-end">1.073.974</td><td class="text-end">619.281</td><td class="text-end text-danger">+42,3%</td></tr> <!-- Invertito segno variazione liquidità -->
-                                     <tr class="table-danger fw-bold"><td>Posizione Finanziaria Netta (PFN)</td><td class="text-end">773.379</td><td class="text-end">488.439</td><td class="text-end">735.643</td><td class="text-end text-danger">+50,6%</td></tr>
+                                     <tr><td>Debiti finanziari a breve</td><td class="text-end">3.349</td><td class="text-end">12.556</td><td class="text-end">0</td><td class="text-end text-success">-100,0%</td></tr>
+                                     <tr><td>Debiti finanziari a M/L termine</td><td class="text-end">187</td><td class="text-end">0</td><td class="text-end">0</td><td class="text-end">0,0%</td></tr>
+                                     <tr class="table-secondary"><td>Totale Debiti Finanziari</td><td class="text-end">3.536</td><td class="text-end">12.556</td><td class="text-end">0</td><td class="text-end text-success">-100,0%</td></tr>
+                                     <tr><td>(-) Liquidità</td><td class="text-end">93.186</td><td class="text-end">70.515</td><td class="text-end">99.972</td><td class="text-end text-success">+41,8%</td></tr>
+                                     <tr class="table-success fw-bold"><td>Posizione Finanziaria Netta (PFN)</td><td class="text-end">-89.650</td><td class="text-end">-57.959</td><td class="text-end">-99.972</td><td class="text-end text-success">+72,6%</td></tr>
                                      <tr class="border-top"><td colspan="5"><em>Indicatori correlati:</em></td></tr>
-                                     <tr><td>EBITDA</td><td class="text-end">3.510.225</td><td class="text-end">3.019.319</td><td class="text-end">2.866.018</td><td class="text-end text-danger">-5,1%</td></tr>
-                                     <tr><td>PFN/EBITDA (x)</td><td class="text-end">0,22</td><td class="text-end">0,16</td><td class="text-end">0,26</td><td class="text-end text-danger">+62,5%</td></tr>
-                                     <tr><td>PFN/PN (x)</td><td class="text-end">0,10</td><td class="text-end">0,06</td><td class="text-end">0,08</td><td class="text-end text-danger">+33,3%</td></tr>
+                                     <tr><td>EBITDA</td><td class="text-end">155.297</td><td class="text-end">20.908</td><td class="text-end">154.660</td><td class="text-end text-success">+639,7%</td></tr>
+                                     <tr><td>PFN/EBITDA (x)</td><td class="text-end">-0,58</td><td class="text-end">-2,77</td><td class="text-end">-0,65</td><td class="text-end text-success">+76,5%</td></tr>
+                                     <tr><td>PFN/PN (x)</td><td class="text-end">-0,14</td><td class="text-end">-0,09</td><td class="text-end">-0,13</td><td class="text-end text-success">+44,4%</td></tr>
                                  </tbody>
                              </table>
                          </div>
@@ -214,13 +207,12 @@
                           <div class="chart-container" style="height: 300px;">
                              <canvas id="pfnTrendChart"></canvas>
                          </div>
-                         <h6 class="mt-3">Analisi PFN (Calcidrata):</h6>
-                         <!-- Updated Commentary -->
+                         <h6 class="mt-3">Analisi PFN (FLC HEALTHY EVOLUTION):</h6>
                          <ul class="small list-unstyled">
-                             <li><i class="fas fa-arrow-up text-danger me-1"></i> Valore Assoluto PFN in aumento (+50,6%), anche se basso.</li>
-                             <li><i class="fas fa-exclamation-triangle text-danger me-1"></i> Causato da <strong>forte calo Liquidità (-42%)</strong> non compensato da ↓ Debiti (-13%).</li>
-                             <li><i class="fas fa-check-circle text-success me-1"></i> Sostenibilità PFN/EBITDA: 0,26x (Eccellente < 1x).</li>
-                              <li><i class="fas fa-check-circle text-success me-1"></i> Leva PFN/PN: 0,08x (Eccellente < 0,5x).</li>
+                             <li><i class="fas fa-arrow-down text-success me-1"></i> PFN negativa in miglioramento (-99.972€), indica surplus di liquidità.</li>
+                             <li><i class="fas fa-check-circle text-success me-1"></i> Causato da <strong>eliminazione totale dei debiti finanziari</strong> e <strong>incremento liquidità (+41,8%)</strong>.</li>
+                             <li><i class="fas fa-check-circle text-success me-1"></i> Sostenibilità PFN/EBITDA: -0,65x (Eccellente, liquidità netta).</li>
+                              <li><i class="fas fa-check-circle text-success me-1"></i> Leva PFN/PN: -0,13x (Eccellente, posizione di cassa netta).</li>
                          </ul>
                      </div>
                  </div>
@@ -231,39 +223,36 @@
             <div class="card-header"><h5 class="mb-0">5. Indici di Solidità Patrimoniale</h5></div>
              <div class="card-body">
                  <p>Gli indici misurano la capacità di mantenere l'equilibrio finanziario nel medio-lungo termine.</p>
-                  <h6 class="mt-4">Tabella 5.1: Principali Indici di Solidità 2022-2024 (Calcidrata)</h6>
-                  <!-- Updated Table Data for Calcidrata -->
+                  <h6 class="mt-4">Tabella 5.1: Principali Indici di Solidità 2022-2024 (FLC HEALTHY EVOLUTION)</h6>
                   <div class="table-responsive">
                      <table class="table table-sm table-striped table-hover">
                          <thead class="table-light"><tr><th>Indice</th><th class="text-end">2022</th><th class="text-end">2023</th><th class="text-end">2024</th><th>Valutazione 2024</th></tr></thead>
                          <tbody>
-                             <tr><td>Copertura Immobilizzazioni</td><td class="text-end">1,15</td><td class="text-end">1,12</td><td class="text-end">1,05</td><td><span class="status-badge bg-success">Buono</span></td></tr>
-                             <tr><td>Indice Autonomia Finanziaria</td><td class="text-end">51,2%</td><td class="text-end">58,0%</td><td class="text-end">61,6%</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
-                             <tr><td>Leva Finanziaria (D/E)</td><td class="text-end">0,24</td><td class="text-end">0,19</td><td class="text-end">0,15</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
-                             <tr><td>Turnover (Ricavi/CIN)</td><td class="text-end">1,35</td><td class="text-end">1,48</td><td class="text-end">1,35</td><td><span class="status-badge bg-success">Buono</span></td></tr> <!-- Corretto Turnover -->
-                             <tr><td>Indice Struttura Primario</td><td class="text-end">0,81</td><td class="text-end">0,91</td><td class="text-end">0,92</td><td><span class="status-badge bg-warning">Adeguato</span></td></tr>
-                             <tr><td>PFN/EBITDA</td><td class="text-end">0,22</td><td class="text-end">0,16</td><td class="text-end">0,26</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
+                             <tr><td>Copertura Immobilizzazioni</td><td class="text-end">1,20</td><td class="text-end">1,25</td><td class="text-end">1,49</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                             <tr><td>Indice Autonomia Finanziaria</td><td class="text-end">81,2%</td><td class="text-end">80,2%</td><td class="text-end">77,9%</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                             <tr><td>Leva Finanziaria (D/E)</td><td class="text-end">0,01</td><td class="text-end">0,02</td><td class="text-end">0,00</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                             <tr><td>Turnover (Ricavi/CIN)</td><td class="text-end">1,46</td><td class="text-end">1,33</td><td class="text-end">1,53</td><td><span class="status-badge bg-success">Ottimo</span></td></tr>
+                             <tr><td>Indice Struttura Primario</td><td class="text-end">1,20</td><td class="text-end">1,25</td><td class="text-end">1,49</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
+                             <tr><td>PFN/EBITDA</td><td class="text-end">-0,58</td><td class="text-end">-2,77</td><td class="text-end">-0,65</td><td><span class="status-badge bg-success">Eccellente</span></td></tr>
                          </tbody>
                      </table>
                  </div>
                  <div class="row mt-3 small">
-                     <!-- Updated Commentary -->
-                     <div class="col-md-6"><i class="fas fa-check text-success me-1"></i><strong>Copertura Immob. (1,05):</strong> Buon equilibrio strutturale (>1).</div>
-                     <div class="col-md-6"><i class="fas fa-check text-success me-1"></i><strong>Autonomia Fin. (61,6%):</strong> Ottima e in crescita.</div>
-                     <div class="col-md-6"><i class="fas fa-check text-success me-1"></i><strong>Efficienza Investimenti:</strong> Turnover (1,35x) Buono, Leva D/E (0,15x) Ottima.</div>
-                     <div class="col-md-6"><i class="fas fa-exclamation text-warning me-1"></i><strong>Struttura Primaria (0,92x):</strong> Adeguata ma migliorabile (< 1x).</div>
+                     <div class="col-md-6"><i class="fas fa-check text-success me-1"></i><strong>Copertura Immob. (1,49):</strong> Eccellente equilibrio strutturale (>1,2).</div>
+                     <div class="col-md-6"><i class="fas fa-check text-success me-1"></i><strong>Autonomia Fin. (77,9%):</strong> Eccellente, ampiamente superiore ai benchmark settoriali.</div>
+                     <div class="col-md-6"><i class="fas fa-check text-success me-1"></i><strong>Efficienza Investimenti:</strong> Turnover (1,53x) Ottimo, Leva D/E (0,00x) Eccellente.</div>
+                     <div class="col-md-6"><i class="fas fa-check text-success me-1"></i><strong>Struttura Primaria (1,49x):</strong> Eccellente, ampiamente > 1x.</div>
                  </div>
              </div>
         </div>
 
         <div class="card summary-card mb-4 report-section">
              <div class="card-body">
-                 <h5 class="card-title"><i class="fas fa-check-circle text-primary me-2"></i>6. Conclusioni Analisi Patrimoniale (Calcidrata)</h5>
-                 <!-- Updated Conclusions -->
-                 <p>L'analisi patrimoniale di Guglietta Global S.p.A. evidenzia una <strong>struttura eccellente</strong>, con elevata patrimonializzazione (62%), bassissimo indebitamento (D/E 0,15x) e buon equilibrio strutturale.</p>
-                 <p>Il progressivo deleveraging è positivo. L'aumento della PFN (+51%) nel 2024, pur mantenendo PFN/EBITDA eccellente (0,26x), è dovuto al <strong>calo di liquidità</strong> e richiede attenzione.</p>
-                 <p><strong>Aree di miglioramento:</strong> monitoraggio <strong>liquidità</strong>, gestione <strong>rimanenze</strong> (crescita +60%), valutazione efficienza <strong>investimenti finanziari</strong> (crescita +25%).</p>
-                 <p class="mb-0"><strong>Potenziale:</strong> La solidità consente ampi margini per <strong>investimenti strategici</strong> (anche con leva moderata) o <strong>politiche di dividendo</strong>.</p>
+                 <h5 class="card-title"><i class="fas fa-check-circle text-primary me-2"></i>6. Conclusioni Analisi Patrimoniale (FLC HEALTHY EVOLUTION)</h5>
+                 <p>L'analisi patrimoniale di FLC HEALTHY EVOLUTION S.R.L. evidenzia una <strong>struttura eccellente</strong>, con elevatissima patrimonializzazione (77,9%), assenza totale di indebitamento finanziario (D/E 0,00x) e ottimo equilibrio strutturale.</p>
+                 <p>La completa eliminazione del debito finanziario e l'incremento della liquidità (+41,8%) nel 2024 hanno portato a una PFN negativa di €99.972, indicativa di un surplus di cassa significativo.</p>
+                 <p><strong>Aree di attenzione:</strong> monitoraggio <strong>crediti clienti</strong> (crescita +102,4%), gestione <strong>tempi di incasso</strong> (DSO 128 giorni), valutazione efficienza <strong>immobilizzazioni immateriali</strong> (98,3% dell'attivo fisso).</p>
+                 <p class="mb-0"><strong>Potenziale:</strong> La solidità eccezionale consente ampi margini per <strong>investimenti strategici</strong>, <strong>acquisizioni</strong> o <strong>politiche di dividendo</strong> più aggressive.</p>
              </div>
          </div>
 
@@ -288,9 +277,9 @@
         document.getElementById('currentYearSidebar').textContent = new Date().getFullYear();
         document.getElementById('currentYearFooterReport').textContent = new Date().getFullYear();
 
-         // Script aggiornamento badge IRP header (Updated for Calcidrata)
+         // Script aggiornamento badge IRP header (Updated for FLC HEALTHY EVOLUTION)
          document.addEventListener('DOMContentLoaded', function() {
-             const irpScoreValue = 82.03; // Updated IRP Value
+             const irpScoreValue = 85.33; // Updated IRP Value
              const irpHeaderBadge = document.getElementById('irp-header-badge');
              if(irpHeaderBadge) {
                  let badgeClass = 'bg-warning text-dark';
@@ -314,8 +303,7 @@
              }
          });
    </script> 
-   
-<scan-chat data-bot-id="44479c6e-7072-49fc-9046-e650ff6f9874"></scan-chat>
-<script src=".  /js/bundle.js"></script>
+   <scan-chat data-bot-id="44479c6e-7072-49fc-9046-e650ff6f9874"></scan-chat>
+   <script src="../js/bundle.js"></script>
 </body>
 </html>

@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = getZscoreData();
              const options = {
                  ...commonChartOptions,
-                 scales: { y: { ...commonChartOptions.scales.y, title: { display: true, text: 'Z-Score' }, suggestedMin: 0, suggestedMax: 7 } },
+                 scales: { y: { ...commonChartOptions.scales.y, title: { display: true, text: 'Z-Score' }, suggestedMin: 0, suggestedMax: 4 } },
                  plugins: { ...commonChartOptions.plugins, title: { display: true, text: 'Evoluzione Z-Score e Soglie di Riferimento' } }
              };
             initChart('zscoreChart', 'line', data, options);

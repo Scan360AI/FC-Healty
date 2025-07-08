@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dettaglio Indice Rischio Ponderato (IRP) - Guglietta Global S.p.A. | SCAN V16</title> <!-- Changed Company Name -->
+    <title>Dettaglio Indice Rischio Ponderato (IRP) - FLC HEALTHY EVOLUTION S.R.L. | SCAN V16</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="../css/styles.css" rel="stylesheet"> <!-- CSS V9/V12 con layout corretto -->
+    <link href="../css/styles.css" rel="stylesheet">
     <link href="../css/print.css" rel="stylesheet" media="print">
      <style>
         /* Stili V15 mantenuti e aggiustamenti */
@@ -155,11 +155,11 @@
 
 <!-- Sidebar -->
     <aside class="sidebar no-print">
-        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>Guglietta Global S.p.A.</h5> </div> <!-- Changed Name -->
+        <div class="sidebar-header"> <img src="../assets/img/logo_scan.png" alt="SCAN Logo" style="max-height: 40px;"> <h5>FLC HEALTHY EVOLUTION S.R.L.</h5> </div>
         <ul class="sidebar-nav flex-grow-1">
-            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li> <!-- Adjusted Path -->
+            <li class="nav-item"> <a class="nav-link" href="../dashboard_v2.html"> <i class="fas fa-tachometer-alt fa-fw"></i> Dashboard </a> </li>
             <li class="nav-title">Analisi Dettagliata</li>
-            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li> <!-- Adjusted Paths -->
+            <li class="nav-item"> <a class="nav-link" href="parte1_sintesi.html"> <i class="fas fa-file-alt fa-fw"></i> Sintesi e Profilo </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte2_economico.html"> <i class="fas fa-balance-scale fa-fw"></i> Analisi Economica </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte3_patrimoniale.html"> <i class="fas fa-landmark fa-fw"></i> Analisi Patrimoniale </a> </li>
             <li class="nav-item"> <a class="nav-link" href="parte4_bancabilita.html"> <i class="fas fa-university fa-fw"></i> Bancabilità </a> </li>
@@ -167,7 +167,6 @@
             <li class="nav-item"> <a class="nav-link" href="parte6_rischi-raccomandazioni.html"> <i class="fas fa-exclamation-triangle fa-fw"></i> Rischi e Azioni </a> </li>
             <li class="nav-title">Approfondimenti</li>
             <li class="nav-item"> <a class="nav-link active" href="irp_dettaglio.html"> <i class="fas fa-shield-alt fa-fw"></i> Dettaglio IRP </a> </li>
-            <!-- Removed Bilancio Plus Link -->
         </ul>
         <div class="sidebar-footer"> <small>SCAN360 © <span id="currentYearSidebar"></span> Kitzanos</small> </div>
     </aside>
@@ -179,19 +178,19 @@
         <header class="dashboard-header no-print">
             <div class="header-title">
                 <h5 class="mb-0">Report Dettagliato: Analisi IRP</h5>
-                <p class="mb-0">Guglietta Global S.p.A. | <span class="report-date">31 Dicembre 2024</span></p> <!-- Changed Name -->
+                <p class="mb-0">FLC HEALTHY EVOLUTION S.R.L. | <span class="report-date">31 Dicembre 2024</span></p>
             </div>
             <div class="header-controls d-flex align-items-center">
                 <span id="irp-header-badge" class="badge me-3"></span> <!-- Badge will be updated by JS -->
                 <button class="btn btn-sm btn-outline-secondary me-2 print-button" onclick="printDocument()"> <i class="fas fa-print"></i> Stampa </button>
                 <div class="dropdown">
-                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> Guglietta Global S.p.A. </button> <!-- Changed Name -->
+                    <button class="btn btn-sm btn-light border dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle me-1"></i> FLC HEALTHY EVOLUTION S.R.L. </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton"> <li><button class="dropdown-item" type="button" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button></li> </ul>
                 </div>
             </div>
         </header>
         <div class="container d-none d-print-block mt-4 mb-4">
-            <h1 class="text-center mb-0"><span class="company-name">Guglietta Global S.p.A.</span></h1> <!-- Changed Name -->
+            <h1 class="text-center mb-0"><span class="company-name">FLC HEALTHY EVOLUTION S.R.L.</span></h1>
             <p class="text-center mb-0">Report Dettagliato: Analisi IRP | <span class="report-date">31 Dicembre 2024</span></p>
             <hr>
         </div>
@@ -200,31 +199,31 @@
         <div class="dashboard-container">
 
             <!-- ================================================================ -->
-            <!-- CONTENUTO SPECIFICO IRP DETTAGLIO - V16 - Updated for Calcidrata -->
+            <!-- CONTENUTO SPECIFICO IRP DETTAGLIO - V16 - Updated for FLC HEALTHY EVOLUTION -->
             <!-- ================================================================ -->
 
              <h2 class="section-title" id="irp-detail"><i class="fas fa-shield-alt me-2"></i>Indice di Rischio Ponderato (IRP) - Dettaglio</h2>
 
-             <!-- Sezione Visuale IRP (Updated for Calcidrata) -->
-             <section class="irp-visual-section risk-low report-section" id="irp-summary-section"> <!-- Changed class to risk-low -->
+             <!-- Sezione Visuale IRP (Updated for FLC HEALTHY EVOLUTION) -->
+             <section class="irp-visual-section risk-low report-section" id="irp-summary-section">
                  <h4 class="irp-main-title text-center">Valutazione Complessiva del Rischio</h4>
                  <div class="row align-items-center">
                       <div class="col-lg-5 order-lg-1">
                           <h6 class="text-center text-md-start">Posizionamento sulla Scala di Rischio</h6>
                          <div class="irp-gradient-bar-container">
-                             <div class="irp-gradient-bar"> <div class="irp-marker" style="left: 82.03%;" title="IRP: 82.03"></div> </div> <!-- Updated Position -->
+                             <div class="irp-gradient-bar"> <div class="irp-marker" style="left: 87.25%;" title="IRP: 87.25"></div> </div>
                              <div class="d-flex justify-content-between irp-scale-labels mt-1"> <span>0 (Alto)</span><span>50</span><span>75</span><span>100 (Basso)</span> </div>
                          </div>
                           <p class="small text-muted mt-3">L'IRP Kitzanos (scala 0-100) offre una valutazione olistica dell'affidabilità.</p>
                       </div>
                       <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0 text-center">
-                          <div class="irp-score-circle risk-low"> <span class="irp-score-value">82,0</span> <span class="irp-score-max">/ 100</span> </div> <!-- Updated Value and Class -->
-                          <div class="irp-category-text text-success mt-2"> Rischio Basso <span class="status-badge bg-success">B</span> </div> <!-- Updated Text, Class, Badge -->
+                          <div class="irp-score-circle risk-low"> <span class="irp-score-value">87,3</span> <span class="irp-score-max">/ 100</span> </div>
+                          <div class="irp-category-text text-success mt-2"> Rischio Molto Basso <span class="status-badge bg-success">A</span> </div>
                       </div>
                  </div>
              </section>
 
-            <!-- Sintesi Calcolo (Updated for Calcidrata) -->
+            <!-- Sintesi Calcolo (Updated for FLC HEALTHY EVOLUTION) -->
             <div class="card mb-4 report-section">
                  <div class="card-header"><h5 class="mb-0">Sintesi Calcolo IRP</h5></div>
                  <div class="card-body">
@@ -233,38 +232,37 @@
                         <table class="table table-sm table-striped table-hover">
                             <thead class="table-light"><tr><th>Componente</th><th class="text-end">Valore Originale</th><th class="text-end">Punteggio Normalizzato</th><th>Peso</th><th class="text-end">Punteggio Ponderato</th></tr></thead>
                             <tbody>
-                                <tr><td><i class="fas fa-cogs text-primary me-2"></i>Componente Primaria (CP)</td><td class="text-end">-</td><td class="text-end score-cell text-success">87,30</td><td>30%</td><td class="text-end weighted-score-cell">26,19</td></tr> <!-- Updated Scores -->
-                                <tr><td><i class="fas fa-chart-bar text-danger me-2"></i>Leanus Score</td><td class="text-end">2,99 ("Critico")</td><td class="text-end score-cell text-warning">68,70</td><td>30%</td><td class="text-end weighted-score-cell">20,61</td></tr> <!-- Updated Scores -->
-                                <tr><td><i class="fas fa-university text-success me-2"></i>Rating MCC (PD)</td><td class="text-end">0,12% (Fascia 1)</td><td class="text-end score-cell text-success">98,80</td><td>25%</td><td class="text-end weighted-score-cell">24,70</td></tr> <!-- Updated Scores -->
-                                <tr><td><i class="fas fa-calculator text-success me-2"></i>Z-Score di Altman</td><td class="text-end">4,07 ("Sicura")</td><td class="text-end score-cell text-success">73,57</td><td>15%</td><td class="text-end weighted-score-cell">11,04</td></tr> <!-- Updated Scores -->
-                                <tr class="table-primary fw-bold"><td><i class="fas fa-shield-alt me-2"></i>Indice di Rischio Ponderato (IRP)</td><td class="text-end"></td><td class="text-end"></td><td>100%</td><td class="text-end fs-5">82,03</td></tr> <!-- Updated Final Score -->
+                                <tr><td><i class="fas fa-cogs text-primary me-2"></i>Component Score (CS)</td><td class="text-end">-</td><td class="text-end score-cell text-success">95,20</td><td>40%</td><td class="text-end weighted-score-cell">38,08</td></tr>
+                                <tr><td><i class="fas fa-chart-bar text-warning me-2"></i>Leanus Score</td><td class="text-end">7,16 ("Discreto")</td><td class="text-end score-cell text-success">69,88</td><td>40%</td><td class="text-end weighted-score-cell">27,95</td></tr>
+                                <tr><td><i class="fas fa-university text-secondary me-2"></i>Rating MCC (PD)</td><td class="text-end">N/A (UNRATED)</td><td class="text-end score-cell text-secondary">N/A</td><td>0%</td><td class="text-end weighted-score-cell">N/A</td></tr>
+                                <tr><td><i class="fas fa-calculator text-success me-2"></i>Z-Score di Altman</td><td class="text-end">6,20 ("Sicura")</td><td class="text-end score-cell text-success">96,50</td><td>20%</td><td class="text-end weighted-score-cell">19,30</td></tr>
+                                <tr class="table-primary fw-bold"><td><i class="fas fa-shield-alt me-2"></i>Indice di Rischio Ponderato (IRP)</td><td class="text-end"></td><td class="text-end"></td><td>100%</td><td class="text-end fs-5">85,33</td></tr>
                             </tbody>
-                             <!-- Removed Footnotes -->
                         </table>
                     </div>
                  </div>
              </div>
 
-            <!-- Dettaglio Componenti (Updated for Calcidrata) -->
+            <!-- Dettaglio Componenti (Updated for FLC HEALTHY EVOLUTION) -->
              <h3 class="section-title mt-5" id="component-details"><i class="fas fa-puzzle-piece me-2"></i>Dettaglio Componenti IRP</h3>
              <div class="row">
-                  <!-- CP -->
+                  <!-- CS -->
                  <div class="col-lg-7 report-section">
                      <div class="card component-card h-100">
-                         <div class="card-header"><h5 class="mb-0">1. Componente Primaria (CP): <span class="fw-bold text-success">87,30</span> <span class="status-badge bg-success float-end">Molto Buona</span></h5></div> <!-- Updated Score & Badge -->
+                         <div class="card-header"><h5 class="mb-0">1. Component Score (CS): <span class="fw-bold text-success">95,20</span> <span class="status-badge bg-success float-end">Eccellente</span></h5></div>
                          <div class="card-body">
                              <p class="small">Media ponderata di 6 indicatori finanziari chiave.</p>
                               <div class="table-responsive">
                                   <table class="table table-sm table-hover small mb-0">
                                      <thead class="table-light"><tr><th>Indicatore</th><th class="text-end">Valore</th><th class="text-end">Punteggio</th><th>Peso</th><th class="text-end">Ponderato</th></tr></thead>
                                      <tbody>
-                                         <tr><td><small>PFN/EBITDA</small></td><td class="text-end">0,26x</td><td class="text-end text-success">95</td><td>25%</td><td class="text-end">23,75</td></tr> <!-- Updated Values -->
-                                         <tr><td><small>EBIT/OF</small></td><td class="text-end">24,42x</td><td class="text-end text-success">95</td><td>20%</td><td class="text-end">19,00</td></tr> <!-- Updated Values -->
-                                         <tr><td><small>Ciclo Circ.</small></td><td class="text-end">57 gg</td><td class="text-end text-success">78</td><td>15%</td><td class="text-end">11,70</td></tr> <!-- Updated Values -->
-                                         <tr><td><small>EBITDA/Ricavi</small></td><td class="text-end">21,34%</td><td class="text-end text-success">93</td><td>15%</td><td class="text-end">13,95</td></tr> <!-- Updated Values -->
-                                         <tr><td><small>Cop. Att. Fisso</small></td><td class="text-end">0,92x</td><td class="text-end text-warning">68</td><td>15%</td><td class="text-end">10,20</td></tr> <!-- Updated Values -->
-                                         <tr><td><small>DSCR</small></td><td class="text-end">4,48x</td><td class="text-end text-success">87</td><td>10%</td><td class="text-end">8,70</td></tr> <!-- Updated Values -->
-                                          <tr class="border-top fw-bold"><td colspan="4">Punteggio CP Finale</td><td class="text-end">87,30</td></tr> <!-- Updated Score -->
+                                         <tr><td><small>PFN/EBITDA</small></td><td class="text-end">-0,65x</td><td class="text-end text-success">100</td><td>25%</td><td class="text-end">25,00</td></tr>
+                                         <tr><td><small>EBIT/OF</small></td><td class="text-end">1.108,56x</td><td class="text-end text-success">100</td><td>20%</td><td class="text-end">20,00</td></tr>
+                                         <tr><td><small>Ciclo Circ.</small></td><td class="text-end">19 gg</td><td class="text-end text-success">95</td><td>15%</td><td class="text-end">14,25</td></tr>
+                                         <tr><td><small>EBITDA/Ricavi</small></td><td class="text-end">14,91%</td><td class="text-end text-success">85</td><td>15%</td><td class="text-end">12,75</td></tr>
+                                         <tr><td><small>Cop. Att. Fisso</small></td><td class="text-end">1,49x</td><td class="text-end text-success">88</td><td>15%</td><td class="text-end">13,20</td></tr>
+                                         <tr><td><small>DSCR</small></td><td class="text-end">49,80x</td><td class="text-end text-success">100</td><td>10%</td><td class="text-end">10,00</td></tr>
+                                          <tr class="border-top fw-bold"><td colspan="4">Punteggio CS Finale</td><td class="text-end">95,20</td></tr>
                                      </tbody>
                                   </table>
                               </div>
@@ -274,34 +272,34 @@
                   <!-- Leanus -->
                   <div class="col-lg-5 report-section">
                       <div class="card component-card h-100">
-                         <div class="card-header"><h5 class="mb-0">2. Leanus Score Norm.: <span class="fw-bold text-warning">68,70</span> <span class="status-badge bg-warning text-dark float-end">Medio-Basso</span></h5></div> <!-- Updated Scores & Badge -->
+                         <div class="card-header"><h5 class="mb-0">2. Leanus Score Norm.: <span class="fw-bold text-success">69,88</span> <span class="status-badge bg-success float-end">Discreto</span></h5></div>
                           <div class="card-body">
-                               <p class="small mb-1">Score Originale: <strong>2,99 ("4 - Critico")</strong></p> <!-- Updated Value & Category -->
+                               <p class="small mb-1">Score Originale: <strong>7,16 ("3 - Discreto")</strong></p>
                                <label class="small fw-bold">Posizionamento Scala Leanus (-40/+40)</label>
-                               <div class="leanus-scale mb-1"><div class="leanus-marker" style="left: calc(50% + (2.99 / 80 * 100%));"></div><div class="leanus-marker-label" style="left: calc(50% + (2.99 / 80 * 100%));">2.99</div></div> <!-- Updated Position & Label -->
+                               <div class="leanus-scale mb-1"><div class="leanus-marker" style="left: calc(50% + (7.16 / 80 * 100%));"></div><div class="leanus-marker-label" style="left: calc(50% + (7.16 / 80 * 100%));">7.16</div></div>
                                <div class="leanus-scale-labels"><span>-40</span><span>0</span><span>+40</span></div>
-                               <p class="small mt-3 mb-1">Normalizzazione 0-100: 68,70.</p> <!-- Simplified, assuming this is the final normalized value used -->
-                               <div class="alert alert-danger small p-2 mt-2 mb-0"><i class="fas fa-exclamation-triangle me-1"></i>Score "Critico" e in peggioramento. Segnala aree deboli (es. trend ricavi/liquidità) nonostante buoni indici.</div> <!-- Updated Alert Text -->
+                               <p class="small mt-3 mb-1">Normalizzazione 0-100: 69,88.</p>
+                               <div class="alert alert-success small p-2 mt-2 mb-0"><i class="fas fa-check-circle me-1"></i>Classificazione STAR: crescita significativa (+27,60%) mantenendo equilibrio patrimoniale.</div>
                           </div>
                      </div>
                  </div>
                   <!-- MCC -->
                   <div class="col-lg-5 report-section">
                       <div class="card component-card h-100">
-                          <div class="card-header"><h5 class="mb-0">3. Rating MCC (PD): <span class="fw-bold text-success">98,80</span> <span class="status-badge bg-success float-end">Rischio Minimo</span></h5></div> <!-- Updated Score & Badge -->
+                          <div class="card-header"><h5 class="mb-0">3. Rating MCC (PD): <span class="fw-bold text-secondary">N/A</span> <span class="status-badge bg-secondary float-end">Non Disponibile</span></h5></div>
                            <div class="card-body">
-                               <p class="small">PD: <strong>0,12%</strong> | MCC: <strong>FASCIA "1"</strong>.</p> <!-- Updated Values -->
-                                <p class="small">Conversione Score (100 - PD*X): ~98,80.</p> <!-- Updated value, acknowledge potential formula variation -->
-                                <div class="alert alert-success small p-2 mt-2 mb-0"><i class="fas fa-check-circle me-1"></i> Rischio insolvenza minimo (Fondo Garanzia). Ottima affidabilità creditizia.</div> <!-- Updated Alert Text -->
+                               <p class="small">PD: <strong>N/A</strong> | MCC: <strong>UNRATED</strong>.</p>
+                                <p class="small">Non disponibile per il periodo di riferimento.</p>
+                                <div class="alert alert-info small p-2 mt-2 mb-0"><i class="fas fa-info-circle me-1"></i> L'assenza di rating MCC determina l'esclusione di questa componente dal calcolo dell'IRP, con conseguente riallocazione proporzionale dei pesi sulle altre componenti.</div>
                            </div>
                       </div>
                  </div>
                  <!-- Z-Score Altman -->
               <div class="col-lg-7 report-section">
                    <div class="card component-card h-100">
-                      <div class="card-header"><h5 class="mb-0">4. Z-Score di Altman Norm.: <span class="fw-bold text-success">73,57</span> <span class="status-badge bg-success float-end">Buono</span></h5></div> <!-- Updated Score & Badge -->
+                      <div class="card-header"><h5 class="mb-0">4. Z-Score di Altman Norm.: <span class="fw-bold text-success">96,50</span> <span class="status-badge bg-success float-end">Eccellente</span></h5></div>
                        <div class="card-body">
-                            <p class="small">Z-Score Originale: <strong>4,07</strong> (<span class="text-success">Zona Sicura</span>)</p> <!-- Updated Value -->
+                            <p class="small">Z-Score Originale: <strong>6,20</strong> (<span class="text-success">Zona Sicura</span>)</p>
                              <label class="small fw-bold">Posizionamento Z-Score</label>
                              <!-- Visualizzazione Scala con Punto SOPRA Barra Progresso -->
                              <div class="zscore-scale-container">
@@ -317,14 +315,14 @@
                                       <span class="label-299">2.99</span>
                                  </div>
                                  <!-- Punto Indicatore (Posizione e colore calcolati con JS) -->
-                                 <div id="zscore-indicator" class="zscore-indicator-dot" title="Z-Score: 4.07">
+                                 <div id="zscore-indicator" class="zscore-indicator-dot" title="Z-Score: 6.20">
                                      <!-- L'etichetta ora è figlia del punto per posizionamento relativo -->
-                                     <span id="zscore-indicator-label" class="zscore-value-label">4.07</span> <!-- Updated Label -->
+                                     <span id="zscore-indicator-label" class="zscore-value-label">6.20</span>
                                  </div>
                              </div>
                              <!-- Fine Nuova Visualizzazione -->
-                            <p class="small mt-3 mb-1">Normalizzazione (0-100): 73,57.</p> <!-- Simplified -->
-                             <div class="alert alert-success small p-2 mt-2 mb-0"><i class="fas fa-check-circle me-1"></i> Bassa probabilità default (ampiamente in zona sicura).</div> <!-- Updated Alert Text -->
+                            <p class="small mt-3 mb-1">Normalizzazione (0-100): 96,50.</p>
+                             <div class="alert alert-success small p-2 mt-2 mb-0"><i class="fas fa-check-circle me-1"></i> Probabilità di default pressoché nulla (ampiamente in zona sicura).</div>
                        </div>
                    </div>
               </div>
@@ -333,11 +331,11 @@
              <div class="card mb-4 report-section recommendation-card">
                  <div class="card-header"><h5 class="mb-0">Valutazione Finale e Raccomandazioni Basate sull'IRP</h5></div>
                  <div class="card-body">
-                      <h6>Interpretazione IRP (82,03 - Basso)</h6>
-                      <p class="small">Profilo di rischio complessivamente basso, sostenuto da eccellente solidità economico-finanziaria (marginalità, PFN/EBITDA, DSCR) e ottimi rating esterni (MCC, Z-Score). Il Leanus Score "Critico" e le aree di attenzione su liquidità e magazzino richiedono monitoraggio e interventi mirati per mantenere questo buon posizionamento.</p> <!-- Updated Text -->
+                      <h6>Interpretazione IRP (85,33 - Molto Basso)</h6>
+                      <p class="small">Profilo di rischio complessivamente molto basso, sostenuto da eccellente solidità economico-finanziaria (marginalità, PFN/EBITDA, DSCR) e ottimo Z-Score. La combinazione di crescita accelerata (+27,60%), solidità patrimoniale e posizione finanziaria ottimale posiziona l'azienda come un caso di eccellenza imprenditoriale, con l'unica criticità significativa rappresentata dalla gestione dei tempi di incasso.</p>
                       <div class="row mt-4">
-                          <div class="col-md-6"><div class="alert alert-success small p-2 h-100"><h6><i class="fas fa-check-circle me-1"></i> Punti Forza IRP</h6><ul class="mb-0 ps-3"><li>Eccellente Marginalità</li><li>Ottima Sostenibilità Debito</li><li>Rating MCC/Z-Score</li><li>Buona Copertura Oneri Fin.</li></ul></div></div> <!-- Updated Strengths -->
-                          <div class="col-md-6"><div class="alert alert-danger small p-2 h-100"><h6><i class="fas fa-exclamation-triangle me-1"></i> Aree Attenzione IRP</h6><ul class="mb-0 ps-3"><li>Gestione Magazzino (DIO 84gg)</li><li>Calo Liquidità (-42%)</li><li>Leanus Score Critico/Peggiorato</li><li>Contrazione Ricavi (-0.9%)</li></ul></div></div> <!-- Updated Weaknesses -->
+                          <div class="col-md-6"><div class="alert alert-success small p-2 h-100"><h6><i class="fas fa-check-circle me-1"></i> Punti Forza IRP</h6><ul class="mb-0 ps-3"><li>Crescita Profittevole (+27,60%)</li><li>Indipendenza Finanziaria (D/E=0)</li><li>Efficienza Operativa (Ciclo 19gg)</li><li>Governance Avanzata</li></ul></div></div>
+                          <div class="col-md-6"><div class="alert alert-danger small p-2 h-100"><h6><i class="fas fa-exclamation-triangle me-1"></i> Aree Attenzione IRP</h6><ul class="mb-0 ps-3"><li>Gestione Crediti (DSO 128gg)</li><li>Sostenibilità Crescita</li><li>Distribuzione Dividendi</li><li>Concentrazione Rischio Commerciale</li></ul></div></div>
                       </div>
                  </div>
             </div>
@@ -356,15 +354,15 @@
     <!-- Script JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <!-- Chart.js non serve qui -->
-    <script src="../js/common.js"></script> <!-- Adjusted Path -->
+    <script src="../js/common.js"></script>
     <!-- Non servono scripts grafici -->
      <script>
         document.getElementById('currentYearSidebar').textContent = new Date().getFullYear();
         document.getElementById('currentYearFooterReport').textContent = new Date().getFullYear();
 
-         // Script aggiornamento badge IRP header e colori sezione IRP (Updated for Calcidrata)
+         // Script aggiornamento badge IRP header e colori sezione IRP (Updated for FLC HEALTHY EVOLUTION)
          document.addEventListener('DOMContentLoaded', function() {
-             const irpScoreValue = 82.03; // Updated IRP Value
+             const irpScoreValue = 87.25; // Updated IRP Value
              const irpHeaderBadge = document.getElementById('irp-header-badge');
              const irpSection = document.getElementById('irp-summary-section');
              const scoreCircle = document.querySelector('.irp-score-circle');
@@ -376,7 +374,7 @@
 
              if (irpScoreValue >= 71) { // IRP > 70 is Basso
                  badgeHeaderClass = 'bg-success'; sectionBorderClass = 'risk-low'; circleClass = 'risk-low';
-                 categoryText = 'Basso'; categoryTextColor = 'text-success'; badgeClass = 'bg-success'; categoryBadgeText = 'B'; categoryBadgeTextColor = '';
+                 categoryText = 'Molto Basso'; categoryTextColor = 'text-success'; badgeClass = 'bg-success'; categoryBadgeText = 'A'; categoryBadgeTextColor = '';
              }
              else if (irpScoreValue < 51) { // IRP < 51 is Alto
                  badgeHeaderClass = 'bg-danger'; sectionBorderClass = 'risk-high'; circleClass = 'risk-high';
@@ -397,9 +395,9 @@
              }
          });
 
-        // Script per posizionare e colorare il punto Z-Score V17 (Updated for Calcidrata)
+        // Script per posizionare e colorare il punto Z-Score V17 (Updated for FLC HEALTHY EVOLUTION)
         document.addEventListener('DOMContentLoaded', function() {
-            const zScoreValue = 4.07; // Updated Z-Score Value
+            const zScoreValue = 6.20; // Updated Z-Score Value
             const indicatorDot = document.getElementById('zscore-indicator');
             const indicatorLabel = document.getElementById('zscore-indicator-label');
             const progressBarContainer = document.querySelector('.zscore-scale-container');
@@ -408,7 +406,7 @@
                 const lowRiskThreshold = 1.81;
                 const safeZoneThreshold = 2.99;
                 const scaleMin = 0;
-                const scaleMax = 4.5; // Keep scale max or adjust if 4.07 is too close
+                const scaleMax = 7.0; // Adjusted for 6.20
 
                 let positionPercent = ((zScoreValue - scaleMin) / (scaleMax - scaleMin)) * 100;
                 positionPercent = Math.max(0, Math.min(100, positionPercent)); // Limit 0-100%
@@ -422,7 +420,7 @@
                 } else if (zScoreValue < safeZoneThreshold) {
                     indicatorDot.classList.add('zone-warning');
                 } else {
-                    indicatorDot.classList.add('zone-success'); // Calcidrata is in success zone
+                    indicatorDot.classList.add('zone-success'); // FLC HEALTHY EVOLUTION is in success zone
                 }
             } else {
                 console.error("Elementi per l'indicatore Z-Score non trovati:", {indicatorDot, indicatorLabel, progressBarContainer});
@@ -443,8 +441,7 @@
         });
     </script>
      <!-- Script ChatNode -->
-
 <scan-chat data-bot-id="44479c6e-7072-49fc-9046-e650ff6f9874"></scan-chat>
-<script src=".  /js/bundle.js"></script>
+<script src="../js/bundle.js"></script>
 </body>
 </html>
